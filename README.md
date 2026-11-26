@@ -1,81 +1,100 @@
 # 基于 Spring Boot 与 Vue 的蛋糕店订单管理系统
 
-本项目是 ADMIN、MERCHANT、CUSTOMER 三角色的多商家蛋糕店平台。当前执行 **Phase 4：平台商家与用户管理**，仅包含 MERCH-01、USER-05、API-35～40 及 UI-14/15。Phase 0～3.1 已获用户确认；历史阶段报告保留当时的验收结论。
+面向校园周边及社区的多商家蛋糕订购平台，设置平台管理员（ADMIN）、商家（MERCHANT）和顾客（CUSTOMER）三类角色。完整需求覆盖选店、商品浏览、下单、模拟支付、商家接单、配送或自提及销售统计。
 
-本轮交付、验证和边界见 [Phase 4 报告](reports/PHASE_4_REPORT.md)、[管理接口与页面说明](docs/admin/PLATFORM_MANAGEMENT.md)、[项目状态](PROJECT_STATUS.md)和[待办](TODO.md)。继续沿用已验收的 `data.fieldErrors` 契约、JWT、BCrypt 和内存登录态。Phase 2 参数化种子继续暂缓；没有正式账号初始化或登录、注册、个人中心页面。
+**当前代码已包含基础工程、六表数据库方案、认证与权限、统一参数错误处理，以及平台商家和顾客管理。现有阶段记录为 Phase 4 已交付、待审核。** 商品经营、订单、支付、履约和统计仍待后续阶段实现；当前没有完整订购流程或正式登录页面。
 
-## 需求与阶段边界
+README 更新日期：2026-11-26（Asia/Shanghai）。本次仅更新本文件；文中的启动、初始化和测试命令是操作说明，历史测试结果来自阶段报告。
 
-唯一需求源是根目录[需求说明书 V1.1](蛋糕店订单管理系统需求说明书_V1.1.docx)，实际修订日期为2026-11-24。范围仍为20功能、45项API、17页面、46验收场景及六张核心表。当前DOCX与Phase0完整转录只在环境行不同，第四章相同；原件本轮保持原样。
+## 当前功能与阶段状态
 
-- ENV-01：Node.js24.20.0；ENV-02：JDK18.0.2.1；ENV-03：Maven Wrapper，沿用已确认环境。
-- 用户于2026-11-26明确授权Phase4，覆盖AGENTS及历史状态中的旧阶段限制。本轮只实现API-35～40及UI-14/15；历史Phase4规划中的公开商家API-33/34不在本轮范围，Phase5及其他页面未授权。
-- 用户于2026-11-25确认 `utf8mb4_0900_as_cs`，区分大小写和重音；未修改服务器全局设置。
-- Phase1历史为有条件通过；REQ-Q10公共结构已由用户确认，并在Phase3.1实施和回归，不修改历史报告。
-- 当前三角色认证由后端独立校验；后续经营接口仍须按ADMIN只读订单、MERCHANT仅本店、CUSTOMER仅本人实现。
+| 模块 | 已有实现 | 状态与边界 |
+| --- | --- | --- |
+| 基础工程 | Spring Boot / Vue 工程、统一响应与异常、ID/金额/时间序列化、Axios 请求层 | Phase 1 交付，历史遗留的参数错误结构已在 Phase 3.1 补齐 |
+| 数据库 | 六张核心表、74 个字段及索引、唯一键、外键、CHECK；独立初始化工具 | Phase 2 交付；正式管理员和演示商家种子仍暂缓 |
+| 认证与本人资料 | 注册、登录、退出、查询本人、修改昵称、修改密码；JWT、BCrypt、失败锁定及令牌失效 | Phase 3 交付；前端已有 API 和 Pinia 集成，登录/注册/个人中心页面未实现 |
+| 参数错误 | `data.fieldErrors` 字段到字符串数组的错误映射 | Phase 3.1 交付；无法可靠定位时 `data=null` |
+| 平台管理 | ADMIN 商家查询、创建、编辑、启停；CUSTOMER 查询和启停；两个管理页面 | Phase 4 报告记录已验证、待审核，范围为 MERCH-01、USER-05、API-35～40、UI-14/15 |
+| 后续业务 | 公开商家查询、分类、商品、库存、订单、模拟支付、履约、统计及其余页面 | 尚未实现，不计入当前交付 |
 
-| 文档 | 用途 |
+实施和验收证据见 [Phase 4 报告](reports/PHASE_4_REPORT.md)、[项目状态](PROJECT_STATUS.md)和[待办事项](TODO.md)。阶段报告保留当时结论；后续开发须按用户明确授权执行。
+
+## 需求依据与角色边界
+
+需求按 V1.1 和用户已确认的补充维护。当前工作区的需求文件为[第5组+肖琳+蛋糕店订单管理系统需求说明书.docx](第5组+肖琳+蛋糕店订单管理系统需求说明书.docx)，历史基线和报告使用的来源名称为《蛋糕店订单管理系统需求说明书_V1.1.docx》。本 README 按现有文件名提供链接，不改动 DOCX；需求基线和追踪矩阵保留历史来源记录。
+
+V1.1 范围为 20 项功能、45 项 API、17 个页面、46 个验收场景和六张核心表。上述数量表示完整需求范围，当前完成范围见上一节。
+
+| 角色 | 需求规定的权限边界 |
 | --- | --- |
-| [开发规则](AGENTS.md) | 原项目规则，结合最新用户授权执行 |
-| [需求基线](docs/requirements/REQUIREMENTS_BASELINE.md) | Phase0完整转录，旧环境行以当前确认覆盖 |
-| [追踪矩阵](docs/requirements/TRACEABILITY_MATRIX.md) | 保留Phase0原文追踪，附本轮Phase4实施状态 |
-| [架构](docs/architecture/ARCHITECTURE_PLAN.md)、[阶段计划](docs/plan/PHASE_PLAN.md) | 历史规划；本轮实际范围以当前报告为准 |
-| [Phase0报告](reports/PHASE_0_REPORT.md)、[Phase1报告](reports/PHASE_1_REPORT.md) | 保留历史证据，不覆盖 |
-| [数据库设计](docs/database/DATABASE_DESIGN.md) | ER关系、快照和DATA01～09实现边界 |
-| [数据字典](docs/database/DATA_DICTIONARY.md) | 六表74字段、类型、NULL、默认及约束 |
-| [索引约束](docs/database/INDEX_AND_CONSTRAINTS.md) | PK、UK、普通索引、FK和CHECK |
-| [初始化指南](docs/database/INITIALIZATION_GUIDE.md) | 环境变量、本机连接、初始化、实测和可选种子 |
-| [认证设计](docs/security/AUTHENTICATION_DESIGN.md) | 六接口与前端基础集成 |
-| [JWT权限](docs/security/JWT_AND_PERMISSION.md)、[密码安全](docs/security/PASSWORD_SECURITY.md) | 签名、当前身份、令牌失效、BCrypt及失败锁定 |
-| [认证测试](docs/security/AUTH_API_TESTS.md) | 用例矩阵、隔离与安全复现命令 |
+| ADMIN | 管理商家和 CUSTOMER 账号；订单和统计只读，不代商家接单或维护商品 |
+| MERCHANT | 仅维护本店经营资源、处理本店订单；账号与店铺由平台创建 |
+| CUSTOMER | 公开注册固定为 CUSTOMER；仅维护本人资料、访问本人订单 |
 
-## 环境与工程
+后端独立校验 JWT、数据库当前角色、账号启停状态、令牌版本及资源归属；前端守卫用于页面访问控制。商品和订单相关归属校验须随对应业务模块实现。
 
-检查日期：2026-11-26；工作区 `D:\study\蛋糕店订单管理系统`。
+核心表固定为 `sys_user`、`cake_merchant`、`cake_category`、`cake_product`、`cake_order`、`cake_order_item`。范围不包含真实支付、退款审批、外部物流、优惠券、配送费、SKU 组合、跨店合单或库存流水表。
 
-| 项目 | 当前版本或设置 |
+## 技术栈与工程环境
+
+下表依据当前工程配置、锁文件和阶段报告。具体依赖见 [backend/pom.xml](backend/pom.xml) 和 [frontend/package.json](frontend/package.json)。
+
+| 项目 | 工程版本或约定 |
 | --- | --- |
-| JDK / 编译目标 | 18.0.2.1 / release18，现有 D:\study\jdk18 |
-| Spring Boot | 3.5.16，沿用Phase1 |
-| Spring Security / Nimbus JWT | Boot管理的6.5.11 / 9.37.4，HS256固定算法 |
-| Maven / Wrapper | 3.9.11 / 官方3.3.4，配置及校验值保持原样 |
-| MyBatis-Plus | Boot3 starter3.5.18，精确版本 |
-| MySQL / Connector/J | 服务端8.0.19 / 驱动8.4.0 |
-| 开发 / 专用测试库 | cake_order_system / cake_order_system_phase2_test |
-| 表选项 | InnoDB / utf8mb4 / utf8mb4_0900_as_cs / DATETIME(3) |
-| Node / npm | 24.20.0 / 11.19.0 |
-| 前端 | 沿用Phase1 package.json及锁文件版本，新增API和Pinia认证状态 |
-| Git | 非Git仓库；未init、commit、push或分支操作 |
+| JDK | 18.0.2.1；编译目标 release 18；本机既有路径 `D:\study\jdk18`（ENV-02） |
+| Spring Boot | 3.5.16 |
+| Spring Security / JWT | Boot 管理的 Spring Security、Nimbus JOSE JWT；HS256、2 小时有效期 |
+| Maven | 官方 Maven Wrapper 3.3.4 / Maven 3.9.11（ENV-03） |
+| MyBatis-Plus / Connector/J | 3.5.18 / 8.4.0 |
+| MySQL | 阶段报告实测 8.0.19；InnoDB、utf8mb4、`utf8mb4_0900_as_cs`、DATETIME(3) |
+| Node.js / npm | 24.20.0（ENV-01） / 11.19.0 |
+| Vue / Vue Router / Pinia | 3.5.46 / 4.6.5 / 3.0.4 |
+| Element Plus / Axios | 2.14.8 / 1.21.1 |
+| Vite / Vitest | 7.3.8 / 4.1.12 |
+| Git | 当前工作区已有 Git 仓库，分支为 `main`；历史文档中的“非 Git 仓库”为当时记录 |
 
-默认Oracle javapath启动器的历史问题保留。后端命令只对当前PowerShell设置JAVA_HOME，不修改系统或用户变量、PATH、ExecutionPolicy。
+Phase 0 历史转录中的 JDK 17 / Node.js 18 环境行与后续确认的 ENV-01～03 区分保留，当前工程按上表执行。排序规则 `utf8mb4_0900_as_cs` 区分大小写和重音，已由用户确认。
+
+Windows 使用 PowerShell、`npm.cmd` 和工程自带的 `mvnw.cmd`。后端命令通过当前进程的 `JAVA_HOME` 指向指定 JDK，不依赖全局 Maven，不修改系统环境变量或 ExecutionPolicy。
+
+## 项目结构
 
 ```text
-backend/                   原有应用及公共响应/异常处理
-  .mvn/wrapper/            官方Maven Wrapper
-  src/main/.../config/    数据源连接检查、脱敏SQL事件日志及原有配置
-  src/main/resources/     application.yml、dev/prod配置
-  src/test/               原有25项测试及数据库基础/真实测试
-frontend/                  Vue/Vite、认证请求层及本轮两项平台管理页面
-database/                 首次DDL、索引、约束、参数化种子及独立Java工具
-docs/database/            Phase2四份数据库文档
-docs/security/            Phase3认证、安全与测试文档
-docs/admin/               Phase4平台管理契约、事务和页面边界
-reports/                  阶段报告
+backend/
+  .mvn/wrapper/               Maven Wrapper 配置
+  src/main/java/com/cake/platform/
+    common/、config/           公共响应、序列化、数据源等配置
+    controller/               auth、user、admin 控制器
+    dto/、vo/                  请求校验和公开响应对象
+    entity/、mapper/           当前认证与平台管理所需数据访问
+    security/                 JWT、当前身份和权限校验
+    service/                  auth、admin 业务与事务
+    exception/                统一异常及字段错误处理
+  src/main/resources/         dev / prod 配置
+  src/test/                   单元测试和隔离 MySQL 集成测试
+frontend/
+  src/api/                    Axios、认证、本人资料和平台管理 API
+  src/stores/                 Pinia 内存认证状态
+  src/router/                 路由和管理员守卫
+  src/layouts/、components/    后台布局及管理组件
+  src/views/admin/            商家管理、顾客管理页面
+database/                     六表 DDL、索引、约束、种子模板及独立 Java 工具
+docs/                         需求、架构、阶段计划、数据库、安全及管理说明
+reports/                      各阶段报告
 ```
 
-认证代码位于backend的controller/auth、controller/user、dto、entity、mapper、security、service/auth、vo及对应测试；平台管理新增controller/admin、service/admin、AdminMapper和相关DTO/VO。前端复用api/auth.js、users.js和stores/auth.js，新增api/admin.js、后台布局及两个管理页。没有Redis、消息队列、SKU、真实支付、退款或库存流水等扩展。应用不自动运行DDL或种子，独立初始化工具不打包进入业务JAR。
+应用不自动执行 DDL 或种子；独立数据库工具不打包进入业务 JAR。`backend/target/`、`frontend/dist/` 是生成物目录，`frontend/node_modules/` 是依赖目录。
 
-## 数据库账号与密码配置位置
+## 数据库与密钥配置
 
-数据库账号和密码配置位于后端的 `spring.datasource` 节点，按运行环境分别配置：
+账号和密码配置位于后端 `spring.datasource` 节点，真实值通过进程环境变量注入：
 
-| 运行环境 | 配置文件 |
+| 用途 | 配置文件 |
 | --- | --- |
-| 本地开发（默认 `dev`） | [backend/src/main/resources/application-dev.yml](backend/src/main/resources/application-dev.yml) |
-| 生产（`prod`） | [backend/src/main/resources/application-prod.yml](backend/src/main/resources/application-prod.yml) |
-| 真实 MySQL 测试（`mysql-test`） | [backend/src/test/resources/application-mysql-test.yml](backend/src/test/resources/application-mysql-test.yml) |
-
-上述文件中的账号、密码配置均为环境变量占位引用：
+| 通用配置、默认 `dev`、JWT 密钥引用 | [application.yml](backend/src/main/resources/application.yml) |
+| 本地开发 | [application-dev.yml](backend/src/main/resources/application-dev.yml) |
+| 生产 | [application-prod.yml](backend/src/main/resources/application-prod.yml) |
+| 真实 MySQL 测试 | [application-mysql-test.yml](backend/src/test/resources/application-mysql-test.yml) |
 
 ```yaml
 spring:
@@ -84,77 +103,230 @@ spring:
     password: ${DB_PASSWORD:}
 ```
 
-`spring.datasource.username` 对应 `DB_USERNAME`，`spring.datasource.password` 对应 `DB_PASSWORD`，两者均无内置默认凭据。真实账号和密码通过当前 PowerShell 进程的环境变量注入，隐藏输入命令见下方[启动](#启动)部分，不将真实凭据写入 YAML 或 README。
+| 环境变量 | 用途与默认值 |
+| --- | --- |
+| `DB_HOST` / `DB_PORT` | dev 默认 `127.0.0.1:3306`；prod 必须提供主机 |
+| `DB_NAME` | dev 默认 `cake_order_system`；prod 必须提供库名 |
+| `DB_USERNAME` / `DB_PASSWORD` | 数据库凭据，无内置默认账号或密码 |
+| `JWT_SECRET_BASE64` | HS256 密钥的 Base64 编码；解码后至少 32 个随机字节，无默认密钥 |
+| `SPRING_PROFILES_ACTIVE` | 默认 `dev`；生产使用 `prod` |
+| `SERVER_ADDRESS` / `SERVER_PORT` | 默认 `127.0.0.1` / `8080` |
+| `DB_TEST_NAME` | 真实测试显式使用隔离库 `cake_order_system_phase2_test` |
+| `CAKE_MYSQL_TEST_ENABLED` | 仅为 `true` 时启用真实 MySQL 测试 |
 
-通用配置 [backend/src/main/resources/application.yml](backend/src/main/resources/application.yml) 设置默认环境为 `dev`。独立数据库工具 `database/tools/DatabaseTool.java` 直接读取同名环境变量 `DB_USERNAME`、`DB_PASSWORD`，不读取上述 YAML 文件。
+数据库会话时区固定为 `+08:00`。prod 使用 `VERIFY_IDENTITY`，部署时还需提供可信证书配置；生产 TLS 和密钥托管尚未验收。开发 SQL 日志仅记录准备事件，不输出 SQL、参数、结果或凭据。
 
-## 数据库首次初始化
+数据库首次初始化和连接检查见[初始化指南](docs/database/INITIALIZATION_GUIDE.md)。历史报告记录开发库及专用测试库已建，已有表时不要重复执行 `init`；工具会拒绝已有对象，DDL 失败也不表示已经回滚。`database/tools/DatabaseTool.java` 直接读取环境变量，不读取 Spring YAML。
 
-完整操作见[初始化指南](docs/database/INITIALIZATION_GUIDE.md)。Phase2已建开发库和专用测试库，本轮仅复用，**不要再次执行 init**；运行器遇已有表会拒绝。脚本用于首次初始化，DDL隐式提交，不能据失败推断已回滚。
+正式账号种子仍暂缓，当前没有可供 README 公布的默认管理员、演示账号或密码。真实凭据与 JWT 密钥不写入 YAML、SQL、README 或命令字面量。
 
-准备独立工具的固定依赖并检查连接：
+## 启动项目步骤（Windows / PowerShell）
+
+按“检查环境 → 确认数据库与依赖 → 启动后端 → 启动前端 → 浏览器检查”的顺序操作。后端和前端分别占用一个 PowerShell 窗口，运行期间保持窗口打开。以下命令用于本机开发，不表示本次文档更新已经执行了启动或安装。
+
+### 1. 检查运行环境
+
+打开 PowerShell，执行：
 
 ```powershell
-Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统\backend'
-$env:JAVA_HOME = 'D:\study\jdk18'
-.\mvnw.cmd -B dependency:build-classpath '-Dmdep.outputFile=target/database-classpath.txt'
 Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统'
-$taskClassPath = (Get-Content -LiteralPath '.\backend\target\database-classpath.txt' -Raw).Trim()
-& "$env:JAVA_HOME\bin\java.exe" -cp $taskClassPath '.\database\tools\DatabaseTool.java' check
+& 'D:\study\jdk18\bin\java.exe' -version
+node --version
+npm.cmd --version
 ```
 
-缺少DB_USERNAME/DB_PASSWORD时在本机终端交互询问，密码隐藏、不保存。默认本机127.0.0.1:3306；首次初始化的CAKE_DB_COLLATION明确设 `utf8mb4_0900_as_cs`。真实密码不写入命令、文件、SQL或报告。
+预期分别为 JDK `18.0.2.1`、Node.js `v24.20.0`、npm `11.19.0`。后端使用项目内的 Maven Wrapper，无需另装全局 Maven。若版本不符，先确认环境，不自动切换或修改系统配置。
 
-## 启动
+### 2. 确认 MySQL 和前端依赖
 
-后端使用本机隐藏交互设置进程环境：
+本机已有 MySQL 服务名为 `MySQL80`，可查看状态：
 
 ```powershell
-Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统\backend'
-$env:JAVA_HOME = 'D:\study\jdk18'
-$env:DB_USERNAME = Read-Host '本地数据库用户名'
-$taskPassword = Read-Host '本地数据库密码' -AsSecureString
-$env:DB_PASSWORD = [Net.NetworkCredential]::new('', $taskPassword).Password
-$taskJwtSecret = Read-Host '安全配置提供的JWT密钥Base64编码（至少32随机字节）' -AsSecureString
-$env:JWT_SECRET_BASE64 = [Net.NetworkCredential]::new('', $taskJwtSecret).Password
-try { .\mvnw.cmd spring-boot:run }
-finally {
-    Remove-Item Env:DB_PASSWORD -ErrorAction SilentlyContinue
-    Remove-Variable taskPassword -ErrorAction SilentlyContinue
-    Remove-Item Env:JWT_SECRET_BASE64 -ErrorAction SilentlyContinue
-    Remove-Variable taskJwtSecret -ErrorAction SilentlyContinue
-}
+Get-Service -Name 'MySQL80'
 ```
 
-默认dev、开发库cake_order_system，强制数据库会话+08:00。prod采用VERIFY_IDENTITY，要求部署时提供可信证书和完整连接变量；本轮未部署。缺凭据或连接失败有固定安全提示。SQL开发日志仅记录准备事件，不记录SQL、参数、结果或凭据。
+状态应为 `Running`；未运行时，在 Windows“服务”中启动该服务。其他机器以实际服务名为准。使用数据库客户端确认 `127.0.0.1:3306` 可连接，开发库 `cake_order_system` 已有六张核心表，并准备可访问该库的数据库用户名和密码。
 
-前端另开窗口，已有依赖时直接启动：
+历史报告记录开发库已经建立，日常启动无需执行 SQL、`init` 或种子。新环境尚无数据库时，先按[初始化指南](docs/database/INITIALIZATION_GUIDE.md)确认并完成获授权的首次初始化，再继续启动。
+
+已有 `frontend/node_modules/` 时直接进入下一步。首次准备且缺少依赖、已获准恢复依赖时，执行：
 
 ```powershell
 Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统\frontend'
+npm.cmd ci
+```
+
+`npm.cmd ci` 按已有锁文件恢复依赖，日常启动不必重复运行。首次运行 Maven Wrapper 时也可能联网下载固定版本的 Maven 及项目依赖。
+
+### 3. 在窗口一启动后端
+
+下面的命令使用本机开发配置，交互输入数据库凭据，并在内存中生成 32 字节随机开发用 JWT 密钥，无需手工编写密钥或将密码填入 YAML：
+
+```powershell
+Set-Location -LiteralPath '“修改成你的项目位置”\蛋糕店订单管理系统\backend'//（例如‘D:\study\蛋糕店订单管理系统’）
+$env:JAVA_HOME = 'D:\study\jdk18'
+$env:SPRING_PROFILES_ACTIVE = 'dev'
+$env:DB_HOST = '127.0.0.1'
+$env:DB_PORT = '3306'
+$env:DB_NAME = 'cake_order_system'
+$env:SERVER_ADDRESS = '127.0.0.1'
+$env:SERVER_PORT = '8080'
+try {
+    $env:DB_USERNAME = Read-Host '本地数据库用户名'
+    $taskPassword = Read-Host '本地数据库密码' -AsSecureString
+    $env:DB_PASSWORD = [Net.NetworkCredential]::new('', $taskPassword).Password
+    $taskJwtBytes = [byte[]]::new(32)
+    $taskJwtRng = [Security.Cryptography.RandomNumberGenerator]::Create()
+    try { $taskJwtRng.GetBytes($taskJwtBytes) }
+    finally { $taskJwtRng.Dispose() }
+    $env:JWT_SECRET_BASE64 = [Convert]::ToBase64String($taskJwtBytes)
+    .\mvnw.cmd spring-boot:run
+}
+finally {
+    Remove-Item Env:DB_PASSWORD,Env:JWT_SECRET_BASE64 -ErrorAction SilentlyContinue
+    if ($null -ne $taskJwtBytes) {
+        [Array]::Clear($taskJwtBytes, 0, $taskJwtBytes.Length)
+    }
+    Remove-Variable taskPassword,taskJwtBytes,taskJwtRng -ErrorAction SilentlyContinue
+}
+```
+
+密码输入时不显示字符，输入完成后按 Enter。等待日志出现 `Started CakeOrderPlatformApplication`，随后数据库启动检查未报错，且进程持续运行。若出现 `APPLICATION FAILED TO START`、数据库连接失败或密钥错误，应先处理错误再继续。
+
+本示例的随机密钥只用于本地开发，每次重启后端会生成新密钥，旧 JWT 随之失效。需要跨重启保留有效令牌的环境应由外部安全配置注入同一密钥；生产配置仍按前文管理。
+
+### 4. 在窗口二启动前端
+
+保持后端运行，另开一个 PowerShell 窗口执行：
+
+```powershell
+Set-Location -LiteralPath '“修改成你的项目位置”\蛋糕店订单管理系统\frontend'//（例如‘D:\study\蛋糕店订单管理系统’）
 npm.cmd run dev
 ```
 
-默认后端127.0.0.1:8080、Vite127.0.0.1:5173，/api保持原路径代理。本轮页面路径为 `/admin/merchants` 和 `/admin/users`，需已有ADMIN内存会话；路由守卫读取本人接口再次确认权限。UI-01登录页尚未授权，缺少会话时回根入口提示先登录；刷新后须重登，不增加调试登录或令牌粘贴入口。未实现路径404不代表API通过。依赖缺失需重建时仍按原锁文件 `npm.cmd ci`，本轮不重新安装依赖。
+终端显示 Vite 已就绪以及 `http://127.0.0.1:5173/` 后，保持该窗口运行。Vite 将 `/api` 原路径代理到后端 `http://127.0.0.1:8080`。
+
+### 5. 检查服务响应并打开页面
+
+可在另一个 PowerShell 窗口执行以下只读请求：
+
+```powershell
+curl.exe --include --max-time 5 http://127.0.0.1:8080/api/users/me
+curl.exe --include --max-time 5 http://127.0.0.1:5173/api/users/me
+```
+
+没有携带登录令牌时，两次请求预期均为 HTTP `401`、业务码 `40102`，提示“登录已失效，请重新登录”。第一次检查后端鉴权响应，第二次检查前端开发代理；这些响应不能单独证明数据库健康或业务流程已验收。
+
+随后在浏览器打开：
+
+| 服务或页面 | 默认地址 | 使用条件 |
+| --- | --- | --- |
+| 后端 | `http://127.0.0.1:8080` | 数据库连接和 JWT 配置齐全 |
+| 前端根入口 | `http://127.0.0.1:5173/` | 当前为基础出口及访问提示，没有登录表单 |
+| 商家管理 UI-14 | `http://127.0.0.1:5173/admin/merchants` | 已有 ADMIN 内存会话 |
+| 顾客管理 UI-15 | `http://127.0.0.1:5173/admin/users` | 已有 ADMIN 内存会话 |
+
+**当前尚无 UI-01 正式登录页。** 直接打开根入口可能显示空白；无会话访问管理页会返回根入口并提示先登录，这是当前已实现的页面行为。Pinia 令牌仅保存在内存，刷新后会话丢失。正式管理员种子仍暂缓，没有已有 ADMIN 账号和内存会话时，当前只能检查服务响应及匿名访问提示，不能通过普通登录页面进入后台。Phase 4 浏览器验证通过既有认证 API 建立隔离测试会话，不代表正式登录页面流程已交付。
+
+### 6. 停止项目
+
+在自己启动的前端、后端 PowerShell 窗口分别按 `Ctrl+C`。等待命令退出；后端示例的 `finally` 会清理当前进程中的数据库密码和 JWT 密钥。项目停止无需停止 MySQL 服务。
+
+### 常见启动问题
+
+| 现象 | 检查方法或处理方向 |
+| --- | --- |
+| Java 启动器异常或找不到 Java | 按上文使用 `D:\study\jdk18`，确认该目录下的 `bin/java.exe` 存在 |
+| 数据库凭据未配置或连接失败 | 检查 MySQL 服务、主机端口、开发库、用户名及密码；在窗口一重新执行完整启动块 |
+| JWT 密钥格式或长度错误 | 使用上文内存随机生成步骤；外部密钥须为 Base64 编码且解码后至少 32 字节 |
+| 8080 或 5173 端口占用 | 确认占用者；只关闭自己启动的旧实例。若调整后端端口，须同步 Vite 代理目标 |
+| 找不到 Vite 或前端依赖 | 确认位于 `frontend` 目录，并按步骤 2 判断是否需恢复依赖 |
+| 根页面空白、管理页提示先登录 | 按步骤 5 核对当前页面和会话限制，不将其当作已有登录页或完整后台流程 |
+
+## 已实现接口
+
+以下 12 项为当前已有控制器和服务的业务接口。请求字段、错误码和事务边界见[认证设计](docs/security/AUTHENTICATION_DESIGN.md)及[平台管理说明](docs/admin/PLATFORM_MANAGEMENT.md)。
+
+| 编号 | 方法与路径 | 功能与访问范围 |
+| --- | --- | --- |
+| API-01 | `POST /api/auth/login` | 三角色统一登录 |
+| API-10 | `POST /api/auth/register` | 公开注册，固定 CUSTOMER |
+| API-11 | `POST /api/auth/logout` | 已登录账号退出，使该账号旧 JWT 失效 |
+| API-12 | `GET /api/users/me` | 查询本人公开资料 |
+| API-13 | `PATCH /api/users/me` | 修改本人昵称 |
+| API-14 | `PATCH /api/users/me/password` | 验证旧密码、修改密码，使旧 JWT 失效 |
+| API-35 | `GET /api/admin/merchants` | ADMIN 分页查询商家 |
+| API-36 | `POST /api/admin/merchants` | ADMIN 在同一事务创建 MERCHANT 账号和店铺 |
+| API-37 | `PUT /api/admin/merchants/{id}` | ADMIN 编辑店铺资料，绑定账号不变 |
+| API-38 | `PATCH /api/admin/merchants/{id}/status` | ADMIN 启停店铺，不修改商家账号状态 |
+| API-39 | `GET /api/admin/users` | ADMIN 分页查询 CUSTOMER |
+| API-40 | `PATCH /api/admin/users/{id}/status` | ADMIN 启停 CUSTOMER，状态变化时递增令牌版本 |
+
+公共响应保持 `code/msg/data`。ID 使用十进制字符串，避免前端整数精度丢失；时间采用 `+08:00` ISO 8601 毫秒字符串。密码使用 BCrypt；登录连续失败第 5 次锁定 10 分钟。退出、改密和顾客账号状态变化使用令牌版本使旧 JWT 失效。
+
+可定位的 HTTP 400 / 业务码 40001 参数错误示例：
+
+```json
+{
+  "code": 40001,
+  "msg": "参数错误",
+  "data": {
+    "fieldErrors": {
+      "phone": ["手机号格式不正确"]
+    }
+  }
+}
+```
+
+`fieldErrors` 的键为实际公开的 lowerCamelCase API 字段，值为字符串数组，支持多字段和同字段多条消息。无法可靠定位、畸形 JSON 或整个请求体缺失时 `data=null`，不增加 `_global`；受保护字段继续按 40302 拒绝。Axios 通过 `RequestError.data` 保留后端错误数据，页面展示字段消息。
 
 ## 测试与构建
 
-无数据库的回归及打包：
+普通后端回归不启用真实数据库套件；在未设置 `CAKE_MYSQL_TEST_ENABLED=true` 的 PowerShell 中执行：
 
 ```powershell
 Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统\backend'
 $env:JAVA_HOME = 'D:\study\jdk18'
-.\mvnw.cmd -B clean test
+.\mvnw.cmd -B test
 .\mvnw.cmd -B package
 ```
 
-普通test明确跳过真实MySQL套件。实际MySQL验证必须按[认证测试说明](docs/security/AUTH_API_TESTS.md)设置 `CAKE_MYSQL_TEST_ENABLED=true`、`DB_TEST_NAME=cake_order_system_phase2_test`、本机凭据和测试专属随机JWT密钥，再执行 `mvnw.cmd -B test` 或 `package`。不得将skip写成真实数据库通过。认证夹具按准确ID清理，原数据库测试事务回滚，最终核对六表计数与结构；不重置自增序列。
+真实 MySQL 测试另按[认证测试说明](docs/security/AUTH_API_TESTS.md)注入本机凭据和测试专用随机 JWT 密钥，并设置 `CAKE_MYSQL_TEST_ENABLED=true`、`DB_TEST_NAME=cake_order_system_phase2_test`。测试会写入并清理隔离夹具，不在开发库或正式库执行；跳过的套件不能记为真实数据库、事务或并发验证通过。
 
-前端使用 `npm.cmd test`、`npm.cmd run build` 验证，保留既有测试覆盖，并将“仅根空路由”断言随本轮授权更新为管理路由及权限覆盖。Pinia只在内存保存令牌；刷新页面后须重新登录。后端JAR及测试XML位于target，生成物不作为手写业务源码。
+前端在已有依赖的目录执行：
 
-公共响应仍为code/msg/data。可定位的HTTP400／40001参数错误返回 `data.fieldErrors: {"phone":["手机号格式不正确"]}`，支持多字段及同字段多消息；键为实际API公开lowerCamelCase字段，嵌套路径按JSON名称映射。无法定位、畸形JSON、整个请求体缺失、仅含未知字段的错误仍data=null，不增加_global。受保护字段仍40302，其他认证/业务/系统码及状态不变。Axios核心实现保持原样，RequestError.data原样透传。
+```powershell
+Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统\frontend'
+npm.cmd test
+npm.cmd run build
+```
 
-历史Phase3.1验证为后端298项、前端59项全过，后端package和前端build成功；这些是历史基线，不计为本轮新增结果。本轮测试、数据库起止审计、JAR及浏览器证据见Phase4报告。阶段验证不替代未来商品、订单、完整TC01～46或生产验收。
+最近一次阶段验证记录如下，来源为 2026-11-26 的 [Phase 4 报告](reports/PHASE_4_REPORT.md)，本次 README 更新未重新运行：
 
-本轮完成后停止于Phase4待审核，不进入Phase5，不执行git init、commit或push，不执行正式种子。
+| 检查 | Phase 4 报告中的结果 |
+| --- | --- |
+| 后端完整回归 | 363 项，失败 0、错误 0、跳过 0，含真实 MySQL、事务回滚及并发测试 |
+| 后端打包 | 在完整测试后以 `-DskipTests package` 打包成功 |
+| 前端测试 | 6 个文件、85 项通过 |
+| 前端构建 | 成功；保留主 chunk 超过 500 kB 的体积提示 |
+| JAR 和浏览器 | 打包 JAR、Chrome / Edge；1440×1000 与 390×844 两种分辨率，验证两管理页及相关操作 |
+| 数据库保护 | 当时两库六表最终均为 0 行，结构及数据摘要一致；测试可能推进自增序列，不重置 |
 
+这些结果仅覆盖已交付阶段，全部 46 个验收场景、17 个页面、商品订单流程及生产部署仍待对应阶段验收。后端测试 XML 位于 `backend/target/surefire-reports/`；Phase 4 可重建证据位于 `backend/target/phase4-evidence/` 和 `backend/target/phase4-browser/`。
+
+## 文档导航与后续事项
+
+| 文档 | 用途 |
+| --- | --- |
+| [AGENTS.md](AGENTS.md) | 项目规则及修改边界，执行时结合当前明确授权 |
+| [PROJECT_STATUS.md](PROJECT_STATUS.md)、[TODO.md](TODO.md) | 阶段状态、待审核内容和需求待确认项；历史 Git 状态以当前实查为准 |
+| [需求基线](docs/requirements/REQUIREMENTS_BASELINE.md)、[追踪矩阵](docs/requirements/TRACEABILITY_MATRIX.md) | 原文完整转录及功能/API/UI/验收追踪 |
+| [架构计划](docs/architecture/ARCHITECTURE_PLAN.md)、[阶段计划](docs/plan/PHASE_PLAN.md) | 架构约定、Phase 0～13 的范围与依赖 |
+| [数据库设计](docs/database/DATABASE_DESIGN.md)、[数据字典](docs/database/DATA_DICTIONARY.md) | 六表关系、74 字段及数据约束 |
+| [索引与约束](docs/database/INDEX_AND_CONSTRAINTS.md)、[初始化指南](docs/database/INITIALIZATION_GUIDE.md) | 建库条件、工具、连接及隔离验证 |
+| [认证设计](docs/security/AUTHENTICATION_DESIGN.md)、[JWT 与权限](docs/security/JWT_AND_PERMISSION.md) | 六个认证/本人接口、身份与令牌规则 |
+| [密码安全](docs/security/PASSWORD_SECURITY.md)、[认证测试](docs/security/AUTH_API_TESTS.md) | BCrypt、失败锁定、测试与安全复现 |
+| [平台管理说明](docs/admin/PLATFORM_MANAGEMENT.md) | 六管理接口、事务、权限及两页面 |
+| [Phase 0](reports/PHASE_0_REPORT.md)、[Phase 1](reports/PHASE_1_REPORT.md)、[Phase 2](reports/PHASE_2_REPORT.md)、[Phase 3](reports/PHASE_3_REPORT.md)、[Phase 3.1](reports/PHASE_3_1_REPORT.md)、[Phase 4](reports/PHASE_4_REPORT.md) | 各阶段当时的实施与验证证据 |
+
+当前待办包括 Phase 4 审核、正式账号种子及后续页面流程，以及商家账号禁用来源、支付超时与停店优先级、库存回补溢出、排行商家名称快照和密码 Unicode 长度口径等需求问题，详见 TODO。未经明确授权，不进入下一阶段，不自动执行种子、提交或推送。
