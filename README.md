@@ -126,16 +126,9 @@ spring:
 
 ### 1. 检查运行环境
 
-打开 PowerShell，执行：
 
-```powershell
-Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统'
-& 'D:\study\jdk18\bin\java.exe' -version
-node --version
-npm.cmd --version
-```
 
-预期分别为 JDK `18.0.2.1`、Node.js `v24.20.0`、npm `11.19.0`。后端使用项目内的 Maven Wrapper，无需另装全局 Maven。若版本不符，先确认环境，不自动切换或修改系统配置。
+分别为 JDK `18.0.2.1`、Node.js `v24.20.0`、npm `11.19.0`。后端使用项目内的 Maven Wrapper，无需另装全局 Maven。若版本不符，先确认环境，不自动切换或修改系统配置。
 
 ### 2. 确认 MySQL 和前端依赖
 
