@@ -1,0 +1,19 @@
+MySQL=8.0.19 timezone=+08:00
+schema=cake_order_system
+sys_user rows=0
+cake_merchant rows=0
+cake_category rows=0
+cake_product rows=0
+cake_order rows=0
+cake_order_item rows=0
+structureSHA256=ee3bebe42cae1a8e7381932029b6f0e2e8cd272d644c4ff25f4d2cb290db5f87
+dataSHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 totalRows=0
+schema=cake_order_system_phase2_test
+sys_user rows=0
+cake_merchant rows=0
+cake_category rows=0
+cake_product rows=0
+cake_order rows=0
+cake_order_item rows=0
+structureSHA256=15cda01419f260c563f5f78386f371eed939283ce5ec01a2a5bacf5599fbbc75
+dataSHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 totalRows=0

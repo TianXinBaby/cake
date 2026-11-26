@@ -1,0 +1,66 @@
+TABLE sys_user
+column id bigint unsigned null=NO default=null extra=auto_increment
+column username varchar(20) null=NO default=null extra=
+column password varchar(100) null=NO default=null extra=
+column nickname varchar(30) null=NO default=null extra=
+column phone varchar(20) null=NO default=null extra=
+column role varchar(10) null=NO default=CUSTOMER extra=
+column status tinyint null=NO default=1 extra=
+column token_version int null=NO default=0 extra=
+column login_fail_count int null=NO default=0 extra=
+column locked_until datetime(3) null=YES default=null extra=
+column create_time datetime(3) null=NO default=CURRENT_TIMESTAMP(3) extra=DEFAULT_GENERATED
+column update_time datetime(3) null=NO default=CURRENT_TIMESTAMP(3) extra=DEFAULT_GENERATED
+CREATE TABLE `sys_user` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '�û�����',
+  `username` varchar(20) COLLATE utf8mb4_0900_as_cs NOT NULL COMMENT '�ֻ��ŵ�¼�˺ţ����治���޸�',
+  `password` varchar(100) COLLATE utf8mb4_0900_as_cs NOT NULL COMMENT '���� BCrypt ɢ�У������ؽӿ�',
+  `nickname` varchar(30) COLLATE utf8mb4_0900_as_cs NOT NULL COMMENT '��ʾ�ǳ�',
+  `phone` varchar(20) COLLATE utf8mb4_0900_as_cs NOT NULL COMMENT '�˺��ֻ��ţ�ע��ʱ���� username',
+  `role` varchar(10) COLLATE utf8mb4_0900_as_cs NOT NULL DEFAULT 'CUSTOMER' COMMENT 'ADMIN/MERCHANT/CUSTOMER',
+  `status` tinyint NOT NULL DEFAULT '1' COMMENT '0���ã�1����',
+  `token_version` int NOT NULL DEFAULT '0' COMMENT 'JWT �汾',
+  `login_fail_count` int NOT NULL DEFAULT '0' COMMENT '������¼ʧ�ܴ���0��5',
+  `locked_until` datetime(3) DEFAULT NULL COMMENT '��ʱ������ֹʱ��',
+  `create_time` datetime(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '����ʱ��',
+  `update_time` datetime(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '����޸�ʱ��',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_user_username` (`username`),
+  UNIQUE KEY `uk_user_phone` (`phone`),
+  CONSTRAINT `ck_user_login_fail_count` CHECK ((`login_fail_count` between 0 and 5)),
+  CONSTRAINT `ck_user_phone` CHECK (((char_length(`phone`) = 11) and regexp_like(`phone`,_utf8mb4'^1[3-9][0-9]{9}$',_utf8mb4'c'))),
+  CONSTRAINT `ck_user_role` CHECK ((cast(`role` as char charset binary) in (_utf8mb4'ADMIN',_utf8mb4'MERCHANT',_utf8mb4'CUSTOMER'))),
+  CONSTRAINT `ck_user_status` CHECK ((`status` in (0,1))),
+  CONSTRAINT `ck_user_text` CHECK (((char_length(trim(`username`)) between 1 and 20) and (char_length(trim(`nickname`)) between 1 and 30))),
+  CONSTRAINT `ck_user_token_version` CHECK ((`token_version` >= 0))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs COMMENT='�û���'
+TABLE cake_merchant
+column id bigint unsigned null=NO default=null extra=auto_increment
+column user_id bigint unsigned null=NO default=null extra=
+column name varchar(60) null=NO default=null extra=
+column phone varchar(20) null=NO default=null extra=
+column address varchar(120) null=NO default=null extra=
+column description varchar(500) null=YES default=null extra=
+column status tinyint null=NO default=1 extra=
+column create_time datetime(3) null=NO default=CURRENT_TIMESTAMP(3) extra=DEFAULT_GENERATED
+column update_time datetime(3) null=NO default=CURRENT_TIMESTAMP(3) extra=DEFAULT_GENERATED
+CREATE TABLE `cake_merchant` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT '�̼�����',
+  `user_id` bigint unsigned NOT NULL COMMENT 'Ψһ�󶨵� MERCHANT �˺�',
+  `name` varchar(60) COLLATE utf8mb4_0900_as_cs NOT NULL COMMENT '��������',
+  `phone` varchar(20) COLLATE utf8mb4_0900_as_cs NOT NULL COMMENT '����ҵ����ϵ�绰',
+  `address` varchar(120) COLLATE utf8mb4_0900_as_cs NOT NULL COMMENT 'ʵ����̵�ַ',
+  `description` varchar(500) COLLATE utf8mb4_0900_as_cs DEFAULT NULL COMMENT '���̼��',
+  `status` tinyint NOT NULL DEFAULT '1' COMMENT '0ͣ�ã�1����',
+  `create_time` datetime(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '����ʱ��',
+  `update_time` datetime(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) COMMENT '����޸�ʱ��',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_merchant_user` (`user_id`),
+  KEY `idx_merchant_status` (`status`,`id`),
+  CONSTRAINT `fk_merchant_user` FOREIGN KEY (`user_id`) REFERENCES `sys_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ck_merchant_phone` CHECK (((char_length(`phone`) = 11) and regexp_like(`phone`,_utf8mb4'^1[3-9][0-9]{9}$',_utf8mb4'c'))),
+  CONSTRAINT `ck_merchant_status` CHECK ((`status` in (0,1))),
+  CONSTRAINT `ck_merchant_text` CHECK (((char_length(trim(`name`)) between 1 and 60) and (char_length(trim(`address`)) between 1 and 120)))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs COMMENT='�̼ұ�'
+invalidMerchantRoleBindings=0
+duplicateMerchantBindings=0

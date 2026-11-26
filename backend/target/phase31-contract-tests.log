@@ -1,0 +1,62 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.cake.platform:cake-order-platform >----------------
+[INFO] Building cake-order-platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ cake-order-platform ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 28 source files with javac [debug parameters release 18] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ cake-order-platform ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 11 source files with javac [debug parameters release 18] to target\test-classes
+[INFO] /D:/study/蛋糕店订单管理系统/backend/src/test/java/com/cake/platform/security/AuthHttpMySqlTests.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /D:/study/蛋糕店订单管理系统/backend/src/test/java/com/cake/platform/security/AuthHttpMySqlTests.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ cake-order-platform ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.cake.platform.exception.ParameterContractTests
+20:07:42.692 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.cake.platform.CakeOrderPlatformApplication for test class com.cake.platform.exception.ParameterContractTests
+2026-11-25T20:07:43.018+08:00  INFO 14276 --- [cake-order-platform] [           main] c.c.p.exception.ParameterContractTests   : Starting ParameterContractTests using Java 18.0.2.1 with PID 14276 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T20:07:43.019+08:00  INFO 14276 --- [cake-order-platform] [           main] c.c.p.exception.ParameterContractTests   : The following 1 profile is active: "test"
+2026-11-25T20:07:43.984+08:00  INFO 14276 --- [cake-order-platform] [           main] c.c.p.exception.ParameterContractTests   : Started ParameterContractTests in 1.209 seconds (process running for 1.859)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-25T20:07:44.654+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=1731b6aa-b575-4576-84f5-f4c92cf7488f method=POST route=/__contract/input outcome=INVALID_PARAMETER fields=1
+2026-11-25T20:07:44.704+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=fee11968-7dda-451a-ac24-90bce8431793 method=GET route=/__contract/empty outcome=BUSINESS_ERROR code=40001
+2026-11-25T20:07:44.713+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3747e285-ffd8-4b6e-a242-663555afd767 method=POST route=/__contract/input outcome=INVALID_PARAMETER fields=2
+2026-11-25T20:07:44.770+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ebd9a457-c99d-48ca-977b-b1a44970e0f4 method=GET route=/__contract/query outcome=INVALID_PARAMETER
+2026-11-25T20:07:44.776+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=14a3fb64-22c2-4084-be14-fa368a76cc7e method=GET route=/__contract/query outcome=INVALID_PARAMETER
+2026-11-25T20:07:44.802+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=56f9da08-7583-42d9-ad47-6f8e12c66338 method=POST route=/__contract/defaults outcome=INVALID_PARAMETER fields=1
+2026-11-25T20:07:44.808+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=78a6324d-efd6-4e7e-8c73-df33ea4cdcbe method=POST route=/__contract/input outcome=INVALID_JSON
+2026-11-25T20:07:44.810+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=00276c4f-89ad-4a52-a226-e21e806f2cd3 method=POST route=/__contract/input outcome=INVALID_JSON
+2026-11-25T20:07:44.816+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=1b90aab2-166f-4ec7-8bf0-b5e2d2e3fe37 method=POST route=/__contract/input outcome=INVALID_JSON
+2026-11-25T20:07:44.821+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ea8b0bfa-bbe3-4fe9-abd0-e64cb9cf6c9b method=GET route=/__contract/constraint outcome=INVALID_PARAMETER
+2026-11-25T20:07:44.835+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9a2185d8-9a46-4379-ba10-b08f27e974e3 method=POST route=/__contract/mixed outcome=INVALID_PARAMETER
+2026-11-25T20:07:44.864+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a5f2ccd1-fb26-49a6-8ca8-ee60f3f11eb6 method=POST route=/__contract/nested outcome=INVALID_PARAMETER fields=1
+2026-11-25T20:07:44.872+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=b6d5e786-4f2d-4184-9564-b762518b5ae1 method=GET route=/__contract/query outcome=INVALID_PARAMETER
+2026-11-25T20:07:44.876+08:00  WARN 14276 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=42575ef6-2c52-442d-bdc3-0ee9b3d70570 method=POST route=/__contract/nested outcome=INVALID_JSON
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.412 s -- in com.cake.platform.exception.ParameterContractTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.380 s
+[INFO] Finished at: 2026-11-25T20:07:44+08:00
+[INFO] ------------------------------------------------------------------------

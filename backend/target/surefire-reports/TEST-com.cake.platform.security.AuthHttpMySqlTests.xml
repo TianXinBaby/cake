@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.cake.platform.security.AuthHttpMySqlTests" time="12.31" tests="107" errors="0" skipped="0" failures="0" flakes="0">
+  <properties>
+    <property name="java.specification.version" value="18"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.class.path" value="D:\study\蛋糕店订单管理系统\backend\target\test-classes;D:\study\蛋糕店订单管理系统\backend\target\classes;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.5.16\spring-boot-starter-security-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.16\spring-boot-starter-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot\3.5.16\spring-boot-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.16\spring-boot-starter-logging-3.5.16.jar;C:\Users\xiaochao\.m2\repository\ch\qos\logback\logback-classic\1.5.34\logback-classic-1.5.34.jar;C:\Users\xiaochao\.m2\repository\ch\qos\logback\logback-core\1.5.34\logback-core-1.5.34.jar;C:\Users\xiaochao\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\xiaochao\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\xiaochao\.m2\repository\org\slf4j\jul-to-slf4j\2.0.18\jul-to-slf4j-2.0.18.jar;C:\Users\xiaochao\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\xiaochao\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-aop\6.2.19\spring-aop-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-beans\6.2.19\spring-beans-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-config\6.5.11\spring-security-config-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-context\6.2.19\spring-context-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-web\6.5.11\spring-security-web-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-expression\6.2.19\spring-expression-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-oauth2-jose\6.5.11\spring-security-oauth2-jose-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-core\6.5.11\spring-security-core-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-crypto\6.5.11\spring-security-crypto-6.5.11.jar;C:\Users\xiaochao\.m2\repository\io\micrometer\micrometer-observation\1.15.12\micrometer-observation-1.15.12.jar;C:\Users\xiaochao\.m2\repository\io\micrometer\micrometer-commons\1.15.12\micrometer-commons-1.15.12.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-oauth2-core\6.5.11\spring-security-oauth2-core-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-core\6.2.19\spring-core-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-jcl\6.2.19\spring-jcl-6.2.19.jar;C:\Users\xiaochao\.m2\repository\com\nimbusds\nimbus-jose-jwt\9.37.4\nimbus-jose-jwt-9.37.4.jar;C:\Users\xiaochao\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.16\spring-boot-starter-web-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.16\spring-boot-starter-json-3.5.16.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.21.4\jackson-databind-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.21\jackson-annotations-2.21.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.21.4\jackson-core-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.21.4\jackson-datatype-jdk8-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.21.4\jackson-datatype-jsr310-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.21.4\jackson-module-parameter-names-2.21.4.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.16\spring-boot-starter-tomcat-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.55\tomcat-embed-core-10.1.55.jar;C:\Users\xiaochao\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.55\tomcat-embed-websocket-10.1.55.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-web\6.2.19\spring-web-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-webmvc\6.2.19\spring-webmvc-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.5.16\spring-boot-starter-validation-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.55\tomcat-embed-el-10.1.55.jar;C:\Users\xiaochao\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.3.Final\hibernate-validator-8.0.3.Final.jar;C:\Users\xiaochao\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\xiaochao\.m2\repository\org\jboss\logging\jboss-logging\3.6.3.Final\jboss-logging-3.6.3.Final.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\classmate\1.7.3\classmate-1.7.3.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring-boot3-starter\3.5.18\mybatis-plus-spring-boot3-starter-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus\3.5.18\mybatis-plus-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-core\3.5.18\mybatis-plus-core-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-annotation\3.5.18\mybatis-plus-annotation-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring\3.5.18\mybatis-plus-spring-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-extension\3.5.18\mybatis-plus-extension-3.5.18.jar;C:\Users\xiaochao\.m2\repository\org\mybatis\mybatis\3.5.19\mybatis-3.5.19.jar;C:\Users\xiaochao\.m2\repository\org\mybatis\mybatis-spring\3.0.6\mybatis-spring-3.0.6.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring-boot-autoconfigure\3.5.18\mybatis-plus-spring-boot-autoconfigure-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring-boot-native-image\3.5.18\mybatis-plus-spring-boot-native-image-3.5.18.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.16\spring-boot-autoconfigure-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.5.16\spring-boot-starter-jdbc-3.5.16.jar;C:\Users\xiaochao\.m2\repository\com\zaxxer\HikariCP\6.3.3\HikariCP-6.3.3.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-jdbc\6.2.19\spring-jdbc-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-tx\6.2.19\spring-tx-6.2.19.jar;C:\Users\xiaochao\.m2\repository\com\mysql\mysql-connector-j\8.4.0\mysql-connector-j-8.4.0.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.16\spring-boot-starter-test-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-test\3.5.16\spring-boot-test-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.16\spring-boot-test-autoconfigure-3.5.16.jar;C:\Users\xiaochao\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\xiaochao\.m2\repository\org\slf4j\slf4j-api\2.0.18\slf4j-api-2.0.18.jar;C:\Users\xiaochao\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.5\jakarta.xml.bind-api-4.0.5.jar;C:\Users\xiaochao\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\xiaochao\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\xiaochao\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\xiaochao\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\xiaochao\.m2\repository\org\assertj\assertj-core\3.27.7\assertj-core-3.27.7.jar;C:\Users\xiaochao\.m2\repository\net\bytebuddy\byte-buddy\1.17.8\byte-buddy-1.17.8.jar;C:\Users\xiaochao\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\xiaochao\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\xiaochao\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\xiaochao\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;C:\Users\xiaochao\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\xiaochao\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar;C:\Users\xiaochao\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\xiaochao\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\xiaochao\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\xiaochao\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-test\6.2.19\spring-test-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\xmlunit\xmlunit-core\2.10.4\xmlunit-core-2.10.4.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="18"/>
+    <property name="APPLICATION_NAME" value="cake-order-platform"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="D:\study\jdk18\bin"/>
+    <property name="sun.java.command" value="C:\Users\xiaochao\AppData\Local\Temp\surefire5046629665340345063\surefirebooter-20261126092906591_3.jar C:\Users\xiaochao\AppData\Local\Temp\surefire5046629665340345063 2026-11-26T09-29-06_470-jvmRun1 surefire-20261126092906591_1tmp surefire_0-20261126092906591_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\study\蛋糕店订单管理系统\backend\target\test-classes;D:\study\蛋糕店订单管理系统\backend\target\classes;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.5.16\spring-boot-starter-security-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.16\spring-boot-starter-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot\3.5.16\spring-boot-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.16\spring-boot-starter-logging-3.5.16.jar;C:\Users\xiaochao\.m2\repository\ch\qos\logback\logback-classic\1.5.34\logback-classic-1.5.34.jar;C:\Users\xiaochao\.m2\repository\ch\qos\logback\logback-core\1.5.34\logback-core-1.5.34.jar;C:\Users\xiaochao\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\xiaochao\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\xiaochao\.m2\repository\org\slf4j\jul-to-slf4j\2.0.18\jul-to-slf4j-2.0.18.jar;C:\Users\xiaochao\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\xiaochao\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-aop\6.2.19\spring-aop-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-beans\6.2.19\spring-beans-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-config\6.5.11\spring-security-config-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-context\6.2.19\spring-context-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-web\6.5.11\spring-security-web-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-expression\6.2.19\spring-expression-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-oauth2-jose\6.5.11\spring-security-oauth2-jose-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-core\6.5.11\spring-security-core-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-crypto\6.5.11\spring-security-crypto-6.5.11.jar;C:\Users\xiaochao\.m2\repository\io\micrometer\micrometer-observation\1.15.12\micrometer-observation-1.15.12.jar;C:\Users\xiaochao\.m2\repository\io\micrometer\micrometer-commons\1.15.12\micrometer-commons-1.15.12.jar;C:\Users\xiaochao\.m2\repository\org\springframework\security\spring-security-oauth2-core\6.5.11\spring-security-oauth2-core-6.5.11.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-core\6.2.19\spring-core-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-jcl\6.2.19\spring-jcl-6.2.19.jar;C:\Users\xiaochao\.m2\repository\com\nimbusds\nimbus-jose-jwt\9.37.4\nimbus-jose-jwt-9.37.4.jar;C:\Users\xiaochao\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.16\spring-boot-starter-web-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.16\spring-boot-starter-json-3.5.16.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.21.4\jackson-databind-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.21\jackson-annotations-2.21.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.21.4\jackson-core-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.21.4\jackson-datatype-jdk8-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.21.4\jackson-datatype-jsr310-2.21.4.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.21.4\jackson-module-parameter-names-2.21.4.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.16\spring-boot-starter-tomcat-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.55\tomcat-embed-core-10.1.55.jar;C:\Users\xiaochao\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.55\tomcat-embed-websocket-10.1.55.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-web\6.2.19\spring-web-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-webmvc\6.2.19\spring-webmvc-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.5.16\spring-boot-starter-validation-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.55\tomcat-embed-el-10.1.55.jar;C:\Users\xiaochao\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.3.Final\hibernate-validator-8.0.3.Final.jar;C:\Users\xiaochao\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\xiaochao\.m2\repository\org\jboss\logging\jboss-logging\3.6.3.Final\jboss-logging-3.6.3.Final.jar;C:\Users\xiaochao\.m2\repository\com\fasterxml\classmate\1.7.3\classmate-1.7.3.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring-boot3-starter\3.5.18\mybatis-plus-spring-boot3-starter-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus\3.5.18\mybatis-plus-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-core\3.5.18\mybatis-plus-core-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-annotation\3.5.18\mybatis-plus-annotation-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring\3.5.18\mybatis-plus-spring-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-extension\3.5.18\mybatis-plus-extension-3.5.18.jar;C:\Users\xiaochao\.m2\repository\org\mybatis\mybatis\3.5.19\mybatis-3.5.19.jar;C:\Users\xiaochao\.m2\repository\org\mybatis\mybatis-spring\3.0.6\mybatis-spring-3.0.6.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring-boot-autoconfigure\3.5.18\mybatis-plus-spring-boot-autoconfigure-3.5.18.jar;C:\Users\xiaochao\.m2\repository\com\baomidou\mybatis-plus-spring-boot-native-image\3.5.18\mybatis-plus-spring-boot-native-image-3.5.18.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.16\spring-boot-autoconfigure-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.5.16\spring-boot-starter-jdbc-3.5.16.jar;C:\Users\xiaochao\.m2\repository\com\zaxxer\HikariCP\6.3.3\HikariCP-6.3.3.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-jdbc\6.2.19\spring-jdbc-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-tx\6.2.19\spring-tx-6.2.19.jar;C:\Users\xiaochao\.m2\repository\com\mysql\mysql-connector-j\8.4.0\mysql-connector-j-8.4.0.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.16\spring-boot-starter-test-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-test\3.5.16\spring-boot-test-3.5.16.jar;C:\Users\xiaochao\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.16\spring-boot-test-autoconfigure-3.5.16.jar;C:\Users\xiaochao\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\xiaochao\.m2\repository\org\slf4j\slf4j-api\2.0.18\slf4j-api-2.0.18.jar;C:\Users\xiaochao\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.5\jakarta.xml.bind-api-4.0.5.jar;C:\Users\xiaochao\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\xiaochao\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\xiaochao\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\xiaochao\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\xiaochao\.m2\repository\org\assertj\assertj-core\3.27.7\assertj-core-3.27.7.jar;C:\Users\xiaochao\.m2\repository\net\bytebuddy\byte-buddy\1.17.8\byte-buddy-1.17.8.jar;C:\Users\xiaochao\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\xiaochao\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\xiaochao\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\xiaochao\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\xiaochao\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;C:\Users\xiaochao\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\xiaochao\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar;C:\Users\xiaochao\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\xiaochao\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\xiaochao\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\xiaochao\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\xiaochao\.m2\repository\org\springframework\spring-test\6.2.19\spring-test-6.2.19.jar;C:\Users\xiaochao\.m2\repository\org\xmlunit\xmlunit-core\2.10.4\xmlunit-core-2.10.4.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\xiaochao"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="LOG_DATEFORMAT_PATTERN" value="yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSSXXX,Asia/Shanghai"/>
+    <property name="java.version.date" value="2022-08-18"/>
+    <property name="java.home" value="D:\study\jdk18"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\study\蛋糕店订单管理系统\backend"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\xiaochao\AppData\Local\Temp\surefire5046629665340345063\surefirebooter-20261126092906591_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="18.0.2.1+1-1"/>
+    <property name="user.name" value="xiaochao"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\xiaochao\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\xiaochao\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="18.0.2.1"/>
+    <property name="user.dir" value="D:\study\蛋糕店订单管理系统\backend"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="22520"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="GBK"/>
+    <property name="java.library.path" value="D:\study\jdk18\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32;C:\Windows;C:\Users\xiaochao\.codex\tmp\arg0\codex-arg0MzVyZx;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\libheif\libheif\bin;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\jxrlib\jxrlib\bin;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\poppler\Library\bin;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\tectonic;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\override;C:\Program Files\Common Files\Oracle\Java\javapath;D:\study\VMware\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell;C:\Users\xiaochao\AppData\Local\Microsoft\WindowsApps;C:\Windows;C:\Windows\system32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet;D:\study\Git\Git\cmd;D:\study\jdk18\bin;D:\study\tomcat10\apache-tomcat-10.1.59\bin;D:\study\tomcat10\apache-tomcat-10.1.59\lib;C:\Program Files\MySQL\MySQL Shell 8.0\bin;D:\everday\???????;D:\study\VSCode\Microsoft VS Code\bin;D:\study\idea22\IntelliJ IDEA 2022.2.1\bin;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs\;D:\study\jdk18\bin;D:\study\jdk18\jre\bin;C:\Users\xiaochao\AppData\Roaming\npm;C:\Program F;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin;C:\Users\xiaochao\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd;C:\Users\xiaochao\AppData\Local\OpenAI\Codex\bin\6de5bf5fa8384f8d;C:\Users\xiaochao\AppData\Local\OpenAI\Codex\bin\f544b3844e0f14e9;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="18.0.2.1+1-1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="62.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[cake-order-platform] "/>
+  </properties>
+  <testcase name="wrongOldPasswordDoesNotChangeHashVersionOrExistingSession" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.219">
+    <system-out><![CDATA[2026-11-26T09:29:18.337+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : Starting AuthHttpMySqlTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:18.337+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : The following 1 profile is active: "mysql-test"
+2026-11-26T09:29:18.800+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : Started AuthHttpMySqlTests in 0.478 seconds (process running for 12.092)
+2026-11-26T09:29:19.026+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=47350a9a-197a-4547-94d9-dbe67f64fa6f method=PATCH outcome=AUTH_ERROR code=40101
+]]></system-out>
+  </testcase>
+  <testcase name="duplicateRegistrationReturns40901AndDoesNotChangeExistingAccount" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.168">
+    <system-out><![CDATA[2026-11-26T09:29:19.150+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=508b529d-04b2-4dab-9cdc-62ac9905626a method=POST outcome=AUTH_ERROR code=40901
+]]></system-out>
+  </testcase>
+  <testcase name="firstFourFailuresPersistAndFifthLocksForExactlyTenDatabaseMinutes" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.358">
+    <system-out><![CDATA[2026-11-26T09:29:19.318+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=63b4afe4-7f0c-4064-988b-8dffc0cc4ab7 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.375+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=70d59745-9540-4eef-87ef-188c45e1e5ff method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.433+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=523c2968-1a30-4e7b-9ca7-4da4bf6a6724 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.488+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=78a35a02-d17c-4a35-a019-6f9e87c4dd7f method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.544+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=ca34ab56-6d04-4cc4-baa7-dc47b7423a73 method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:19.550+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=f6888db5-f101-4072-bfdf-3a8885a90dec method=POST outcome=AUTH_ERROR code=42301
+]]></system-out>
+  </testcase>
+  <testcase name="passwordChangeReturnsBothActualFieldsWithoutChangingHashOrVersion" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.127">
+    <system-out><![CDATA[2026-11-26T09:29:19.682+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f725f14e-5207-4e6e-abb1-280555cb5aa6 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="passwordChangeUsesBcryptAndInvalidatesAllOldTokensWithoutReplacement(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.48">
+    <system-out><![CDATA[2026-11-26T09:29:20.054+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=5a532564-0a9f-4a9f-ab5d-40f33757b270 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.055+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=f58529de-cf55-468e-83d0-c7e9822ae0bb method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.110+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c65e9eb8-b4d9-4171-b151-7193f818cc7b method=POST outcome=AUTH_ERROR code=40101
+]]></system-out>
+  </testcase>
+  <testcase name="passwordChangeUsesBcryptAndInvalidatesAllOldTokensWithoutReplacement(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.487">
+    <system-out><![CDATA[2026-11-26T09:29:20.538+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=a558de2d-2885-4810-8a8e-d58cca3f4d45 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.539+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=78dd40d1-4efc-4c8d-98f2-520bbf6088c9 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.594+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c2903851-8560-4c39-9fc6-d9927f980fa8 method=POST outcome=AUTH_ERROR code=40101
+]]></system-out>
+  </testcase>
+  <testcase name="passwordChangeUsesBcryptAndInvalidatesAllOldTokensWithoutReplacement(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.529">
+    <system-out><![CDATA[2026-11-26T09:29:21.024+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=63808ec2-2417-4690-82dd-4ff052f2a74b method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:21.025+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=f4c2086d-668e-4d11-aba7-de1b73d12dd0 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:21.081+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=421d187c-6b34-4afc-a0aa-30421ca881ac method=POST outcome=AUTH_ERROR code=40101
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidMainlandPhone(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.006">
+    <system-out><![CDATA[2026-11-26T09:29:21.197+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=66d0f0df-0521-4f7c-ab88-821d7adfb235 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidMainlandPhone(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:21.202+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f7c57472-0111-4b73-87f4-f56de849570a method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidMainlandPhone(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.006">
+    <system-out><![CDATA[2026-11-26T09:29:21.208+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ddeff2a8-35af-42f8-a5df-e602030d1a93 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidMainlandPhone(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:21.214+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9e3ce7a3-028b-4e4b-9f51-5bf4639f0ada method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidMainlandPhone(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:21.220+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ea3b3841-f865-435b-aaeb-0c2dbc0f55e6 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="unlocatableRegistrationBodiesKeepNullData(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:21.225+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=b5b31939-b347-42f4-91bf-d77117b80bad method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="unlocatableRegistrationBodiesKeepNullData(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:21.231+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ebdf938c-4954-47d6-a882-b9d31b946d06 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="unlocatableRegistrationBodiesKeepNullData(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:21.236+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5a9d8f71-8b14-46ae-b224-d233bda7de98 method=POST route=/api/auth/register outcome=INVALID_JSON
+]]></system-out>
+  </testcase>
+  <testcase name="disabledAccountCannotLoginAndDoesNotReceiveJwt" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.068">
+    <system-out><![CDATA[2026-11-26T09:29:21.300+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=d9b8c876-cca1-4837-b109-b77e723e1345 method=POST outcome=AUTH_ERROR code=40301
+]]></system-out>
+  </testcase>
+  <testcase name="successfulLoginClearsFailedCountAndExpiredLock" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.182"/>
+  <testcase name="concurrentFailuresForDifferentAccountsRemainIndependent" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.301">
+    <system-out><![CDATA[2026-11-26T09:29:21.658+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-5] c.c.p.c.auth.AuthExceptionHandler        : requestId=5f4bfcad-1e74-40d2-90c5-eb769d7ff82c method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.668+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-3] c.c.p.c.auth.AuthExceptionHandler        : requestId=a83da625-f476-4e0d-aad3-3efaa91cdc04 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.722+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=71a91525-b12f-4f55-9870-e2705584b7bd method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.775+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=cdf6d662-ab9e-4364-8d28-ced8170415b0 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.778+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-4] c.c.p.c.auth.AuthExceptionHandler        : requestId=5783b946-d630-41c6-a042-6e2f5db14cee method=POST outcome=AUTH_ERROR code=40101
+]]></system-out>
+  </testcase>
+  <testcase name="registrationCreatesOnlyEnabledCustomerUsingDatabaseDefaultsAndBcryptWithoutLogin" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.13">
+    <system-out><![CDATA[2026-11-26T09:29:21.914+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=75266e6f-bd13-4360-9c40-1ca15ec8d21c method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsBlankOrOverlongValues(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.121">
+    <system-out><![CDATA[2026-11-26T09:29:22.035+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=98e3c522-f4e5-41d5-9cd7-5ba25f26eb14 method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsBlankOrOverlongValues(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.122">
+    <system-out><![CDATA[2026-11-26T09:29:22.159+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=774a7980-4210-4172-b309-99797cf99900 method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsBlankOrOverlongValues(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.118">
+    <system-out><![CDATA[2026-11-26T09:29:22.277+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=91f3213f-0b84-41e3-8cd6-5a1284210d7a method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateChangesOnlyAuthenticatedUsersNickname(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.184"/>
+  <testcase name="nicknameUpdateChangesOnlyAuthenticatedUsersNickname(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.194"/>
+  <testcase name="nicknameUpdateChangesOnlyAuthenticatedUsersNickname(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.318"/>
+  <testcase name="loginSignsTwoHourJwtAndReturnsOnlyDocumentedPublicUser" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.121"/>
+  <testcase name="logoutAtomicallyInvalidatesAllPreviouslyIssuedTokens" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.183">
+    <system-out><![CDATA[2026-11-26T09:29:23.223+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e701e9b8-6f31-47cd-8a96-afac0961e553 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:23.224+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2ae7e5fa-60ce-4247-b5f7-209064f3f874 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:23.225+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=bde21247-ca4d-4be7-b3b9-288ad2f75249 method=POST outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="merchantWithoutBindingCannotReceiveNormalLoginToken" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.119">
+    <system-out><![CDATA[2026-11-26T09:29:23.398+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-26T09:29:23.399+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=02274066-314b-4c2d-ae29-b979c97fa232 method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=50001
+]]></system-out>
+  </testcase>
+  <testcase name="deletedUserCannotUsePreviouslyIssuedJwt" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.121">
+    <system-out><![CDATA[2026-11-26T09:29:23.525+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8b51f07f-0831-44d1-aa97-188c5450256f method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="concurrentDuplicateRegistrationCreatesOnlyOneCustomer" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.072">
+    <system-out><![CDATA[2026-11-26T09:29:23.593+08:00  WARN 22520 --- [cake-order-platform] [pool-7-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=384d5534-eac4-46ed-b8cd-60a92dff9628 method=POST outcome=AUTH_ERROR code=40901
+]]></system-out>
+  </testcase>
+  <testcase name="profileRejectsRequestBodyIncludingProtectedTargetFields" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.121">
+    <system-out><![CDATA[2026-11-26T09:29:23.713+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=69e59caf-a38b-4b34-9806-d4786da37d0a method=GET route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:23.714+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=676b4f52-3f15-43ca-86ae-e4f3c1b63090 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsMissingFieldsInvalidJsonAndWrongTypes(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.091">
+    <system-out><![CDATA[2026-11-26T09:29:23.783+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5954c5ae-3c3b-4ddd-a324-538f485366fd method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsMissingFieldsInvalidJsonAndWrongTypes(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:23.818+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=bb0aef31-ad33-461e-88c8-1935d873c477 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsMissingFieldsInvalidJsonAndWrongTypes(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:23.823+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d694370c-55c4-4901-b4b9-024dc0058184 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsMissingFieldsInvalidJsonAndWrongTypes(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:23.828+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9e840f45-ee92-4c6b-a5d5-c7a6b18999a4 method=POST route=/api/auth/register outcome=INVALID_JSON
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsMissingFieldsInvalidJsonAndWrongTypes(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:23.833+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=80e71119-6875-4ed6-83b2-f41bd472cdda method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="concurrentFailuresCannotLoseIncrementsOrExceedLockThreshold" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.346">
+    <system-out><![CDATA[2026-11-26T09:29:23.952+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-7] c.c.p.c.auth.AuthExceptionHandler        : requestId=960f322e-6a6b-430b-9740-1db3f33c374d method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.008+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-8] c.c.p.c.auth.AuthExceptionHandler        : requestId=2199d1cf-4b80-4bd3-8552-0a4d6161502f method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.061+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-3] c.c.p.c.auth.AuthExceptionHandler        : requestId=95216bd4-1f6c-4b84-bad1-b988999a0c38 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.115+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-4] c.c.p.c.auth.AuthExceptionHandler        : requestId=d85515d0-14d7-4b32-903c-eb8dce8ac0ea method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.170+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-6] c.c.p.c.auth.AuthExceptionHandler        : requestId=024f6fa1-a0e8-4c2f-afda-cb5def67b01f method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:24.170+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=d984387d-41fc-4804-bae1-c3efda64efa5 method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:24.171+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-5] c.c.p.c.auth.AuthExceptionHandler        : requestId=0bb732b9-c1b2-46ba-946c-8301e59973b8 method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:24.172+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=eb79b835-0418-4601-8fef-73b86091f832 method=POST outcome=AUTH_ERROR code=42301
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsUnknownFieldsWithoutInventingPublicFieldNames" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:24.184+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=4be3713a-2e8d-47a7-882a-83d178461c62 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="missingOrMalformedAuthorizationIsRejected(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:24.190+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=7df8a0b0-d0e3-4ad8-87d7-0ac469b3e327 method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="missingOrMalformedAuthorizationIsRejected(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:24.195+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=7c7e1ea4-f7e6-480c-8526-5e0874aa7c24 method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="missingOrMalformedAuthorizationIsRejected(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:24.200+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=832f787d-7b2c-4b35-bb8f-f7ad07738699 method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="missingOrMalformedAuthorizationIsRejected(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.003">
+    <system-out><![CDATA[2026-11-26T09:29:24.205+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=14de4dbb-4dfe-4732-a3dd-3c8021b4a0ac method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="missingOrMalformedAuthorizationIsRejected(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:24.209+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=0e3f2ad9-497c-47a0-b5ec-a292b1e11e2e method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="missingOrMalformedAuthorizationIsRejected(String)[6]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:24.213+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8e4d3e99-5019-4d92-a476-f576c691cff5 method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="loginParameterFailuresUseUsernameAndDoNotChangeAccountFailures" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.063">
+    <system-out><![CDATA[2026-11-26T09:29:24.271+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5cd76070-016e-4ea2-aec3-17aff074a0b1 method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="faultAfterRealPasswordSqlRollsBackPasswordVersionAndUpdateTimeTogether" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.416"/>
+  <testcase name="signatureTamperingIsRejected" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.132">
+    <system-out><![CDATA[2026-11-26T09:29:24.821+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e9b724b3-0325-4bd9-b402-81bc2b5aa367 method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="loginRejectsClientRoleSelection" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.07">
+    <system-out><![CDATA[2026-11-26T09:29:24.892+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=ce0d51b2-db78-43fe-8b51-72a7bb388ff1 method=POST outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="tokenVersionMismatchIsRejectedOnVeryNextRequest" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.134">
+    <system-out><![CDATA[2026-11-26T09:29:25.027+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=229a9f09-f380-4c1b-948e-4d98c689d523 method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="invalidNewPasswordIsRejectedWithoutChangingHashOrVersion(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.135">
+    <system-out><![CDATA[2026-11-26T09:29:25.162+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3efec588-bd17-4ba4-8698-2ac583a4e4a6 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="invalidNewPasswordIsRejectedWithoutChangingHashOrVersion(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.132">
+    <system-out><![CDATA[2026-11-26T09:29:25.295+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9eb08085-584b-48f9-838f-04ce0fbaaf38 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="invalidNewPasswordIsRejectedWithoutChangingHashOrVersion(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.135">
+    <system-out><![CDATA[2026-11-26T09:29:25.430+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=51666354-eee1-4105-8986-9d6d3c98b3d3 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="invalidNewPasswordIsRejectedWithoutChangingHashOrVersion(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.133">
+    <system-out><![CDATA[2026-11-26T09:29:25.565+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3530b208-2ee3-4e3d-9524-9e386576fbe9 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="invalidNewPasswordIsRejectedWithoutChangingHashOrVersion(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.135">
+    <system-out><![CDATA[2026-11-26T09:29:25.699+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=2c5cab14-5b78-41d2-b064-e151f423dbd6 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="invalidNewPasswordIsRejectedWithoutChangingHashOrVersion(String)[6]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.127">
+    <system-out><![CDATA[2026-11-26T09:29:25.826+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ed9a8e2d-96ee-4fb5-b563-dd7b9f34f505 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="allThreeRolesReadOnlyTheirOwnPublicProfile(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.199"/>
+  <testcase name="allThreeRolesReadOnlyTheirOwnPublicProfile(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.209"/>
+  <testcase name="allThreeRolesReadOnlyTheirOwnPublicProfile(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.199"/>
+  <testcase name="expiredJwtIsRejected" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.077">
+    <system-out><![CDATA[2026-11-26T09:29:26.511+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=591fcb7f-8903-48e6-9d6f-f6200869920c method=GET outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="disablingUserImmediatelyBlocksPreviouslyIssuedJwt" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.141">
+    <system-out><![CDATA[2026-11-26T09:29:26.654+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=ad1bba5e-bb0c-44ad-8b96-5a4f5ea50194 method=GET outcome=AUTH_ERROR code=40301
+]]></system-out>
+  </testcase>
+  <testcase name="sameNewPasswordIsRejectedWithoutWrites" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.305">
+    <system-out><![CDATA[2026-11-26T09:29:26.881+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9980bf42-8210-4bae-8d9c-f4c22a5aee0b method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidPassword(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.006">
+    <system-out><![CDATA[2026-11-26T09:29:26.971+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a82a598b-cfa8-4153-8c37-e437b93e4d89 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidPassword(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:26.977+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=76a00691-5540-47fa-b42b-1de5b80ea4d1 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidPassword(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:26.983+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=c76de139-82f2-4a0a-9dc2-ea864bba816a method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidPassword(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:26.987+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0c62b0f8-f667-4edf-baef-9fbd79971c50 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidPassword(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:26.992+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0af80355-185a-44e4-aadc-52d8a0d302e1 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidPassword(String)[6]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:26.998+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=fa04bf17-4aff-485a-9595-ccf20521873e method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsInvalidPassword(String)[7]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:27.003+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=22b5da45-46e5-48f9-b24d-e76f6aac1fca method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="profileRejectsQueryParametersInsteadOfReadingAnotherUser(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.129">
+    <system-out><![CDATA[2026-11-26T09:29:27.126+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=69087dd0-dad0-4aa8-b382-dcd676de6a47 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="profileRejectsQueryParametersInsteadOfReadingAnotherUser(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.134">
+    <system-out><![CDATA[2026-11-26T09:29:27.261+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=2bc6d05b-9f8d-49b0-8c95-cf67c4f1aeb6 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="profileRejectsQueryParametersInsteadOfReadingAnotherUser(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.134">
+    <system-out><![CDATA[2026-11-26T09:29:27.395+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=8b052411-100f-4b94-b7bc-6d31c0723eb5 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="profileRejectsQueryParametersInsteadOfReadingAnotherUser(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.132">
+    <system-out><![CDATA[2026-11-26T09:29:27.528+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c6ccea0c-fa05-465d-917f-a0744eaa0e9f method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="profileRejectsQueryParametersInsteadOfReadingAnotherUser(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.132">
+    <system-out><![CDATA[2026-11-26T09:29:27.660+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=db19fe8a-e183-42fc-bba0-9d3519b5d3f0 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="profileRejectsQueryParametersInsteadOfReadingAnotherUser(String)[6]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.128">
+    <system-out><![CDATA[2026-11-26T09:29:27.788+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0b1c47ca-fcd2-4142-b848-757aa6168bec method=GET route=/api/users/me outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationTreatsOtherNonContractFieldsAsParameterErrors(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:27.800+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=e1766b76-b7c3-4cc7-8d52-0b92b7e8b3ba method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationTreatsOtherNonContractFieldsAsParameterErrors(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.006">
+    <system-out><![CDATA[2026-11-26T09:29:27.805+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=42b6bf02-5d47-46e8-b5ac-c46db89362cc method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationTreatsOtherNonContractFieldsAsParameterErrors(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.006">
+    <system-out><![CDATA[2026-11-26T09:29:27.811+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=996709b6-3870-4ad3-a4bc-f00c29dea0f5 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationTreatsOtherNonContractFieldsAsParameterErrors(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:27.817+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ab0183f7-8ba6-416f-a486-f77930be4ef9 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationTreatsOtherNonContractFieldsAsParameterErrors(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:27.822+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0da36f19-839f-420a-a6a7-f439a01c61d1 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsBlankOrOverlongTrimmedNickname(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.006">
+    <system-out><![CDATA[2026-11-26T09:29:27.828+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=39266dd5-36b7-4ea2-b5b2-83f7889d1c43 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsBlankOrOverlongTrimmedNickname(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:27.833+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5c373b4a-30fb-43fa-b71d-848b20d99d85 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsBlankOrOverlongTrimmedNickname(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.007">
+    <system-out><![CDATA[2026-11-26T09:29:27.840+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=7b20c345-36c2-499e-8473-df1a97a3ce90 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="removingMerchantBindingImmediatelyInvalidatesMerchantToken" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.132">
+    <system-out><![CDATA[2026-11-26T09:29:27.966+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-26T09:29:27.966+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e53bdc18-697f-475f-ba69-8ab4630e5806 method=GET outcome=AUTH_ERROR code=50001
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsEveryProtectedField(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.006">
+    <system-out><![CDATA[2026-11-26T09:29:27.980+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=01806b58-428b-472e-8575-2038bfde9109 method=POST outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsEveryProtectedField(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:27.986+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=6a858782-e2c8-49b9-885b-4a47fe607e51 method=POST outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsEveryProtectedField(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.004">
+    <system-out><![CDATA[2026-11-26T09:29:27.991+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=085109eb-b6fc-431e-ab2e-f175672a740f method=POST outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="registrationRejectsEveryProtectedField(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.005">
+    <system-out><![CDATA[2026-11-26T09:29:27.997+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c10f4f97-8bce-4046-9c0f-efa0cc7f5757 method=POST outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="passwordChangeRequiresBothFieldsAndRejectsProtectedFields" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.129">
+    <system-out><![CDATA[2026-11-26T09:29:28.115+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a4367992-a292-4134-b9f6-7e75632a735d method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:28.117+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=63c5bd10-1e99-4cc5-a90b-f642e02e3e5d method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:28.118+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9dd0db84-8233-4356-a094-fc511854bcb0 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:28.119+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4d796a48-0a14-4bb2-a54a-07762809bca4 method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="registrationReturnsAllPublicFieldErrorsAndMultiplePasswordMessagesWithoutWrites" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.008">
+    <system-out><![CDATA[2026-11-26T09:29:28.132+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=09c23a0e-4da8-43d5-ba25-09d1ac59b806 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+]]></system-out>
+  </testcase>
+  <testcase name="concurrentPasswordChangesAllowOnlyOneOldPasswordTransition" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.391">
+    <system-out><![CDATA[2026-11-26T09:29:28.402+08:00  WARN 22520 --- [cake-order-platform] [pool-9-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=eb3d9127-23f2-4ac5-958a-25843879e984 method=PATCH outcome=AUTH_ERROR code=40102
+]]></system-out>
+  </testcase>
+  <testcase name="realSecurityFilterChainAndMethodSecurityEnforceCurrentRole(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.124">
+    <system-out><![CDATA[2026-11-26T09:29:28.642+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=47984d08-2d65-4c64-802c-07f620cbac26 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.643+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=728c8b33-7407-4cb8-b21c-e65403d1a6e0 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="realSecurityFilterChainAndMethodSecurityEnforceCurrentRole(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.138">
+    <system-out><![CDATA[2026-11-26T09:29:28.768+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=00dfcdb4-b598-4f72-99b9-caf6bff8e92e method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.770+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2b2a79d9-ff97-453e-a23f-a5b33cf5a512 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.771+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=3f6da516-1e5a-4752-9e38-9b6b29e35899 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="realSecurityFilterChainAndMethodSecurityEnforceCurrentRole(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.119">
+    <system-out><![CDATA[2026-11-26T09:29:28.900+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=107cb920-185e-40e1-8ed0-e303b01f29ec method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.901+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=0b69603c-5157-4d2d-9df0-36236ad42005 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.903+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=d0fa96f3-be2b-48ff-ab0d-63514d93cc1f method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="protectedQueryFieldTakesPriorityOverOrdinaryUnknownFieldInEitherOrder" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.119">
+    <system-out><![CDATA[2026-11-26T09:29:29.021+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=30d788cd-93f1-4106-a8aa-32ab62c339fd method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.022+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=20cb36b2-d11e-4241-b933-8cf2c1df1e38 method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="logoutReturnsNullWithoutDeletingAccountOrIssuingReplacementToken" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.123"/>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[1]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.118">
+    <system-out><![CDATA[2026-11-26T09:29:29.262+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=65a98dd8-1c6f-4712-8c10-ae78767bd786 method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[2]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.114">
+    <system-out><![CDATA[2026-11-26T09:29:29.378+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=fda039aa-461a-45ab-be5f-3b28e425d0a0 method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[3]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.116">
+    <system-out><![CDATA[2026-11-26T09:29:29.495+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=7aa45de6-09d5-41a8-aa05-85d89cab77cc method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[4]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.115">
+    <system-out><![CDATA[2026-11-26T09:29:29.610+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c2f30fe1-e8f0-4394-9070-a081506cd63f method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[5]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.118">
+    <system-out><![CDATA[2026-11-26T09:29:29.729+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4e217b3e-3d19-432a-8b48-53c2d3c438d2 method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[6]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.117">
+    <system-out><![CDATA[2026-11-26T09:29:29.847+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=e984607f-260e-49e1-b091-6559f418c936 method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[7]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.116">
+    <system-out><![CDATA[2026-11-26T09:29:29.963+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=faceb5c2-ee3c-4e67-9dff-0aeadf98230d method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nicknameUpdateRejectsEveryProtectedFieldAndDoesNotWrite(String)[8]" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.12">
+    <system-out><![CDATA[2026-11-26T09:29:30.082+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=3a73c155-1676-414f-a115-5976f4336efb method=PATCH outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="nonexistentAccountAndWrongPasswordHaveExactlySamePublicFailure" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.162">
+    <system-out><![CDATA[2026-11-26T09:29:30.198+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=3b87bd34-4895-4fef-869d-effc21b48d8c method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:30.247+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c888776e-c1b4-4367-b093-c300354d2af1 method=POST outcome=AUTH_ERROR code=40101
+]]></system-out>
+  </testcase>
+  <testcase name="signedRoleEscalationDoesNotOverrideCurrentDatabaseRole" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.063">
+    <system-out><![CDATA[2026-11-26T09:29:30.309+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=5f86fae6-d3ec-482a-8fca-f4dcca7c151b method=GET outcome=AUTH_ERROR code=40302
+]]></system-out>
+  </testcase>
+  <testcase name="expiredLockStartsNewFailureRoundWithoutWaitingTenMinutes" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.18">
+    <system-out><![CDATA[2026-11-26T09:29:30.427+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4915d3c2-9ec2-4304-9ec4-5f91686c418a method=POST outcome=AUTH_ERROR code=40101
+]]></system-out>
+  </testcase>
+  <testcase name="invalidNonMerchantShopBindingCannotReceiveNormalToken" classname="com.cake.platform.security.AuthHttpMySqlTests" time="0.121">
+    <system-out><![CDATA[2026-11-26T09:29:30.607+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-26T09:29:30.607+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=b0cc405c-7b67-4d52-b9b3-aa2847d0ae3a method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=50001
+]]></system-out>
+  </testcase>
+</testsuite>

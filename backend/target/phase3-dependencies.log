@@ -1,0 +1,15 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.cake.platform:cake-order-platform >----------------
+[INFO] Building cake-order-platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ cake-order-platform ---
+[INFO] Wrote dependency tree to: D:\study\蛋糕店订单管理系统\backend\target\phase3-dependency-tree.txt
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.216 s
+[INFO] Finished at: 2026-11-25T19:28:50+08:00
+[INFO] ------------------------------------------------------------------------

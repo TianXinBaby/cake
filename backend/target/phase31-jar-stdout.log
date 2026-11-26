@@ -1,0 +1,35 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-25T20:10:54.937+08:00  INFO 5752 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplication       : Starting CakeOrderPlatformApplication v0.0.1-SNAPSHOT using Java 18.0.2.1 with PID 5752 (D:\study\蛋糕店订单管理系统\backend\target\cake-order-platform-0.0.1-SNAPSHOT.jar started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T20:10:54.939+08:00  INFO 5752 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplication       : No active profile set, falling back to 1 default profile: "dev"
+2026-11-25T20:10:56.286+08:00  INFO 5752 --- [cake-order-platform] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 53990 (http)
+2026-11-25T20:10:56.299+08:00  INFO 5752 --- [cake-order-platform] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T20:10:56.300+08:00  INFO 5752 --- [cake-order-platform] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-25T20:10:56.325+08:00  INFO 5752 --- [cake-order-platform] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-25T20:10:56.325+08:00  INFO 5752 --- [cake-order-platform] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1357 ms
+2026-11-25T20:10:57.557+08:00  INFO 5752 --- [cake-order-platform] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 53990 (http) with context path '/'
+2026-11-25T20:10:57.564+08:00  INFO 5752 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplication       : Started CakeOrderPlatformApplication in 3.039 seconds (process running for 3.403)
+2026-11-25T20:10:58.024+08:00  INFO 5752 --- [cake-order-platform] [.1-53990-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T20:10:58.024+08:00  INFO 5752 --- [cake-order-platform] [.1-53990-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T20:10:58.024+08:00  INFO 5752 --- [cake-order-platform] [.1-53990-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-11-25T20:10:58.041+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-1] c.c.p.security.AuthErrorResponses        : requestId=465a7f3d-f205-4382-a37f-d59548e83429 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T20:10:58.077+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-2] c.c.p.security.AuthErrorResponses        : requestId=1e67e485-bbfc-4d01-82ec-60bea1f234f4 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T20:10:58.116+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-3] c.c.p.exception.GlobalExceptionHandler   : requestId=d8da2bd4-dd0b-428a-b9e9-d6b241dce8ca method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T20:10:58.140+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-4] c.c.p.exception.GlobalExceptionHandler   : requestId=a38e5132-ee45-4392-92f6-4688278fedff method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T20:10:58.146+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-5] c.c.p.exception.GlobalExceptionHandler   : requestId=0fe09302-5545-40b8-8281-fb4fdd3038e0 method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=40001
+2026-11-25T20:10:58.149+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-6] c.c.p.c.auth.AuthExceptionHandler        : requestId=89635a36-5a45-478a-b3ef-d46c84cb068a method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T20:10:58.151+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-7] c.c.p.c.auth.AuthExceptionHandler        : requestId=36b4f135-5f03-4c26-a89c-29fc8ae12459 method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T20:10:58.153+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-8] c.c.p.c.auth.AuthExceptionHandler        : requestId=b328845b-0ff2-4d6c-be64-286daae185a8 method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T20:10:58.155+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-9] c.c.p.c.auth.AuthExceptionHandler        : requestId=5f5e9fa4-0938-44a1-9d6f-e18936c6b40f method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T20:10:58.157+08:00  WARN 5752 --- [cake-order-platform] [1-53990-exec-10] c.c.p.exception.GlobalExceptionHandler   : requestId=ce02b37b-94db-40d2-93fc-1fb1aac89c19 method=POST route=/api/auth/register outcome=INVALID_JSON
+2026-11-25T20:10:58.159+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-1] c.c.p.exception.GlobalExceptionHandler   : requestId=8b674f5c-8eb2-438e-8003-c7da15146337 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T20:10:58.161+08:00  WARN 5752 --- [cake-order-platform] [.1-53990-exec-2] c.c.p.exception.GlobalExceptionHandler   : requestId=fe97648e-1f7a-47bc-a66b-82d5258da4f1 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+

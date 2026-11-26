@@ -1,0 +1,75 @@
+table	column	type	nullable	default	extra
+sys_user	id	bigint unsigned	NO	<NULL>	auto_increment
+sys_user	username	varchar(20)	NO	<NULL>	
+sys_user	password	varchar(100)	NO	<NULL>	
+sys_user	nickname	varchar(30)	NO	<NULL>	
+sys_user	phone	varchar(20)	NO	<NULL>	
+sys_user	role	varchar(10)	NO	CUSTOMER	
+sys_user	status	tinyint	NO	1	
+sys_user	token_version	int	NO	0	
+sys_user	login_fail_count	int	NO	0	
+sys_user	locked_until	datetime(3)	YES	<NULL>	
+sys_user	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+sys_user	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_category	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_category	merchant_id	bigint unsigned	NO	<NULL>	
+cake_category	name	varchar(30)	NO	<NULL>	
+cake_category	sort	int	NO	0	
+cake_category	status	tinyint	NO	1	
+cake_category	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_category	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_product	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_product	merchant_id	bigint unsigned	NO	<NULL>	
+cake_product	category_id	bigint unsigned	NO	<NULL>	
+cake_product	name	varchar(60)	NO	<NULL>	
+cake_product	spec	varchar(30)	NO	<NULL>	
+cake_product	price	decimal(10,2)	NO	<NULL>	
+cake_product	stock	int	NO	0	
+cake_product	image	varchar(255)	YES	<NULL>	
+cake_product	description	varchar(500)	YES	<NULL>	
+cake_product	status	tinyint	NO	0	
+cake_product	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_product	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_order	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_order	merchant_id	bigint unsigned	NO	<NULL>	
+cake_order	merchant_name	varchar(60)	NO	<NULL>	
+cake_order	order_no	varchar(32)	NO	<NULL>	
+cake_order	user_id	bigint unsigned	NO	<NULL>	
+cake_order	request_id	char(36)	NO	<NULL>	
+cake_order	request_hash	char(64)	NO	<NULL>	
+cake_order	total_amount	decimal(10,2)	NO	<NULL>	
+cake_order	status	tinyint	NO	0	
+cake_order	order_type	tinyint	NO	<NULL>	
+cake_order	receiver	varchar(30)	NO	<NULL>	
+cake_order	phone	varchar(20)	NO	<NULL>	
+cake_order	address	varchar(120)	YES	<NULL>	
+cake_order	remark	varchar(200)	YES	<NULL>	
+cake_order	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_order	expire_time	datetime(3)	NO	<NULL>	
+cake_order	pay_time	datetime(3)	YES	<NULL>	
+cake_order	accept_time	datetime(3)	YES	<NULL>	
+cake_order	start_time	datetime(3)	YES	<NULL>	
+cake_order	delivery_time	datetime(3)	YES	<NULL>	
+cake_order	ready_time	datetime(3)	YES	<NULL>	
+cake_order	complete_time	datetime(3)	YES	<NULL>	
+cake_order	cancel_time	datetime(3)	YES	<NULL>	
+cake_order	cancel_reason	varchar(200)	YES	<NULL>	
+cake_order	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_order_item	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_order_item	order_id	bigint unsigned	NO	<NULL>	
+cake_order_item	product_id	bigint unsigned	NO	<NULL>	
+cake_order_item	product_name	varchar(60)	NO	<NULL>	
+cake_order_item	product_spec	varchar(30)	NO	<NULL>	
+cake_order_item	price	decimal(10,2)	NO	<NULL>	
+cake_order_item	quantity	int	NO	<NULL>	
+cake_order_item	subtotal	decimal(10,2)	NO	<NULL>	
+cake_order_item	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_merchant	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_merchant	user_id	bigint unsigned	NO	<NULL>	
+cake_merchant	name	varchar(60)	NO	<NULL>	
+cake_merchant	phone	varchar(20)	NO	<NULL>	
+cake_merchant	address	varchar(120)	NO	<NULL>	
+cake_merchant	description	varchar(500)	YES	<NULL>	
+cake_merchant	status	tinyint	NO	1	
+cake_merchant	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	
+cake_merchant	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	

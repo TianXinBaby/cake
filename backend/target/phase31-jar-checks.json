@@ -1,0 +1,68 @@
+[
+  {
+    "check": "anonymous-authentication",
+    "httpStatus": 401,
+    "code": 40102,
+    "passed": true
+  },
+  {
+    "check": "missing-fields",
+    "httpStatus": 400,
+    "code": 40001,
+    "passed": true
+  },
+  {
+    "check": "multiple-and-same-field",
+    "httpStatus": 400,
+    "code": 40001,
+    "passed": true
+  },
+  {
+    "check": "login-public-name",
+    "httpStatus": 400,
+    "code": 40001,
+    "passed": true
+  },
+  {
+    "check": "protected-role",
+    "httpStatus": 403,
+    "code": 40302,
+    "passed": true
+  },
+  {
+    "check": "protected-status",
+    "httpStatus": 403,
+    "code": 40302,
+    "passed": true
+  },
+  {
+    "check": "protected-merchantId",
+    "httpStatus": 403,
+    "code": 40302,
+    "passed": true
+  },
+  {
+    "check": "protected-tokenVersion",
+    "httpStatus": 403,
+    "code": 40302,
+    "passed": true
+  },
+  {
+    "check": "malformed-json",
+    "httpStatus": 400,
+    "code": 40001,
+    "passed": true
+  },
+  {
+    "check": "unknown-field",
+    "httpStatus": 400,
+    "code": 40001,
+    "passed": true
+  },
+  {
+    "check": "non-object-body",
+    "httpStatus": 400,
+    "code": 40001,
+    "passed": true
+  }
+]

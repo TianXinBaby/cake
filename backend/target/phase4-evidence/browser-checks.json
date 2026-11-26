@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-26",
+  "surface": "headless actual Chrome and Edge via CDP; Vite proxies to packaged JAR and isolated MySQL",
+  "browsers": [
+    {
+      "name": "Chrome",
+      "version": "158.0.8127.38",
+      "viewports": [
+        "1440x1000",
+        "390x844"
+      ],
+      "checks": [
+        "anonymous guard",
+        "real ADMIN login through existing auth API",
+        "merchant create with local validation",
+        "shop-only edit",
+        "merchant status cancel and confirm",
+        "multiline description and HTML plain text",
+        "CUSTOMER disable: old JWT HTTP403/40301",
+        "CUSTOMER restore: old JWT HTTP401/40102",
+        "both page layouts and scrollable create dialog"
+      ]
+    },
+    {
+      "name": "Edge",
+      "version": "158.0.4370.33",
+      "viewports": [
+        "1440x1000",
+        "390x844"
+      ],
+      "checks": [
+        "anonymous guard",
+        "real ADMIN login through existing auth API",
+        "both page layouts",
+        "create dialog open and cancel",
+        "CUSTOMER status cancel leaves state unchanged"
+      ]
+    }
+  ],
+  "scope": "UI-14/15 only; UI-01 login page and all-17-page TC-36 not accepted by these checks",
+  "cleanup": "All owned fixtures cleaned by exact identifiers; final two schemas contain zero rows in all six tables"
+}

@@ -1,0 +1,366 @@
+[
+  {
+    "Path": "蛋糕店订单管理系统需求说明书_V1.1.docx",
+    "Hash": "522D3CB741550FD88D8B73365A245F2AEDF98AA6CF6B1AF2A5A7A34DF56025E5"
+  },
+  {
+    "Path": "AGENTS.md",
+    "Hash": "0A8BED2F69F2E0A58557F5FAEE7C96BEAF6B81C736581C0D01FED49A6AC90202"
+  },
+  {
+    "Path": "PROJECT_STATUS.md",
+    "Hash": "0E311D61DD684EB02FF9437FF3A6620E0430E310B7E6BEF4CE89D29600A41538"
+  },
+  {
+    "Path": "README.md",
+    "Hash": "6F69DCC578B3F50EFAB1AF502EBE2978CF61723DDDFD6AFADAC1311EA783F635"
+  },
+  {
+    "Path": "TODO.md",
+    "Hash": "BC1E884BFD7E78CEAF152C7E3F00D5D4A1F2F04CDD2BCC7DE72F075138BD004F"
+  },
+  {
+    "Path": "backend\\mvnw",
+    "Hash": "CAE96CEF89EBEA3531221F4AE17C23CF8EDF67D00EAE8306D4186AE1BBED4D02"
+  },
+  {
+    "Path": "backend\\mvnw.cmd",
+    "Hash": "46EEDB8419BD14FE70D5BB2916D7B6F51806E51B39D5B76A42610384CA929C1C"
+  },
+  {
+    "Path": "backend\\pom.xml",
+    "Hash": "6515EAF42DBE7BFA459BA291D44719F5537AEB16E81F4DF1EFFCF08ED4BE035E"
+  },
+  {
+    "Path": "backend\\.mvn\\wrapper\\maven-wrapper.properties",
+    "Hash": "0CA928F6A95DEE6B3E24DEB3E664F39290229C9E3D16F37B5B7ED35376076BAF"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\CakeOrderPlatformApplication.java",
+    "Hash": "43D09D9D1ECEDF59B106B29BADA6570F57D3AF68D96566B27A3BE05E42968206"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\common\\ApiResponse.java",
+    "Hash": "CCF90386CD7FCBBD0091160A88B7AA1C97BB1CAE62FDB555E0F65D52AA26D6B8"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\config\\AuthenticationConfiguration.java",
+    "Hash": "B9272C3AE77D8A69BBEF5506E2FB33FB16BDBBF792A409447377B22953AD35BA"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\config\\DatabaseConnectionConfiguration.java",
+    "Hash": "E447D92DD42C60A13B6DCD883065B6B25C1B49FF7805319F412CFD4084F09D3E"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\config\\JacksonConfiguration.java",
+    "Hash": "372B5E6B823D6C30234A756C91E4C2E2AC57D6FDC3492B4CB2C42D7C3D157975"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\config\\RequestTraceFilter.java",
+    "Hash": "736E080DD5F6C0674320EA22EAB23AEA0F7B9A64B3BE50869FD5C8B4430AE441"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\config\\SqlEventLog.java",
+    "Hash": "144E12FC97026EC6B4C1F88449A291C93EB667C8E23DE6DFE850C99199C50D16"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\controller\\auth\\AuthController.java",
+    "Hash": "7755CD59454C1959564CF724577B5ED6EEF3A12FFA627712D676589A90E85205"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\controller\\auth\\AuthExceptionHandler.java",
+    "Hash": "8E28CA594165C76AAADACDD18F90ED09A079E7959485FB1FC1395199FC28C6E5"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\controller\\user\\UserController.java",
+    "Hash": "6C2FE83190076EDB0F258FF2D38A65A8F7F50403CEE2C40BDB903BB2987BCBE0"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\dto\\AuthRequests.java",
+    "Hash": "CACEEBE544E20B502D2498FA27A352120DD01103FBC18A508F6F93F97861354C"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\entity\\UserAccount.java",
+    "Hash": "CD6E2246209F357F518045108E87048F4962B71B0E142E8CD6986552B2682CEA"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\exception\\BusinessException.java",
+    "Hash": "70C2891490A83C3CBD2C1D21B7CD298F633F3CEEEF7D4D7A49D9F076460B4ADD"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\exception\\CommonErrorCode.java",
+    "Hash": "0D30085DD7DFD0C2369B2235179FAA32EF71FA8B444FA0E5B4129899A3C2133B"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\exception\\ErrorCode.java",
+    "Hash": "23C46F5C6D62088DF5EFC1E91F3C8BEA033EC3BC969195BA8BE6EE49E12A3693"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\exception\\GlobalExceptionHandler.java",
+    "Hash": "4DF229A609069A30A1CAB7531D8F205A95A9A7F0F3219F14F24C46D20216BEE6"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\exception\\ValidationErrorExtractor.java",
+    "Hash": "64FE302604E7EABE41E481B23DF9B3298E5AA75C9285560C499247E83ADF315A"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\mapper\\UserAuthMapper.java",
+    "Hash": "F931C651CA560CF79C768B7EC4B4A5DBCEECCE01EC58234FB775E1744CE71507"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\security\\AuthErrorCode.java",
+    "Hash": "68FA94E9367E32B42E9AF2B8B9FC9C318CE4611F6D81F21082890730C45985A8"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\security\\AuthErrorResponses.java",
+    "Hash": "6B3BCA115FC9736D4091031040C8E5E34C6E2BE5A27E68ABB947AD0897946B96"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\security\\AuthFailure.java",
+    "Hash": "4BC1A5A728E8AB2AB68A2A44FFF8FAC1471E1358E8963341A6BD28D450C75FA1"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\security\\AuthPrincipal.java",
+    "Hash": "3D24A57B74220898440856E3EEBDC53D138BF8837D68AF882BB35A7CAB61A5CA"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\security\\JwtAuthenticationFilter.java",
+    "Hash": "EB7524979E32A549E1033F089489DA2AD037E50922B73BFA25A77086803CBE96"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\security\\JwtService.java",
+    "Hash": "27C2DA1EBC20194AAA77541FF826753517ACF7107B85AABB805183ABA4FF700E"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\service\\auth\\AuthenticationService.java",
+    "Hash": "9635148162FB3624D23A4E9898F2D70E44752AC7FF9FB481D91F6FC21BF802D2"
+  },
+  {
+    "Path": "backend\\src\\main\\java\\com\\cake\\platform\\vo\\UserView.java",
+    "Hash": "AF41E9533D9218A1E3E90A5156FF2D077745C36884A09F27E416DA3A9CD15B38"
+  },
+  {
+    "Path": "backend\\src\\main\\resources\\application-dev.yml",
+    "Hash": "A8518016CF46BBB1FD07ADCD118D366B38095E55F793C8088B13AD40D38AC1F0"
+  },
+  {
+    "Path": "backend\\src\\main\\resources\\application-prod.yml",
+    "Hash": "AEEA42F9189E6B6552BD41FEDA35E53AE6D92342B352D6FF36A450DF93ADA417"
+  },
+  {
+    "Path": "backend\\src\\main\\resources\\application.yml",
+    "Hash": "396AE311BA06FEDFA6484E0BA727F0C00A48CFD436F74943DA312498BCA071AB"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\CakeOrderPlatformApplicationTests.java",
+    "Hash": "CC32F2FE91B306F442BB85E129B6040F6B2A3657AAB97EAEC8E6B182EFEC60A4"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\common\\ApiResponseTests.java",
+    "Hash": "FD8F5421AB306D9CBE9863A57C68FCB33187F906A755B6DC8E5A005674A21486"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\database\\DatabaseInfrastructureTests.java",
+    "Hash": "3BEC6435A9545DC9CA43A915CA0F165460C814A88FB28DF7300A6F33C44DE2B0"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\database\\MySqlDatabaseTests.java",
+    "Hash": "ED2E9E6B0882AA7640B6823B20B1044D164B97351FE60475554A0EBE1FF4AF49"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\exception\\GlobalExceptionHandlerTests.java",
+    "Hash": "870A879B4BC080D11D4BA354BB84A6CAE822BC77213A630B8AFB9501BDDF30CC"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\exception\\ValidationErrorExtractorTests.java",
+    "Hash": "49586E2D33FB7AC533BC360A23575B3E2C2ADE01653B5BE369A73D74A37451DE"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\security\\AuthHttpMySqlTests.java",
+    "Hash": "34C16B0F32E3DC7B804DC413B8EBFAD87EB9277C01CDA2A16CE9B0A8F94B3354"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\security\\AuthRequestsTests.java",
+    "Hash": "2B778A9F78EF1D55ACE6C9C4498C2F778BA655B70237EA069212238E7AD2EE2A"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\security\\JwtAuthenticationFilterTests.java",
+    "Hash": "F1CB0482B98A2BE9CB86036E7C3944DE7B635A8F5A210FFA45F44A427B8C4EA7"
+  },
+  {
+    "Path": "backend\\src\\test\\java\\com\\cake\\platform\\security\\JwtServiceTests.java",
+    "Hash": "C426C5741EE1E73CAEB7BE4CBF78BC31D83B85E169FD76D4432067CE586ED1EB"
+  },
+  {
+    "Path": "backend\\src\\test\\resources\\application-mysql-test.yml",
+    "Hash": "701C352860422A2E90C5D2765B4E0EAD76751D6EF61749C0D89F26A08E514A8D"
+  },
+  {
+    "Path": "backend\\src\\test\\resources\\application-test.yml",
+    "Hash": "EBDA6822CD85013520277D78258515EAD876965D60BABE066134AB0942F6555F"
+  },
+  {
+    "Path": "backend\\src\\test\\resources\\database\\expected-columns.tsv",
+    "Hash": "9DDF66F3B29CC153BAE6D8188C0F418A2A4EB842FF5259AD658489224D8E09E8"
+  },
+  {
+    "Path": "database\\README.md",
+    "Hash": "C42957BDFC190CB788800A4A6931B44B1DFC0083EAEB59B174E6C616B473E94F"
+  },
+  {
+    "Path": "database\\constraints\\03_data_constraints.sql",
+    "Hash": "E971B4F6F7E4B6919511193AE1B05830D25ECB31FD9A1B06BAE08E50D694C738"
+  },
+  {
+    "Path": "database\\indexes\\02_create_indexes.sql",
+    "Hash": "E391E54C374A17F19FACD34E8FD8D0395BFF6FC7C04D29041C413DCEBB3B2DDF"
+  },
+  {
+    "Path": "database\\schema\\01_create_tables.sql",
+    "Hash": "421920EB03CCDF773C34484718476F1F5A95AB04F518F2182F42E9738A6F0352"
+  },
+  {
+    "Path": "database\\seed\\04_initial_data.sql",
+    "Hash": "8231E15CCA0779C2D1698A1F6EC4A02709CA88DC9B95A377C7E733B7371F34A2"
+  },
+  {
+    "Path": "database\\tools\\DatabaseTool.java",
+    "Hash": "F117764A5CDCCC7EEE4EABDD651CEE4DBC4441CA1BF83B553CA7301AC9681224"
+  },
+  {
+    "Path": "docs\\architecture\\ARCHITECTURE_PLAN.md",
+    "Hash": "42886C7B1019616BC669AB299BA02817D140AF188D80B847AD2D17F4D5792453"
+  },
+  {
+    "Path": "docs\\database\\DATA_DICTIONARY.md",
+    "Hash": "61DAA2E86C851DB96BF4CD32902EB0D0BACC0B9EDFDAC8EB613F11D33DBF99C8"
+  },
+  {
+    "Path": "docs\\database\\DATABASE_DESIGN.md",
+    "Hash": "6B7B6BFA3080805CF96576AA918F8D34ABF6B060A0577F40FBDF8D1EBDC3686B"
+  },
+  {
+    "Path": "docs\\database\\INDEX_AND_CONSTRAINTS.md",
+    "Hash": "EEB968BFF28306BEB5D468A41E2AE482FD3B5FDD52553B34EE746FC511FE5BD2"
+  },
+  {
+    "Path": "docs\\database\\INITIALIZATION_GUIDE.md",
+    "Hash": "4267210C26FCE11A783C51B0B0A6797965A37659FEDF0C8205F823A2D8C52C91"
+  },
+  {
+    "Path": "docs\\plan\\PHASE_PLAN.md",
+    "Hash": "94281E081ED229392CFA29214432CC4C8F834844AAF998E11F4E2F3011753ED0"
+  },
+  {
+    "Path": "docs\\requirements\\REQUIREMENTS_BASELINE.md",
+    "Hash": "3E24B6A7EE41A9FB69EBFE7204A3AA54731DC8BC6DD29B2475BAC9DDA25D5C5D"
+  },
+  {
+    "Path": "docs\\requirements\\TRACEABILITY_MATRIX.md",
+    "Hash": "B466C660D080B1F613D35C9BF75C2C48AB40BD78179F37F41269D7C109B8B8B9"
+  },
+  {
+    "Path": "docs\\security\\AUTH_API_TESTS.md",
+    "Hash": "BE180C51A0E444D3B87CEDF696EBDB9F2DA7D32C1205DCEF7C6D5526E75BAEB7"
+  },
+  {
+    "Path": "docs\\security\\AUTHENTICATION_DESIGN.md",
+    "Hash": "B1455EBD84944BE06C2AB8B99513E23CF504DD905047B276BAE837CB2725ADF2"
+  },
+  {
+    "Path": "docs\\security\\JWT_AND_PERMISSION.md",
+    "Hash": "7E2B5A743891DA609A35705F620D06BAEC1CC701DDBE4DD40D40331562897B76"
+  },
+  {
+    "Path": "docs\\security\\PASSWORD_SECURITY.md",
+    "Hash": "01A6068409D909D598A92E7FBA668304E2DB7D023586DDC1D56E74BA87FDC3E9"
+  },
+  {
+    "Path": "frontend\\.npmrc",
+    "Hash": "3B88D1057ADD6F92EC23DC22DD017E312DED13A042DEB0BA6F08BAD85D936456"
+  },
+  {
+    "Path": "frontend\\index.html",
+    "Hash": "294B680790116AE5E028A0DF59F9CA5CB507539AD82AF15D79D7DC8E6B4B186E"
+  },
+  {
+    "Path": "frontend\\package-lock.json",
+    "Hash": "43105B6A613314A1A1A9C929A94AEDB3F98D5EEA3B34D480492D5D1367F16DBA"
+  },
+  {
+    "Path": "frontend\\package.json",
+    "Hash": "ECDCF96036C84B98E8B66B0A8115C6469DC6F1E894F312B91A409D0EA5FB487A"
+  },
+  {
+    "Path": "frontend\\vite.config.js",
+    "Hash": "B1FF6FD84B447D5FB8D1867776E2BC089BFC55E94551214787DE9469E5246172"
+  },
+  {
+    "Path": "frontend\\src\\App.vue",
+    "Hash": "0B8A4870148802A2A9B3037B443FB2CD1019B3B8855FC17CB656AE9AB8AC3838"
+  },
+  {
+    "Path": "frontend\\src\\application.js",
+    "Hash": "1637B051859D78F63E45F185FCD336FD80B7A9DF671989A38FB0BB2705287C02"
+  },
+  {
+    "Path": "frontend\\src\\application.test.js",
+    "Hash": "E6AF7B291564FDFD8E573490F0CAB9280A7079A123C5513DA47861EDEC179653"
+  },
+  {
+    "Path": "frontend\\src\\main.js",
+    "Hash": "747CC85D47D75B9643FC3240C3D248DE0FBAC0B6DBBBACFC28C06338C1EC83D3"
+  },
+  {
+    "Path": "frontend\\src\\api\\auth.js",
+    "Hash": "E57360AA4A96348A7099EE9B1D0E46558FBBD9C06A809CA96514FB2190F2779D"
+  },
+  {
+    "Path": "frontend\\src\\api\\authentication.test.js",
+    "Hash": "0C1135AA5817DBA62816D05C27CDD1168DCB6CC4DDAE071DAB2A910E913844D6"
+  },
+  {
+    "Path": "frontend\\src\\api\\http.js",
+    "Hash": "E10539B58E7E2C78CFC9D0BD2FDBF0D7062CE31C9B96F1AB6C8992DA9708810B"
+  },
+  {
+    "Path": "frontend\\src\\api\\http.test.js",
+    "Hash": "B405188AC33924A40AD3F5153C86314E495441E16E96F9AF12C37810A43C1757"
+  },
+  {
+    "Path": "frontend\\src\\api\\users.js",
+    "Hash": "C2152DF9E86CC78385CA8EB54A08E3A00560BB7DCE74DF0501E4A3200037F600"
+  },
+  {
+    "Path": "frontend\\src\\router\\index.js",
+    "Hash": "B2010E0C3D5E316D487B74305198EE67F3FB9D7EC7EB058D6E1C02CCC0259252"
+  },
+  {
+    "Path": "frontend\\src\\stores\\auth.js",
+    "Hash": "E40D6F8F5453B29DCE26F50E7A519BD60078B215D2EC47F6B2DCE14082877714"
+  },
+  {
+    "Path": "frontend\\src\\stores\\auth.test.js",
+    "Hash": "CEEDA18907F57F2DB6E0FE81D000AB601C7DC3E2880B7B14B9C0075EB341F014"
+  },
+  {
+    "Path": "frontend\\src\\styles\\base.css",
+    "Hash": "A226BF72DAB71059A31B7CC59F1BB6DDDBD9AA32B41EB13F259FC68DEFCC1DC2"
+  },
+  {
+    "Path": "reports\\PHASE_0_REPORT.md",
+    "Hash": "467601F100F45027DAA323F5EE79B71927280C601B01112D56E26D9D40FE7A93"
+  },
+  {
+    "Path": "reports\\PHASE_1_REPORT.md",
+    "Hash": "2043FB4C81F726410E880C4DB1367EA490B72BB081FA18FDB267A921C265CA17"
+  },
+  {
+    "Path": "reports\\PHASE_2_REPORT.md",
+    "Hash": "4D7B39C51C732FEA8360691D87104221B0DCF8CDC185E7956FF8898DA4D8EC89"
+  },
+  {
+    "Path": "reports\\PHASE_3_REPORT.md",
+    "Hash": "D0972CA0F1BBAD8037F94C5DD2CCACEC91F9F1FBC0CB43E8E4A5A17B67440540"
+  }
+]

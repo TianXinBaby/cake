@@ -1,0 +1,72 @@
+[
+  {
+    "Suite": "com.cake.platform.CakeOrderPlatformApplicationTests",
+    "Tests": 1,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.common.ApiResponseTests",
+    "Tests": 6,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.database.DatabaseInfrastructureTests",
+    "Tests": 4,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.database.MySqlDatabaseTests",
+    "Tests": 28,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.exception.GlobalExceptionHandlerTests",
+    "Tests": 17,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.exception.ValidationErrorExtractorTests",
+    "Tests": 1,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.security.AuthHttpMySqlTests",
+    "Tests": 101,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.security.AuthRequestsTests",
+    "Tests": 55,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.security.JwtAuthenticationFilterTests",
+    "Tests": 17,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  },
+  {
+    "Suite": "com.cake.platform.security.JwtServiceTests",
+    "Tests": 25,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0
+  }
+]

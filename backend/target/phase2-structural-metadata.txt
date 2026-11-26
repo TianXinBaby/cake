@@ -1,0 +1,197 @@
+cake_category	1	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_category	2	merchant_id	bigint unsigned	NO	<NULL>	
+cake_category	3	name	varchar(30)	NO	<NULL>	
+cake_category	4	sort	int	NO	0	
+cake_category	5	status	tinyint	NO	1	
+cake_category	6	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_category	7	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_merchant	1	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_merchant	2	user_id	bigint unsigned	NO	<NULL>	
+cake_merchant	3	name	varchar(60)	NO	<NULL>	
+cake_merchant	4	phone	varchar(20)	NO	<NULL>	
+cake_merchant	5	address	varchar(120)	NO	<NULL>	
+cake_merchant	6	description	varchar(500)	YES	<NULL>	
+cake_merchant	7	status	tinyint	NO	1	
+cake_merchant	8	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_merchant	9	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_order	1	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_order	2	merchant_id	bigint unsigned	NO	<NULL>	
+cake_order	3	merchant_name	varchar(60)	NO	<NULL>	
+cake_order	4	order_no	varchar(32)	NO	<NULL>	
+cake_order	5	user_id	bigint unsigned	NO	<NULL>	
+cake_order	6	request_id	char(36)	NO	<NULL>	
+cake_order	7	request_hash	char(64)	NO	<NULL>	
+cake_order	8	total_amount	decimal(10,2)	NO	<NULL>	
+cake_order	9	status	tinyint	NO	0	
+cake_order	10	order_type	tinyint	NO	<NULL>	
+cake_order	11	receiver	varchar(30)	NO	<NULL>	
+cake_order	12	phone	varchar(20)	NO	<NULL>	
+cake_order	13	address	varchar(120)	YES	<NULL>	
+cake_order	14	remark	varchar(200)	YES	<NULL>	
+cake_order	15	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_order	16	expire_time	datetime(3)	NO	<NULL>	
+cake_order	17	pay_time	datetime(3)	YES	<NULL>	
+cake_order	18	accept_time	datetime(3)	YES	<NULL>	
+cake_order	19	start_time	datetime(3)	YES	<NULL>	
+cake_order	20	delivery_time	datetime(3)	YES	<NULL>	
+cake_order	21	ready_time	datetime(3)	YES	<NULL>	
+cake_order	22	complete_time	datetime(3)	YES	<NULL>	
+cake_order	23	cancel_time	datetime(3)	YES	<NULL>	
+cake_order	24	cancel_reason	varchar(200)	YES	<NULL>	
+cake_order	25	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_order_item	1	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_order_item	2	order_id	bigint unsigned	NO	<NULL>	
+cake_order_item	3	product_id	bigint unsigned	NO	<NULL>	
+cake_order_item	4	product_name	varchar(60)	NO	<NULL>	
+cake_order_item	5	product_spec	varchar(30)	NO	<NULL>	
+cake_order_item	6	price	decimal(10,2)	NO	<NULL>	
+cake_order_item	7	quantity	int	NO	<NULL>	
+cake_order_item	8	subtotal	decimal(10,2)	NO	<NULL>	
+cake_order_item	9	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_product	1	id	bigint unsigned	NO	<NULL>	auto_increment
+cake_product	2	merchant_id	bigint unsigned	NO	<NULL>	
+cake_product	3	category_id	bigint unsigned	NO	<NULL>	
+cake_product	4	name	varchar(60)	NO	<NULL>	
+cake_product	5	spec	varchar(30)	NO	<NULL>	
+cake_product	6	price	decimal(10,2)	NO	<NULL>	
+cake_product	7	stock	int	NO	0	
+cake_product	8	image	varchar(255)	YES	<NULL>	
+cake_product	9	description	varchar(500)	YES	<NULL>	
+cake_product	10	status	tinyint	NO	0	
+cake_product	11	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_product	12	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+sys_user	1	id	bigint unsigned	NO	<NULL>	auto_increment
+sys_user	2	username	varchar(20)	NO	<NULL>	
+sys_user	3	password	varchar(100)	NO	<NULL>	
+sys_user	4	nickname	varchar(30)	NO	<NULL>	
+sys_user	5	phone	varchar(20)	NO	<NULL>	
+sys_user	6	role	varchar(10)	NO	CUSTOMER	
+sys_user	7	status	tinyint	NO	1	
+sys_user	8	token_version	int	NO	0	
+sys_user	9	login_fail_count	int	NO	0	
+sys_user	10	locked_until	datetime(3)	YES	<NULL>	
+sys_user	11	create_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+sys_user	12	update_time	datetime(3)	NO	CURRENT_TIMESTAMP(3)	DEFAULT_GENERATED
+cake_category	idx_category_merchant_status_sort	1	1	merchant_id
+cake_category	idx_category_merchant_status_sort	1	2	status
+cake_category	idx_category_merchant_status_sort	1	3	sort
+cake_category	idx_category_merchant_status_sort	1	4	id
+cake_category	PRIMARY	0	1	id
+cake_category	uk_category_id_merchant	0	1	id
+cake_category	uk_category_id_merchant	0	2	merchant_id
+cake_category	uk_category_merchant_name	0	1	merchant_id
+cake_category	uk_category_merchant_name	0	2	name
+cake_merchant	idx_merchant_status	1	1	status
+cake_merchant	idx_merchant_status	1	2	id
+cake_merchant	PRIMARY	0	1	id
+cake_merchant	uk_merchant_user	0	1	user_id
+cake_order	idx_order_create	1	1	create_time
+cake_order	idx_order_create	1	2	id
+cake_order	idx_order_merchant_create	1	1	merchant_id
+cake_order	idx_order_merchant_create	1	2	create_time
+cake_order	idx_order_merchant_create	1	3	id
+cake_order	idx_order_merchant_status_complete	1	1	merchant_id
+cake_order	idx_order_merchant_status_complete	1	2	status
+cake_order	idx_order_merchant_status_complete	1	3	complete_time
+cake_order	idx_order_merchant_status_complete	1	4	id
+cake_order	idx_order_merchant_status_create	1	1	merchant_id
+cake_order	idx_order_merchant_status_create	1	2	status
+cake_order	idx_order_merchant_status_create	1	3	create_time
+cake_order	idx_order_merchant_status_create	1	4	id
+cake_order	idx_order_status_complete	1	1	status
+cake_order	idx_order_status_complete	1	2	complete_time
+cake_order	idx_order_status_complete	1	3	id
+cake_order	idx_order_status_create	1	1	status
+cake_order	idx_order_status_create	1	2	create_time
+cake_order	idx_order_status_create	1	3	id
+cake_order	idx_order_status_expire	1	1	status
+cake_order	idx_order_status_expire	1	2	expire_time
+cake_order	idx_order_status_expire	1	3	id
+cake_order	idx_order_user_create	1	1	user_id
+cake_order	idx_order_user_create	1	2	create_time
+cake_order	idx_order_user_create	1	3	id
+cake_order	idx_order_user_status_create	1	1	user_id
+cake_order	idx_order_user_status_create	1	2	status
+cake_order	idx_order_user_status_create	1	3	create_time
+cake_order	idx_order_user_status_create	1	4	id
+cake_order	PRIMARY	0	1	id
+cake_order	uk_order_no	0	1	order_no
+cake_order	uk_order_user_request	0	1	user_id
+cake_order	uk_order_user_request	0	2	request_id
+cake_order_item	idx_item_product	1	1	product_id
+cake_order_item	PRIMARY	0	1	id
+cake_order_item	uk_item_order_product	0	1	order_id
+cake_order_item	uk_item_order_product	0	2	product_id
+cake_product	fk_product_category_merchant	1	1	category_id
+cake_product	fk_product_category_merchant	1	2	merchant_id
+cake_product	idx_product_merchant_category_status	1	1	merchant_id
+cake_product	idx_product_merchant_category_status	1	2	category_id
+cake_product	idx_product_merchant_category_status	1	3	status
+cake_product	idx_product_merchant_category_status	1	4	id
+cake_product	idx_product_merchant_status	1	1	merchant_id
+cake_product	idx_product_merchant_status	1	2	status
+cake_product	idx_product_merchant_status	1	3	id
+cake_product	PRIMARY	0	1	id
+cake_product	uk_product_id_merchant	0	1	id
+cake_product	uk_product_id_merchant	0	2	merchant_id
+sys_user	PRIMARY	0	1	id
+sys_user	uk_user_phone	0	1	phone
+sys_user	uk_user_username	0	1	username
+cake_category	fk_category_merchant	merchant_id	1	cake_merchant	id
+cake_category	PRIMARY	id	1	-	-
+cake_category	uk_category_id_merchant	id	1	-	-
+cake_category	uk_category_id_merchant	merchant_id	2	-	-
+cake_category	uk_category_merchant_name	merchant_id	1	-	-
+cake_category	uk_category_merchant_name	name	2	-	-
+cake_merchant	fk_merchant_user	user_id	1	sys_user	id
+cake_merchant	PRIMARY	id	1	-	-
+cake_merchant	uk_merchant_user	user_id	1	-	-
+cake_order	fk_order_merchant	merchant_id	1	cake_merchant	id
+cake_order	fk_order_user	user_id	1	sys_user	id
+cake_order	PRIMARY	id	1	-	-
+cake_order	uk_order_no	order_no	1	-	-
+cake_order	uk_order_user_request	user_id	1	-	-
+cake_order	uk_order_user_request	request_id	2	-	-
+cake_order_item	fk_item_order	order_id	1	cake_order	id
+cake_order_item	fk_item_product	product_id	1	cake_product	id
+cake_order_item	PRIMARY	id	1	-	-
+cake_order_item	uk_item_order_product	order_id	1	-	-
+cake_order_item	uk_item_order_product	product_id	2	-	-
+cake_product	fk_product_category_merchant	category_id	1	cake_category	id
+cake_product	fk_product_category_merchant	merchant_id	2	cake_category	merchant_id
+cake_product	fk_product_merchant	merchant_id	1	cake_merchant	id
+cake_product	PRIMARY	id	1	-	-
+cake_product	uk_product_id_merchant	id	1	-	-
+cake_product	uk_product_id_merchant	merchant_id	2	-	-
+sys_user	PRIMARY	id	1	-	-
+sys_user	uk_user_phone	phone	1	-	-
+sys_user	uk_user_username	username	1	-	-
+ck_category_name	(char_length(trim(`name`)) between 1 and 30)
+ck_category_sort	(`sort` >= 0)
+ck_category_status	(`status` in (0,1))
+ck_item_price	(`price` > 0)
+ck_item_quantity	(`quantity` between 1 and 99)
+ck_item_snapshot	((char_length(trim(`product_name`)) between 1 and 60) and (char_length(trim(`product_spec`)) between 1 and 30))
+ck_item_subtotal	((`subtotal` > 0) and (`subtotal` = (`price` * `quantity`)))
+ck_merchant_phone	((char_length(`phone`) = 11) and regexp_like(`phone`,_utf8mb4\\'^1[3-9][0-9]{9}$\\',_utf8mb4\\'c\\'))
+ck_merchant_status	(`status` in (0,1))
+ck_merchant_text	((char_length(trim(`name`)) between 1 and 60) and (char_length(trim(`address`)) between 1 and 120))
+ck_order_address	(((`order_type` = 1) and (`address` is not null) and (char_length(trim(`address`)) between 1 and 120)) or ((`order_type` = 2) and (`address` is null)))
+ck_order_amount	(`total_amount` > 0)
+ck_order_event_times	(((`pay_time` is null) or ((`pay_time` >= `create_time`) and (`pay_time` < `expire_time`))) and ((`accept_time` is null) or ((`pay_time` is not null) and (`accept_time` >= `pay_time`))) and ((`start_time` is null) or ((`accept_time` is not null) and (`start_time` >= `accept_time`))) and ((`delivery_time` is null) or ((`start_time` is not null) and (`delivery_time` >= `start_time`))) and ((`ready_time` is null) or ((`start_time` is not null) and (`ready_time` >= `start_time`))) and ((`complete_time` is null) or ((`order_type` = 1) and (`delivery_time` is not null) and (`complete_time` >= `delivery_time`)) or ((`order_type` = 2) and (`ready_time` is not null) and (`complete_time` >= `ready_time`))) and ((`cancel_time` is null) or ((`cancel_time` >= `create_time`) and ((`pay_time` is null) or (`cancel_time` >= `pay_time`)) and ((`accept_time` is null) or (`cancel_time` >= `accept_time`)))))
+ck_order_expire	(`expire_time` = (`create_time` + interval 30 minute))
+ck_order_phone	((char_length(`phone`) = 11) and regexp_like(`phone`,_utf8mb4\\'^1[3-9][0-9]{9}$\\',_utf8mb4\\'c\\'))
+ck_order_state_events	(((`status` = 0) and (`pay_time` is null) and (`accept_time` is null) and (`start_time` is null) and (`delivery_time` is null) and (`ready_time` is null) and (`complete_time` is null) and (`cancel_time` is null) and (`cancel_reason` is null)) or ((`status` = 7) and (`pay_time` is not null) and (`accept_time` is null) and (`start_time` is null) and (`delivery_time` is null) and (`ready_time` is null) and (`complete_time` is null) and (`cancel_time` is null) and (`cancel_reason` is null)) or ((`status` = 1) and (`pay_time` is not null) and (`accept_time` is not null) and (`start_time` is null) and (`delivery_time` is null) and (`ready_time` is null) and (`complete_time` is null) and (`cancel_time` is null) and (`cancel_reason` is null)) or ((`status` = 5) and (`pay_time` is not null) and (`accept_time` is not null) and (`start_time` is not null) and (`delivery_time` is null) and (`ready_time` is null) and (`complete_time` is null) and (`cancel_time` is null) and (`cancel_reason` is null)) or ((`status` = 2) and (`order_type` = 1) and (`pay_time` is not null) and (`accept_time` is not null) and (`start_time` is not null) and (`delivery_time` is not null) and (`ready_time` is null) and (`complete_time` is null) and (`cancel_time` is null) and (`cancel_reason` is null)) or ((`status` = 6) and (`order_type` = 2) and (`pay_time` is not null) and (`accept_time` is not null) and (`start_time` is not null) and (`ready_time` is not null) and (`delivery_time` is null) and (`complete_time` is null) and (`cancel_time` is null) and (`cancel_reason` is null)) or ((`status` = 3) and (`pay_time` is not null) and (`accept_time` is not null) and (`start_time` is not null) and (`complete_time` is not null) and (`cancel_time` is null) and (`cancel_reason` is null) and (((`order_type` = 1) and (`delivery_time` is not null) and (`ready_time` is null)) or ((`order_type` = 2) and (`ready_time` is not null) and (`delivery_time` is null)))) or ((`status` = 4) and (`cancel_time` is not null) and (`cancel_reason` is not null) and (char_length(trim(`cancel_reason`)) between 1 and 200) and (`start_time` is null) and (`delivery_time` is null) and (`ready_time` is null) and (`complete_time` is null) and ((`accept_time` is null) or (`pay_time` is not null))))
+ck_order_status	(`status` in (0,1,2,3,4,5,6,7))
+ck_order_text	((char_length(trim(`merchant_name`)) between 1 and 60) and (char_length(trim(`order_no`)) between 1 and 32) and (char_length(trim(`receiver`)) between 1 and 30))
+ck_order_type	(`order_type` in (1,2))
+ck_product_price	(`price` > 0)
+ck_product_status	(`status` in (0,1))
+ck_product_stock	(`stock` between 0 and 2147483647)
+ck_product_text	((char_length(trim(`name`)) between 1 and 60) and (char_length(trim(`spec`)) between 1 and 30))
+ck_user_login_fail_count	(`login_fail_count` between 0 and 5)
+ck_user_phone	((char_length(`phone`) = 11) and regexp_like(`phone`,_utf8mb4\\'^1[3-9][0-9]{9}$\\',_utf8mb4\\'c\\'))
+ck_user_role	(cast(`role` as char charset binary) in (_utf8mb4\\'ADMIN\\',_utf8mb4\\'MERCHANT\\',_utf8mb4\\'CUSTOMER\\'))
+ck_user_status	(`status` in (0,1))
+ck_user_text	((char_length(trim(`username`)) between 1 and 20) and (char_length(trim(`nickname`)) between 1 and 30))
+ck_user_token_version	(`token_version` >= 0)

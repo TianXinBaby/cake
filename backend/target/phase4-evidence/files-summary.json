@@ -1,0 +1,40 @@
+{
+  "Before": 96,
+  "After": 119,
+  "New": [
+    "backend\\src\\main\\java\\com\\cake\\platform\\controller\\admin\\AdminController.java",
+    "backend\\src\\main\\java\\com\\cake\\platform\\dto\\AdminRequests.java",
+    "backend\\src\\main\\java\\com\\cake\\platform\\entity\\MerchantRecord.java",
+    "backend\\src\\main\\java\\com\\cake\\platform\\exception\\AdminErrorCode.java",
+    "backend\\src\\main\\java\\com\\cake\\platform\\mapper\\AdminMapper.java",
+    "backend\\src\\main\\java\\com\\cake\\platform\\service\\admin\\AdminService.java",
+    "backend\\src\\main\\java\\com\\cake\\platform\\vo\\MerchantView.java",
+    "backend\\src\\main\\java\\com\\cake\\platform\\vo\\PageView.java",
+    "backend\\src\\test\\java\\com\\cake\\platform\\admin\\AdminHttpMySqlTests.java",
+    "backend\\src\\test\\java\\com\\cake\\platform\\admin\\AdminRequestsTests.java",
+    "docs\\admin\\PLATFORM_MANAGEMENT.md",
+    "frontend\\src\\admin\\management.test.js",
+    "frontend\\src\\admin\\useAdminList.js",
+    "frontend\\src\\admin\\validation.js",
+    "frontend\\src\\api\\admin.js",
+    "frontend\\src\\api\\admin.test.js",
+    "frontend\\src\\components\\admin\\AdminPagination.vue",
+    "frontend\\src\\components\\admin\\FieldErrors.vue",
+    "frontend\\src\\components\\admin\\StatusConfirm.vue",
+    "frontend\\src\\layouts\\AdminLayout.vue",
+    "frontend\\src\\views\\admin\\MerchantsView.vue",
+    "frontend\\src\\views\\admin\\UsersView.vue",
+    "reports\\PHASE_4_REPORT.md"
+  ],
+  "Changed": [
+    "PROJECT_STATUS.md",
+    "README.md",
+    "TODO.md",
+    "docs\\requirements\\TRACEABILITY_MATRIX.md",
+    "frontend\\src\\application.test.js",
+    "frontend\\src\\router\\index.js",
+    "frontend\\src\\styles\\base.css"
+  ],
+  "Unchanged": 89,
+  "Deleted": []
+}

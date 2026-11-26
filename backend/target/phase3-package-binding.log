@@ -1,0 +1,1031 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.cake.platform:cake-order-platform >----------------
+[INFO] Building cake-order-platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ cake-order-platform ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 26 source files with javac [debug parameters release 18] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ cake-order-platform ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 10 source files with javac [debug parameters release 18] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ cake-order-platform ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.cake.platform.CakeOrderPlatformApplicationTests
+19:31:22.758 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.cake.platform.CakeOrderPlatformApplicationTests]: CakeOrderPlatformApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:31:22.841 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.cake.platform.CakeOrderPlatformApplication for test class com.cake.platform.CakeOrderPlatformApplicationTests
+2026-11-25T19:31:23.186+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : Starting CakeOrderPlatformApplicationTests using Java 18.0.2.1 with PID 2400 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:31:23.187+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : The following 1 profile is active: "test"
+2026-11-25T19:31:24.206+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : Started CakeOrderPlatformApplicationTests in 1.27 seconds (process running for 2.274)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.139 s -- in com.cake.platform.CakeOrderPlatformApplicationTests
+[INFO] Running com.cake.platform.common.ApiResponseTests
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 s -- in com.cake.platform.common.ApiResponseTests
+[INFO] Running com.cake.platform.database.DatabaseInfrastructureTests
+2026-11-25T19:31:24.923+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : Starting DatabaseInfrastructureTests using Java 18.0.2.1 with PID 2400 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:31:24.924+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : The following 1 profile is active: "test"
+2026-11-25T19:31:25.138+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : Started DatabaseInfrastructureTests in 0.233 seconds (process running for 3.206)
+2026-11-25T19:31:25.578+08:00 DEBUG 2400 --- [cake-order-platform] [           main] com.cake.platform.sql.events             : sqlEvent=PREPARE
+2026-11-25T19:31:25.578+08:00  WARN 2400 --- [cake-order-platform] [           main] com.cake.platform.sql.events             : sqlEvent=ERROR
+2026-11-25T19:31:26.306+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=bd633114-070e-4ab8-a5fc-7f1e3a711147 method=GET route=/__database_fixture/unreachable outcome=SYSTEM_ERROR
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.505 s -- in com.cake.platform.database.DatabaseInfrastructureTests
+[INFO] Running com.cake.platform.database.MySqlDatabaseTests
+2026-11-25T19:31:26.450+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.database.MySqlDatabaseTests        : Starting MySqlDatabaseTests using Java 18.0.2.1 with PID 2400 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:31:26.450+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.database.MySqlDatabaseTests        : The following 1 profile is active: "mysql-test"
+2026-11-25T19:31:28.211+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.database.MySqlDatabaseTests        : Started MySqlDatabaseTests in 1.803 seconds (process running for 6.281)
+[ERROR] Tests run: 28, Failures: 0, Errors: 28, Skipped: 0, Time elapsed: 2.592 s <<< FAILURE! -- in com.cake.platform.database.MySqlDatabaseTests
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.confirmedCollationKeepsCaseAndAccentDistinctWithinOneMerchant -- Time elapsed: 0.078 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.exactlySixInnoDbTablesUseConfirmedCollation -- Time elapsed: 0.018 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.absentMerchantReferenceFails -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.accountDefaultsAreAppliedByTheActualDatabase -- Time elapsed: 0.016 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.all29ChecksArePresentAndEnforced -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.primaryUniqueOrdinaryAndFkSupportIndexesMatchExactly -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.invalidOrderTypeFails -- Time elapsed: 0.015 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.allEightStatesAndBothFulfillmentBranchesAcceptValidEventShapes -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.allEightForeignKeysHaveExactOrderedColumnsAndRestrictRules -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.absentUserReferenceFails -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.zeroAndNegativeProductPricesFail -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.invalidRoleFails -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.all74ColumnsMatchIndependentDocxDictionaryIncludingDefaults -- Time elapsed: 0.013 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.duplicateUsernameFails -- Time elapsed: 0.012 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.sameMerchantDuplicateCategoryFails -- Time elapsed: 0.015 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.eachOf29CheckDefinitionsHasAnActualViolatingStatement -- Time elapsed: 0.014 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.springDatasourceAndMybatisPlusInitializeAgainstMysql8019 -- Time elapsed: 0.013 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.differentMerchantsMayShareCategoryName -- Time elapsed: 0.012 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.negativeStockFails -- Time elapsed: 0.011 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.duplicateProductInSameOrderFails -- Time elapsed: 0.012 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.invalidOrderStatusFails -- Time elapsed: 0.010 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.referencedRowsCannotBeDeletedOrPrimaryKeysUpdated -- Time elapsed: 0.010 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.unsignedBigintAboveSignedLongRangeRoundTripsUsingJdbcBigInteger -- Time elapsed: 0.009 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.productCannotReferenceAnotherMerchantsCategory -- Time elapsed: 0.010 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.decimalTenTwoKeepsExactCentsAndRejectsOverflow -- Time elapsed: 0.008 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.duplicatePhoneFails -- Time elapsed: 0.009 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.datetimeThreeKeepsMilliseconds -- Time elapsed: 0.009 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[ERROR] com.cake.platform.database.MySqlDatabaseTests.repeatedMerchantAccountBindingFails -- Time elapsed: 0.009 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:116)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1003)
+	at com.cake.platform.database.MySqlDatabaseTests.insert(MySqlDatabaseTests.java:357)
+	at com.cake.platform.database.MySqlDatabaseTests.product(MySqlDatabaseTests.java:343)
+	at com.cake.platform.database.MySqlDatabaseTests.createRollbackOnlyFixtures(MySqlDatabaseTests.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'category_id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:95)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:938)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1106)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1045)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1369)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1030)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1004)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658)
+	... 7 more
+
+[INFO] Running com.cake.platform.exception.GlobalExceptionHandlerTests
+2026-11-25T19:31:29.025+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : Starting GlobalExceptionHandlerTests using Java 18.0.2.1 with PID 2400 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:31:29.025+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : The following 1 profile is active: "test"
+2026-11-25T19:31:29.179+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : Started GlobalExceptionHandlerTests in 0.17 seconds (process running for 7.249)
+2026-11-25T19:31:29.221+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=1a922402-0fcc-4150-9bba-6225a8a3be72 method=POST route=/__fixture/fail/{value} outcome=SYSTEM_ERROR
+2026-11-25T19:31:29.227+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=50c25426-4e77-4532-8598-654ae4fcb0d4 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:31:29.231+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=790ecc0a-4d8d-4139-842f-57793555da37 method=GET route=/__fixture/unknown outcome=SYSTEM_ERROR
+2026-11-25T19:31:29.232+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=13b33be8-64d8-4816-839e-4e7a96a5a67c method=GET route=/__fixture/unknown outcome=SYSTEM_ERROR
+2026-11-25T19:31:29.253+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=8eb83513-392c-4cf3-b11b-8a585d7c6237 method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-25T19:31:29.289+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0acc186a-5849-4c74-90d1-9c605385081d method=GET route=/__fixture/invalid-return outcome=SYSTEM_ERROR
+2026-11-25T19:31:29.294+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=81c88357-e5b2-4d61-9cc2-ef9392f8000d method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-25T19:31:29.296+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=332c62b6-f5f4-42db-ae75-c47b0b62b22b method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:31:29.299+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=fa1e1590-d967-4eb1-909c-031009c6621e method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-25T19:31:29.303+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=e8eb7370-45ed-48f8-b03d-3be68f7e31ee method=GET route=/__fixture/constraint outcome=INVALID_PARAMETER
+2026-11-25T19:31:29.305+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9fe88ed8-420a-419d-b900-4ae88eade617 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:31:29.308+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=7d8595fe-a45c-403f-a38f-5e0c782d8f78 method=GET route=/__fixture/business outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:29.322+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=2f9c7d18-c599-40cb-a4cb-b1122bf2fcad method=POST route=/__fixture/validated outcome=INVALID_PARAMETER fields=1
+2026-11-25T19:31:29.327+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=65f66128-a3cd-4d04-96dd-90bd40227cbb method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:31:29.330+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=169b34f8-13ce-4634-8e00-2bcd5253531a method=GET route=/__fixture/business-system outcome=BUSINESS_ERROR code=50001
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.340 s -- in com.cake.platform.exception.GlobalExceptionHandlerTests
+[INFO] Running com.cake.platform.exception.ValidationErrorExtractorTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.cake.platform.exception.ValidationErrorExtractorTests
+[INFO] Running com.cake.platform.security.AuthHttpMySqlTests
+2026-11-25T19:31:29.372+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : Starting AuthHttpMySqlTests using Java 18.0.2.1 with PID 2400 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:31:29.372+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : The following 1 profile is active: "mysql-test"
+2026-11-25T19:31:29.741+08:00  INFO 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : Started AuthHttpMySqlTests in 0.39 seconds (process running for 7.811)
+2026-11-25T19:31:30.005+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=5ce4478e-1c10-4197-815b-74b4a00fb0b3 method=PATCH outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:30.201+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=9bc636df-5777-44fe-9324-64d6968d5755 method=POST outcome=AUTH_ERROR code=40901
+2026-11-25T19:31:30.372+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=a8140ba8-780c-4d21-b001-60e83aace32f method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:30.429+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=8d80db83-7004-4a5d-9d01-4b06690b5bd6 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:30.484+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=82823fb9-5a97-444d-9fb6-8e164da6b932 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:30.538+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=de5d99d5-bcc2-42fd-9f65-78c54f3a0e46 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:30.594+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=cb8a50f0-3789-47a6-acce-143aac5b3300 method=POST outcome=AUTH_ERROR code=42301
+2026-11-25T19:31:30.600+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=51259dc8-be03-4bea-93a1-212e37b9a469 method=POST outcome=AUTH_ERROR code=42301
+2026-11-25T19:31:31.045+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=97ebb986-d0b2-4ac7-97a3-ecd88bd9c3ac method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:31.046+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=4d94216f-2349-4314-aa58-8c24e3e52ca3 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:31.105+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=f393b7ab-c59b-4e99-b0bb-963f86e267be method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:31.604+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=4c698e90-07d0-440b-8ac6-1fcdc6a348e9 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:31.606+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=b03162b8-8848-45d1-9775-3b700ecaf37a method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:31.663+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=2dd1ff9e-6bfa-4cfc-a353-99108618db11 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:32.185+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=277cc59f-9002-4dfe-a4d3-8a9dbaf505e8 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:32.187+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=b4f0748e-4d68-4d3f-ac53-f82c1f571b9f method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:32.239+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=7a94555f-cdf7-406e-9b74-e54cea0c92cb method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:32.305+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=687266e9-8755-42b7-9c9e-5ea35cc2afe7 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:32.312+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5efe64a9-e290-4a98-ae02-7bad1db9b858 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:32.317+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=313ea848-2469-4b3b-950d-2bd0baa5dee4 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:32.323+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a955db01-f407-4c4a-af40-2c95f870aef2 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:32.329+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ea37557b-843d-48e2-8404-f07e798a2b58 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:32.335+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=6e3ee736-701a-45cb-8d12-9262c9a33458 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:32.397+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=63645f5e-c2e9-4764-a86b-fc8cbfc2ae1c method=POST outcome=AUTH_ERROR code=40301
+2026-11-25T19:31:32.800+08:00  WARN 2400 --- [cake-order-platform] [pool-3-thread-5] c.c.p.c.auth.AuthExceptionHandler        : requestId=b65e8d1f-ee16-4406-ac3d-dce57b587093 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:32.808+08:00  WARN 2400 --- [cake-order-platform] [pool-3-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=9fa15423-8203-45e2-8bae-2f76711cc0f6 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:32.851+08:00  WARN 2400 --- [cake-order-platform] [pool-3-thread-4] c.c.p.c.auth.AuthExceptionHandler        : requestId=bc57615b-14bf-4e97-836c-65f690c4d49e method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:32.858+08:00  WARN 2400 --- [cake-order-platform] [pool-3-thread-3] c.c.p.c.auth.AuthExceptionHandler        : requestId=ddfe3205-7ced-49fb-9afb-fdb7fea00a92 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:32.907+08:00  WARN 2400 --- [cake-order-platform] [pool-3-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=13bc9bfd-abe0-42b6-889c-f26e182ae24f method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:33.028+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=a210f5ed-1fab-4ecb-b19f-9b5a2f1c8959 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:33.148+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d67f6ac8-dbc8-492e-8600-021ae925dda6 method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:33.262+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=80575c28-fc81-48ce-8bee-f5c38032cb10 method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:33.378+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=665880d6-f9d5-476c-ac65-071ba5b4b2d5 method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:34.205+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2070f206-1bcd-47fd-9ca4-62255f3bbe4e method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:34.206+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=85420b8c-196c-4eda-a58a-1545676516ae method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:34.207+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=806e709b-30d3-4274-9af8-d5f806ba6d5f method=POST outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:34.370+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-25T19:31:34.371+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=46fa0b08-4a4f-43af-b53a-1554e11d39fd method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=50001
+2026-11-25T19:31:34.488+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=18ccbc21-f66e-406c-a903-6c0324eb5292 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:34.550+08:00  WARN 2400 --- [cake-order-platform] [pool-4-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=e0afac2d-6992-44c6-bebf-e848241e44ad method=POST outcome=AUTH_ERROR code=40901
+2026-11-25T19:31:34.670+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=1fe41be8-f539-48d7-8184-67f15dc7bf50 method=GET route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:34.672+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=10d49c59-ec00-43b3-912f-21ad7324de4d method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:34.747+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a44f70b7-6815-4cb8-b851-d667aaf29e7f method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:34.752+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f2929178-527d-46c3-8ead-173537fad3a3 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:34.761+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=38e11588-c35f-48ab-9089-dc4ed52bd93b method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:34.766+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=56266784-447b-4d9d-8180-6ed964b35cc2 method=POST route=/api/auth/register outcome=INVALID_JSON
+2026-11-25T19:31:34.771+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=89874cd1-1114-4e8c-96c4-eb7f3f8fc80f method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:34.879+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-6] c.c.p.c.auth.AuthExceptionHandler        : requestId=307245ae-28bc-4dbc-8b98-92181ab72b76 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:34.929+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=0a2f6052-898f-4e1a-a8b9-fa6368079a17 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:34.979+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-4] c.c.p.c.auth.AuthExceptionHandler        : requestId=951e4116-abe8-4c09-90da-67f2426e8776 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:35.031+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-8] c.c.p.c.auth.AuthExceptionHandler        : requestId=bc14bee8-9d44-4e54-be8d-8aabbcc3a948 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:35.081+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=d3544142-ece5-4ec7-86f8-4b902e2b418e method=POST outcome=AUTH_ERROR code=42301
+2026-11-25T19:31:35.082+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-5] c.c.p.c.auth.AuthExceptionHandler        : requestId=20c4e291-9d73-4325-9ead-1350c4635609 method=POST outcome=AUTH_ERROR code=42301
+2026-11-25T19:31:35.082+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-3] c.c.p.c.auth.AuthExceptionHandler        : requestId=147ef16f-dced-4b08-a99d-17722404a5d6 method=POST outcome=AUTH_ERROR code=42301
+2026-11-25T19:31:35.083+08:00  WARN 2400 --- [cake-order-platform] [pool-5-thread-7] c.c.p.c.auth.AuthExceptionHandler        : requestId=fea8cd50-2b09-450c-8e24-93e88fae25d9 method=POST outcome=AUTH_ERROR code=42301
+2026-11-25T19:31:35.096+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=c9d01a1d-f07b-464b-9197-9f825def9989 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.101+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=f543e6f5-2dd3-4b59-8907-777f430dcb40 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.106+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=33ff8314-4040-4cf2-8709-5baa0bdbc23f method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.111+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=00634dff-1b7d-4db5-a67c-b58c4f2a73b3 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.115+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=4c9674fc-7f96-4fc8-b010-d32956d11749 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.120+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2edf8346-a873-4922-bf77-1d73a0fc3e4d method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.577+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=24f39637-caf7-48d6-b271-646c4c0b9a78 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.638+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4d91ed6c-3e43-467f-bb28-3a46adbc9655 method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:35.757+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8922c2ef-e98e-4f3f-96ae-60347169f106 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:35.874+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0cb10983-190a-4a57-8238-1e8610133f7f method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:35.989+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=65bdd4df-5022-4a06-af2f-d4e22f110a32 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:36.104+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=29bcf0d1-7a8f-45a8-ba56-2ba0a09f4fd5 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:36.219+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=18263726-55af-4f76-81b4-8dad8b457bd5 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:36.334+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=516eec81-4f90-4d3b-9354-cd0d658abc73 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:36.449+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=314a87c3-6bba-424b-92fc-66ffa4df9167 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.036+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=95b0263a-a5a7-4784-bac0-bd4cd297e682 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:37.155+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=6415860c-fdb8-45a6-a163-233e5874d9c3 method=GET outcome=AUTH_ERROR code=40301
+2026-11-25T19:31:37.360+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=1a2356a5-d8ea-4960-9bfb-77ed68b3594c method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.373+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d15b6570-ee0d-4e13-a2c1-ce1420f9aa3a method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.379+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=4c252b6a-4b9b-4060-a72e-a41e02eca9b4 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.384+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f28bd063-d7dc-4935-830e-8a547bfd7880 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.390+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=789652e4-c288-48c4-9ef1-54c636666233 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.395+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=c187bc0c-6950-4220-b29c-3d0c36a78107 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.400+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f0196d8c-6a4f-4e14-b037-c579f0eebbd2 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.406+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3ac662f0-eb9a-497d-a7e4-30a21d8d2723 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:37.520+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=ea4e1fff-f597-4028-bf31-afc95f337db9 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:37.639+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4bd5b9de-12b0-4046-afe4-33ff40b0088a method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:37.754+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=2c8f80ae-e8d1-46e4-ba87-44a202e749ea method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:37.876+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=490305b4-4540-428b-a6d5-abd762b917fd method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:37.995+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=01f5209e-5c2e-48e5-8a97-381f138f2a71 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:38.120+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ddd6bcb5-afbd-4fc6-89af-80128ced188a method=GET route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.132+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=210725c5-cf46-4641-814b-072251389ff9 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.138+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a47250d6-5b64-4d58-bcfe-3bf9e7ac27b6 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.143+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=925ca189-9e13-49fa-b7e5-53cc647f2e26 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.148+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9c1c0173-5fb5-4536-a585-c2153a90da5d method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.154+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=27293f52-04ed-4b59-a658-4e3333082b3c method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.160+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=6037d87d-7b2d-4419-b8f5-b2b825b6ab5a method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.165+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=97929627-b581-4250-a8e8-94410ef66237 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.171+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=11226540-82e8-40a2-a4ab-380bcda14e34 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.373+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-25T19:31:38.374+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e7d6ef4c-c7f5-41cd-b91b-2c58e51bc34f method=GET outcome=AUTH_ERROR code=50001
+2026-11-25T19:31:38.388+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c353eda9-18cf-401b-8fe7-45cb1990b845 method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:38.395+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=eedff1a8-03ae-4e33-a5b8-090c270ca504 method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:38.400+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=2f685c1c-4446-40dc-884a-0cc1cbcae61f method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:38.406+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=58fd864e-b5b3-4d7a-871c-8c13dde58403 method=POST outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:38.521+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ee9b3b10-ce58-4164-9a3e-00037f7c5598 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.523+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9705b687-0378-43f6-82fe-701fe9623e62 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.524+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3dcaf197-178a-4886-86c7-f878e5fe6c71 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:31:38.526+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=d8ba5936-1201-4a74-b98b-fcb0d7d677c5 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:38.817+08:00  WARN 2400 --- [cake-order-platform] [pool-6-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=290736ba-80fc-49f6-bb66-06fa63d4a533 method=PATCH outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:39.082+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=fae53ece-7ee3-4194-8908-bf2899bee5e0 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.083+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=c23c58cc-1d32-486d-a58c-b7b560b8a899 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.231+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=492b33b7-4b4f-4f4f-86c5-8be8c69fcc99 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.233+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=7de4df03-af2e-45ba-8ea9-501592840e55 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.235+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=fd705591-a2e8-4d61-bc94-7caf888d6a55 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.356+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=eb04ebc4-0eff-41a7-9605-0d1eb3554c88 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.357+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=c352d67e-d291-467d-90fc-7345af9f34a3 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.360+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=3a74de60-cd8d-4985-827b-8dcd99bbcd97 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.479+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=23c3ac3e-3c3d-4829-bb91-433de4a9bc8f method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.481+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=fbffdba8-35dd-4f74-9e4b-82c999a7c8a6 method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.733+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=879de893-6bd4-4062-ba3b-3f7f256a31cb method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.857+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=0c4611a5-7970-4ab9-b263-8eb74125f499 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:39.978+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=00594ed2-0fab-4fb5-8819-0ac15aab2553 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:40.101+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=ce44ba45-3322-41f6-bcc7-34928951bcea method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:40.219+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=7db0714f-e351-475a-9db1-a8e3d24325cc method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:40.341+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=e78776bb-09f5-4f48-bcde-bec92f7e282c method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:40.459+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=f9bb7d1c-440c-4af4-87c4-55957cf50cbc method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:40.601+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=59ffac52-c8a3-4fd9-ac96-fead045a4a06 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:40.738+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=10716f27-f004-417e-9b25-1d4f7ed830fa method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:40.789+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=627e7b9c-13c1-4384-9d25-04fac2429fbb method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:40.867+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=712aac61-2d15-4b2b-8077-7b838ba2efab method=GET outcome=AUTH_ERROR code=40302
+2026-11-25T19:31:40.997+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=6d08e37d-74e6-4e27-87d5-4ec55f28b707 method=POST outcome=AUTH_ERROR code=40101
+2026-11-25T19:31:41.130+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-25T19:31:41.131+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0a7576b3-b629-4a88-8890-5c938cb0f6af method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=50001
+[INFO] Tests run: 101, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.81 s -- in com.cake.platform.security.AuthHttpMySqlTests
+[INFO] Running com.cake.platform.security.AuthRequestsTests
+[INFO] Tests run: 55, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.040 s -- in com.cake.platform.security.AuthRequestsTests
+[INFO] Running com.cake.platform.security.JwtAuthenticationFilterTests
+2026-11-25T19:31:41.370+08:00 ERROR 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=90231a1b-cb5f-46db-b50e-c725362ab3e4 method=GET outcome=AUTH_ERROR code=50001
+2026-11-25T19:31:41.391+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e635a530-af70-4716-ba57-a2abf5a18eba method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.395+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=40f190d1-ae98-4452-a954-81e613014a57 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.399+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=5b5624fd-7b25-425a-9ec9-2eaa87b86b9e method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.403+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=ff855552-8c1f-47be-a6af-a0b5a5b44b56 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.407+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=377ba5a8-064c-4788-bbf0-590dafe27e3c method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.410+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=a198ddba-dba5-4300-9dd8-befa6ec247fe method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.413+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=057fea6d-a85e-4276-aa75-363e2a0cfcfe method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.419+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=ddc5ca56-c10f-4324-8521-7535f4096957 method=GET outcome=AUTH_ERROR code=40102
+2026-11-25T19:31:41.424+08:00  WARN 2400 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=c62ccecd-1ace-41ff-8243-a2503c8e6c42 method=GET outcome=AUTH_ERROR code=40301
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 s -- in com.cake.platform.security.JwtAuthenticationFilterTests
+[INFO] Running com.cake.platform.security.JwtServiceTests
+[INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s -- in com.cake.platform.security.JwtServiceTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[ERROR]   MySqlDatabaseTests.createRollbackOnlyFixtures:80->product:343->insert:357 » DataIntegrityViolation PreparedStatementCallback; Data truncation: Out of range value for column 'category_id' at row 1
+[INFO] 
+[ERROR] Tests run: 255, Failures: 0, Errors: 28, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.680 s
+[INFO] Finished at: 2026-11-25T19:31:41+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project cake-order-platform: 
+[ERROR] 
+[ERROR] See D:\study\蛋糕店订单管理系统\backend\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

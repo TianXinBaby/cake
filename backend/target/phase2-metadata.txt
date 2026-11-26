@@ -1,0 +1,40 @@
+TABLE_SCHEMA	TABLE_NAME	ENGINE	TABLE_COLLATION
+cake_order_system	cake_category	InnoDB	utf8mb4_0900_as_cs
+cake_order_system	cake_merchant	InnoDB	utf8mb4_0900_as_cs
+cake_order_system	cake_order	InnoDB	utf8mb4_0900_as_cs
+cake_order_system	cake_order_item	InnoDB	utf8mb4_0900_as_cs
+cake_order_system	cake_product	InnoDB	utf8mb4_0900_as_cs
+cake_order_system	sys_user	InnoDB	utf8mb4_0900_as_cs
+cake_order_system_phase2_test	cake_category	InnoDB	utf8mb4_0900_as_cs
+cake_order_system_phase2_test	cake_merchant	InnoDB	utf8mb4_0900_as_cs
+cake_order_system_phase2_test	cake_order	InnoDB	utf8mb4_0900_as_cs
+cake_order_system_phase2_test	cake_order_item	InnoDB	utf8mb4_0900_as_cs
+cake_order_system_phase2_test	cake_product	InnoDB	utf8mb4_0900_as_cs
+cake_order_system_phase2_test	sys_user	InnoDB	utf8mb4_0900_as_cs
+TABLE_SCHEMA	TABLE_NAME	columns_count
+cake_order_system	cake_category	7
+cake_order_system	cake_merchant	9
+cake_order_system	cake_order	25
+cake_order_system	cake_order_item	9
+cake_order_system	cake_product	12
+cake_order_system	sys_user	12
+cake_order_system_phase2_test	cake_category	7
+cake_order_system_phase2_test	cake_merchant	9
+cake_order_system_phase2_test	cake_order	25
+cake_order_system_phase2_test	cake_order_item	9
+cake_order_system_phase2_test	cake_product	12
+cake_order_system_phase2_test	sys_user	12
+CONSTRAINT_SCHEMA	CONSTRAINT_TYPE	COUNT(*)
+cake_order_system	PRIMARY KEY	6
+cake_order_system	UNIQUE	9
+cake_order_system_phase2_test	PRIMARY KEY	6
+cake_order_system_phase2_test	UNIQUE	9
+cake_order_system	FOREIGN KEY	8
+cake_order_system_phase2_test	FOREIGN KEY	8
+cake_order_system	CHECK	29
+cake_order_system_phase2_test	CHECK	29
+db	users	merchants	categories	products	orders	items
+dev	0	0	0	0	0	0
+test	0	0	0	0	0	0
+@@global.time_zone	@@global.collation_server
+SYSTEM	utf8mb4_0900_ai_ci

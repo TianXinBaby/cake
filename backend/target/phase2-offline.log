@@ -1,0 +1,59 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-25T14:41:31.665+08:00  INFO 36628 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplication       : Starting CakeOrderPlatformApplication v0.0.1-SNAPSHOT using Java 18.0.2.1 with PID 36628 (D:\study\蛋糕店订单管理系统\backend\target\cake-order-platform-0.0.1-SNAPSHOT.jar started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T14:41:31.668+08:00  INFO 36628 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplication       : No active profile set, falling back to 1 default profile: "dev"
+2026-11-25T14:41:32.596+08:00  WARN 36628 --- [cake-order-platform] [           main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.cake.platform]' package. Please check your configuration.
+2026-11-25T14:41:32.922+08:00  INFO 36628 --- [cake-order-platform] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-25T14:41:32.935+08:00  INFO 36628 --- [cake-order-platform] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T14:41:32.935+08:00  INFO 36628 --- [cake-order-platform] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-25T14:41:32.964+08:00  INFO 36628 --- [cake-order-platform] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-25T14:41:32.965+08:00  INFO 36628 --- [cake-order-platform] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1257 ms
+2026-11-25T14:41:33.808+08:00  INFO 36628 --- [cake-order-platform] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 61376 (http) with context path '/'
+2026-11-25T14:41:33.815+08:00  INFO 36628 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplication       : Started CakeOrderPlatformApplication in 2.646 seconds (process running for 3.169)
+2026-11-25T14:41:38.842+08:00  INFO 36628 --- [cake-order-platform] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-11-25T14:41:38.852+08:00 ERROR 36628 --- [cake-order-platform] [           main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:795) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.2.19.jar!/:6.2.19]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86) ~[spring-core-6.2.19.jar!/:6.2.19]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:796) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:784) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:772) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:772) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at com.cake.platform.CakeOrderPlatformApplication.main(CakeOrderPlatformApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[cake-order-platform-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[cake-order-platform-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[cake-order-platform-0.0.1-SNAPSHOT.jar:0.0.1-SNAPSHOT]
+Caused by: java.sql.SQLTransientConnectionException: 数据库连接失败，请检查本机数据库服务、网络和环境变量配置。
+	at com.cake.platform.config.DatabaseConnectionConfiguration.lambda$verifyDatabaseConnection$0(DatabaseConnectionConfiguration.java:51) ~[!/:0.0.1-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:784) ~[spring-boot-3.5.16.jar!/:3.5.16]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82) ~[spring-core-6.2.19.jar!/:6.2.19]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.2.19.jar!/:6.2.19]
+	... 22 common frames omitted
+
+2026-11-25T14:41:38.856+08:00  INFO 36628 --- [cake-order-platform] [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T14:41:38.857+08:00  INFO 36628 --- [cake-order-platform] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

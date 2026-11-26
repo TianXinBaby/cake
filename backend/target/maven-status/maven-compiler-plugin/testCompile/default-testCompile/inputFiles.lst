@@ -1,0 +1,13 @@
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\admin\AdminHttpMySqlTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\admin\AdminRequestsTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\CakeOrderPlatformApplicationTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\common\ApiResponseTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\database\DatabaseInfrastructureTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\database\MySqlDatabaseTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\exception\GlobalExceptionHandlerTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\exception\ParameterContractTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\exception\ValidationErrorExtractorTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\security\AuthHttpMySqlTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\security\AuthRequestsTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\security\JwtAuthenticationFilterTests.java
+D:\study\蛋糕店订单管理系统\backend\src\test\java\com\cake\platform\security\JwtServiceTests.java

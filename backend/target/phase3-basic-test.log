@@ -1,0 +1,82 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.cake.platform:cake-order-platform >----------------
+[INFO] Building cake-order-platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ cake-order-platform ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ cake-order-platform ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 7 source files with javac [debug parameters release 18] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ cake-order-platform ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.cake.platform.CakeOrderPlatformApplicationTests
+19:21:59.625 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.cake.platform.CakeOrderPlatformApplicationTests]: CakeOrderPlatformApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:21:59.716 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.cake.platform.CakeOrderPlatformApplication for test class com.cake.platform.CakeOrderPlatformApplicationTests
+2026-11-25T19:22:00.079+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : Starting CakeOrderPlatformApplicationTests using Java 18.0.2.1 with PID 7544 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:22:00.080+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : The following 1 profile is active: "test"
+2026-11-25T19:22:01.100+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : Started CakeOrderPlatformApplicationTests in 1.275 seconds (process running for 2.248)
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.304 s -- in com.cake.platform.CakeOrderPlatformApplicationTests
+[INFO] Running com.cake.platform.common.ApiResponseTests
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in com.cake.platform.common.ApiResponseTests
+[INFO] Running com.cake.platform.database.DatabaseInfrastructureTests
+2026-11-25T19:22:01.942+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : Starting DatabaseInfrastructureTests using Java 18.0.2.1 with PID 7544 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:22:01.943+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : The following 1 profile is active: "test"
+2026-11-25T19:22:02.153+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : Started DatabaseInfrastructureTests in 0.228 seconds (process running for 3.301)
+2026-11-25T19:22:02.581+08:00 DEBUG 7544 --- [cake-order-platform] [           main] com.cake.platform.sql.events             : sqlEvent=PREPARE
+2026-11-25T19:22:02.581+08:00  WARN 7544 --- [cake-order-platform] [           main] com.cake.platform.sql.events             : sqlEvent=ERROR
+2026-11-25T19:22:03.225+08:00 ERROR 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=78f445b4-533d-4d92-ac48-b4ec9359ea83 method=GET route=/__database_fixture/unreachable outcome=SYSTEM_ERROR
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.410 s -- in com.cake.platform.database.DatabaseInfrastructureTests
+[INFO] Running com.cake.platform.database.MySqlDatabaseTests
+[WARNING] Tests run: 28, Failures: 0, Errors: 0, Skipped: 28, Time elapsed: 0.001 s -- in com.cake.platform.database.MySqlDatabaseTests
+[INFO] Running com.cake.platform.exception.GlobalExceptionHandlerTests
+2026-11-25T19:22:03.378+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : Starting GlobalExceptionHandlerTests using Java 18.0.2.1 with PID 7544 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-25T19:22:03.378+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : The following 1 profile is active: "test"
+2026-11-25T19:22:03.641+08:00  INFO 7544 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : Started GlobalExceptionHandlerTests in 0.292 seconds (process running for 4.788)
+2026-11-25T19:22:03.743+08:00 ERROR 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=7a860171-9b3c-4983-b088-1361ce17547c method=POST route=/__fixture/fail/{value} outcome=SYSTEM_ERROR
+2026-11-25T19:22:03.754+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=788569c7-5eea-408d-92e5-85d6ec107441 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:22:03.766+08:00 ERROR 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=e1712a0a-f574-42ed-9945-6d9bc8ee650f method=GET route=/__fixture/unknown outcome=SYSTEM_ERROR
+2026-11-25T19:22:03.768+08:00 ERROR 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=28026a52-e0ae-4085-b197-ae2364dc36f8 method=GET route=/__fixture/unknown outcome=SYSTEM_ERROR
+2026-11-25T19:22:03.829+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=6389b15c-4853-4ec1-b167-ff341f6b33e1 method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-25T19:22:03.950+08:00 ERROR 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f130d41e-3775-455d-b3cc-958f3fc44e48 method=GET route=/__fixture/invalid-return outcome=SYSTEM_ERROR
+2026-11-25T19:22:03.965+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=38130265-67e5-4ece-a6c2-e0c4757462c1 method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-25T19:22:03.976+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=2ac4fa70-bc8e-4171-90a3-6aee0de30bff method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:22:03.982+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f0afcbdd-ce79-4028-b187-ae04d9c3e3d7 method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-25T19:22:03.987+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ccf52ac6-cb5a-43e6-9864-40a8343f3b8d method=GET route=/__fixture/constraint outcome=INVALID_PARAMETER
+2026-11-25T19:22:03.992+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f123a833-d233-45bd-a726-e604f8971c07 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:22:03.996+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=62cb98a3-b3f3-443d-a0a2-a926539cb3b7 method=GET route=/__fixture/business outcome=BUSINESS_ERROR code=40001
+2026-11-25T19:22:04.047+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d246802a-e124-4fb5-bffe-dd2447dd4bd3 method=POST route=/__fixture/validated outcome=INVALID_PARAMETER fields=1
+2026-11-25T19:22:04.058+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=513ac3f2-01bd-446d-b0d2-3d51b652ae17 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-25T19:22:04.062+08:00  WARN 7544 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=68d99bb4-a832-49f8-b730-dfbd2db034e5 method=GET route=/__fixture/business-system outcome=BUSINESS_ERROR code=50001
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.742 s -- in com.cake.platform.exception.GlobalExceptionHandlerTests
+[INFO] Running com.cake.platform.exception.ValidationErrorExtractorTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.cake.platform.exception.ValidationErrorExtractorTests
+[INFO] Running com.cake.platform.security.AuthHttpMySqlTests
+[WARNING] Tests run: 39, Failures: 0, Errors: 0, Skipped: 39, Time elapsed: 0.001 s -- in com.cake.platform.security.AuthHttpMySqlTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 96, Failures: 0, Errors: 0, Skipped: 67
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.451 s
+[INFO] Finished at: 2026-11-25T19:22:04+08:00
+[INFO] ------------------------------------------------------------------------

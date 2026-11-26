@@ -1,0 +1,6 @@
+anonymous profile: HTTP 401/40102
+nonexistent login: HTTP 401/40101
+protected role: HTTP 403/40302
+JAR startup PID=11068 port=62382; stopped
+Missing JWT key startup exit=1
+Runtime log credential scan: no database password

@@ -1,0 +1,53 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+  application:
+    name: cake-order-platform
+  profiles:
+    default: dev
+  sql:
+    init:
+      mode: never
+  jackson:
+    time-zone: Asia/Shanghai
+    property-naming-strategy: LOWER_CAMEL_CASE
+    default-property-inclusion: always
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  port: ${SERVER_PORT:8080}
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  error:
+    include-message: never
+    include-binding-errors: never
+    include-stacktrace: never
+    include-exception: false
+logging:
+  pattern:
+    dateformat: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX,Asia/Shanghai"
+  charset:
+    console: UTF-8
+  level:
+    root: INFO
+    com.cake.platform: INFO
+    com.zaxxer.hikari: "OFF"
+    com.mysql.cj: "OFF"
+    org.mybatis: WARN
+    com.baomidou.mybatisplus: WARN
+mybatis-plus:
+  global-config:
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+cake:
+  security:
+    jwt-secret-base64: ${JWT_SECRET_BASE64:}

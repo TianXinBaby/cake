@@ -1,0 +1,333 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.cake.platform:cake-order-platform >----------------
+[INFO] Building cake-order-platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ cake-order-platform ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ cake-order-platform ---
+[INFO] Copying 3 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ cake-order-platform ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ cake-order-platform ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.cake.platform.admin.AdminHttpMySqlTests
+09:29:07.387 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.cake.platform.admin.AdminHttpMySqlTests]: AdminHttpMySqlTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:29:07.484 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.cake.platform.CakeOrderPlatformApplication for test class com.cake.platform.admin.AdminHttpMySqlTests
+2026-11-26T09:29:07.936+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.platform.admin.AdminHttpMySqlTests   : Starting AdminHttpMySqlTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:07.938+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.platform.admin.AdminHttpMySqlTests   : The following 1 profile is active: "mysql-test"
+2026-11-26T09:29:10.385+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.platform.admin.AdminHttpMySqlTests   : Started AdminHttpMySqlTests in 2.708 seconds (process running for 3.677)
+2026-11-26T09:29:11.536+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=3d02ca62-f680-4330-8154-6137f3af1966 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.539+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=0a4c64ff-c7f6-4713-81a3-96d5cc8bb74d method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.542+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=19aacfb1-c331-4cb3-a312-e247c70a7620 method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.545+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=c63c7bd5-0a44-41be-89da-89434ab627bc method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.547+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e5af9296-5f8f-4788-a788-42be9d2b8707 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.549+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8e3b6785-3191-4630-9470-7a3f79034ded method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.597+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=c19a95c2-28db-4af7-b51e-1a9cfda26fde method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.599+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=1b8df745-9a1b-4bdf-9288-a3b1930fe876 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.602+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e8860711-45db-43ea-9276-ce307a5a0006 method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.604+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=665adb72-b495-4822-8507-e0854f347890 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.606+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=84156077-fa84-4bb3-aaf5-3370f413f012 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.608+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=0495eeff-990e-454c-a8e0-e476f2dded35 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:11.872+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d1e786d0-99dd-4089-a998-6426ecd52121 method=GET route=/api/admin/users outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:11.888+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=e4c1c866-ea5d-4e72-a31a-5fbe2440b10c method=GET route=/api/admin/merchants outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:11.891+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a60ec4e0-ee0a-41d0-88a5-8791f6587b2b method=GET route=/api/admin/users outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:11.894+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=40899c3d-fb4e-42a7-b8a0-5599451a5210 method=GET route=/api/admin/users outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:11.897+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=546427ac-0b15-4eb7-88ed-13828a29760c method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:12.034+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=22ed7dd5-8cd8-480f-9c91-21af85ca5329 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:12.169+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=eb4b275b-c5fa-4f43-aca6-7a626ae6250d method=PUT route=/api/admin/merchants/{id} outcome=BUSINESS_ERROR code=40404
+2026-11-26T09:29:12.173+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=dfb9a1aa-547c-45c4-a676-3be113bfa334 method=PATCH route=/api/admin/merchants/{id}/status outcome=BUSINESS_ERROR code=40404
+2026-11-26T09:29:12.177+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=92ca87e1-fe85-4276-b8b6-c022dfebe1b5 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40405
+2026-11-26T09:29:12.180+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=4706c818-797a-4ea1-be9e-2dfeb6bcc307 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:12.223+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=bb3d62d2-6bd0-495f-9cfb-11952c053187 method=GET outcome=AUTH_ERROR code=40301
+2026-11-26T09:29:12.225+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=794a8ebf-0a36-42f2-a890-1f5b29e1a6d5 method=POST outcome=AUTH_ERROR code=40301
+2026-11-26T09:29:12.270+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=07c7ab0a-e5a4-4bae-ad72-2dba30a96144 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:12.271+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=ca4fd32a-9998-4a24-9192-ae89ee3c4d32 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:12.355+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=461ab035-dd0f-44cf-bf58-62a2d5a3e7c0 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:12.381+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=e0c4e052-65b6-4f83-9b75-7713c239c392 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:12.405+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=f395ba08-6fef-4519-a7d7-a181cb02cdc1 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:12.428+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c3eece37-5fdc-44c9-91ec-7f8d04ff1f1c method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:12.452+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=1ec6464a-135f-4c07-bc3d-3be3ecd9f66c method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:12.477+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=ad14a2b6-91fe-49e5-b0ae-2a5659f7fa50 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:13.021+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=fd71696f-84c7-4541-9f40-46bbfd3f6554 method=PATCH route=/api/admin/users/{id}/status outcome=SYSTEM_ERROR
+2026-11-26T09:29:13.109+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=9f13503f-5aad-4f95-89e2-41f5d51dd97c method=POST outcome=AUTH_ERROR code=40901
+2026-11-26T09:29:13.195+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=a58deb06-5b02-4ddb-8d14-6eee3372f46c method=POST outcome=AUTH_ERROR code=40901
+2026-11-26T09:29:13.281+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=e724f3f0-a4b9-4f7b-9fbb-d20133d2ff9f method=POST outcome=AUTH_ERROR code=40901
+2026-11-26T09:29:13.501+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=026efa08-e88e-4c99-bcf8-106cb31a3356 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:13.501+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=37a7a415-052a-4c76-acd7-74dfadd62cc8 method=POST outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:13.502+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=3584d043-6800-4081-87e2-5a353df21d81 method=PUT outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:13.502+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=f835979a-8575-49a3-b947-996d4d2517a1 method=PATCH outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:13.503+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=3e6e9147-4310-4934-9c3f-a761cebd32bb method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:13.504+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=c16406fb-efa4-4154-9938-5974aa2aa9af method=PATCH outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:13.544+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=59d3dea2-15cc-46d0-b219-99500212a1d8 method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:13.546+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=87487f58-2bd4-453d-8101-0aa28ded7b46 method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:13.549+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=27da07b1-859f-402a-a12c-071f780c99bd method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:13.550+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=bea2fde4-9d8f-4ac0-bbf1-e07cc6bca401 method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:13.552+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=65ca727f-94bd-4b4a-80c7-d9f7bdfd13e5 method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:13.553+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=5bb32674-d5ec-421d-89e7-00d1935e5aa3 method=PUT outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:13.584+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=dde33b51-17fa-4e44-8f0f-e080f2045a6f method=POST route=/api/admin/merchants outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.587+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=fcc6227b-133d-46ec-902f-99782b81351b method=POST route=/api/admin/merchants outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.588+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a5a924d5-ce80-4a14-958b-a9b0a31514ae method=POST route=/api/admin/merchants outcome=INVALID_JSON
+2026-11-26T09:29:13.590+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=106e3373-4c50-4473-be9f-8be7eeac6ef2 method=POST route=/api/admin/merchants outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.592+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=263cbffd-9510-4bbd-9955-64f5b328ffb4 method=POST route=/api/admin/merchants outcome=INVALID_JSON
+2026-11-26T09:29:13.628+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=95dc32d5-a930-47e0-8eea-8586f0b982ed method=PATCH route=/api/admin/merchants/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.630+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=b929b5d3-e6d8-4451-9c7b-78a1c8db5eeb method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.682+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3cc25002-fac7-4f4c-beed-28cd72ce7da5 method=PATCH route=/api/admin/merchants/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.684+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=069889d8-9085-4e25-9bea-d65aa06cd5b6 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.738+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=009bda2a-4835-42c0-8300-10691ccb8e57 method=PATCH route=/api/admin/merchants/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.741+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=21f8a165-e7ad-4440-823d-e32572b7c834 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.793+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d2f141a7-9eba-4e04-bc22-3d3c1657d177 method=PATCH route=/api/admin/merchants/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.796+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=e393a34b-99ea-43c5-b26b-53f299cfeca2 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.847+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=93c0aaa7-1655-479f-8c68-402ca01020ca method=PATCH route=/api/admin/merchants/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.850+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=974fae12-d273-4fa2-942e-9e58495c1b2c method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.899+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9a493580-f453-474f-98c3-a3f210f27135 method=PATCH route=/api/admin/merchants/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.902+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=47ce6aea-e713-40b3-9b99-66d116835073 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:13.946+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=15aeda34-75ae-457d-b595-0e36f2fae697 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40405
+2026-11-26T09:29:13.984+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=4eea22b5-01f6-4177-8114-ee8992215989 method=PATCH route=/api/admin/users/{id}/status outcome=BUSINESS_ERROR code=40405
+2026-11-26T09:29:14.145+08:00  WARN 22520 --- [cake-order-platform] [pool-4-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=c5e11812-d257-461d-9e55-d54e45b387de method=POST outcome=AUTH_ERROR code=40901
+2026-11-26T09:29:14.192+08:00  WARN 22520 --- [cake-order-platform] [pool-5-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=9bb8b5f8-fabb-4451-9837-58a29bbdce9b method=POST outcome=AUTH_ERROR code=40301
+[INFO] Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.946 s -- in com.cake.platform.admin.AdminHttpMySqlTests
+[INFO] Running com.cake.platform.admin.AdminRequestsTests
+[INFO] Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in com.cake.platform.admin.AdminRequestsTests
+[INFO] Running com.cake.platform.CakeOrderPlatformApplicationTests
+2026-11-26T09:29:14.267+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : Starting CakeOrderPlatformApplicationTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:14.268+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : The following 1 profile is active: "test"
+2026-11-26T09:29:14.414+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.CakeOrderPlatformApplicationTests  : Started CakeOrderPlatformApplicationTests in 0.164 seconds (process running for 7.706)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 s -- in com.cake.platform.CakeOrderPlatformApplicationTests
+[INFO] Running com.cake.platform.common.ApiResponseTests
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s -- in com.cake.platform.common.ApiResponseTests
+[INFO] Running com.cake.platform.database.DatabaseInfrastructureTests
+2026-11-26T09:29:14.492+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : Starting DatabaseInfrastructureTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:14.494+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : The following 1 profile is active: "test"
+2026-11-26T09:29:14.668+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.d.DatabaseInfrastructureTests      : Started DatabaseInfrastructureTests in 0.191 seconds (process running for 7.96)
+2026-11-26T09:29:15.170+08:00 DEBUG 22520 --- [cake-order-platform] [           main] com.cake.platform.sql.events             : sqlEvent=PREPARE
+2026-11-26T09:29:15.170+08:00  WARN 22520 --- [cake-order-platform] [           main] com.cake.platform.sql.events             : sqlEvent=ERROR
+2026-11-26T09:29:15.621+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=7829316d-8f0d-4fbd-b689-a30a5a54b8c7 method=GET route=/__database_fixture/unreachable outcome=SYSTEM_ERROR
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.248 s -- in com.cake.platform.database.DatabaseInfrastructureTests
+[INFO] Running com.cake.platform.database.MySqlDatabaseTests
+2026-11-26T09:29:15.746+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.database.MySqlDatabaseTests        : Starting MySqlDatabaseTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:15.746+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.database.MySqlDatabaseTests        : The following 1 profile is active: "mysql-test"
+2026-11-26T09:29:16.491+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.database.MySqlDatabaseTests        : Started MySqlDatabaseTests in 0.777 seconds (process running for 9.783)
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.501 s -- in com.cake.platform.database.MySqlDatabaseTests
+[INFO] Running com.cake.platform.exception.GlobalExceptionHandlerTests
+2026-11-26T09:29:17.247+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : Starting GlobalExceptionHandlerTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:17.247+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : The following 1 profile is active: "test"
+2026-11-26T09:29:17.457+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.e.GlobalExceptionHandlerTests      : Started GlobalExceptionHandlerTests in 0.231 seconds (process running for 10.749)
+2026-11-26T09:29:17.513+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=1b07bf97-3acf-46e9-bff3-00decaa6f227 method=POST route=/__fixture/fail/{value} outcome=SYSTEM_ERROR
+2026-11-26T09:29:17.531+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f746c17d-66f8-4aa1-9c47-b73408b934cf method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-26T09:29:17.534+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=1e035f18-431a-4979-8506-776f764fe73e method=GET route=/__fixture/unknown outcome=SYSTEM_ERROR
+2026-11-26T09:29:17.535+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=316cde75-571d-4fdf-af42-54bafd336811 method=GET route=/__fixture/unknown outcome=SYSTEM_ERROR
+2026-11-26T09:29:17.591+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=8e198bd3-f22c-4147-b6c0-dfbd59eccada method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-26T09:29:17.796+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a409dfde-5777-484b-ab32-1b9f198a2a81 method=GET route=/__fixture/invalid-return outcome=SYSTEM_ERROR
+2026-11-26T09:29:17.811+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=4457ff50-66c4-45f2-9fd0-a4bb4a6c05cb method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-26T09:29:17.821+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=00c77e23-7886-4615-86f4-b45ee9409373 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-26T09:29:17.827+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=2c7088e0-6ef1-44f2-8da7-4cf1aef13220 method=GET route=/__fixture/method-validation outcome=INVALID_PARAMETER
+2026-11-26T09:29:17.831+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d6be699f-43ab-46b8-880a-52150433e576 method=GET route=/__fixture/constraint outcome=INVALID_PARAMETER
+2026-11-26T09:29:17.834+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=012f1c1e-7a56-42d9-b979-319e07350313 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-26T09:29:17.839+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=57018449-7bf8-475d-b4a5-270d4dceab93 method=GET route=/__fixture/business outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:17.881+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=cc48877f-e585-412b-ab89-fd4698990f91 method=POST route=/__fixture/validated outcome=INVALID_PARAMETER fields=1
+2026-11-26T09:29:17.891+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=200a6589-c105-45f4-a6ff-873ea0040383 method=POST route=/__fixture/validated outcome=INVALID_JSON
+2026-11-26T09:29:17.893+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5fc7aa92-60b9-4848-9f50-4b86841e99bb method=GET route=/__fixture/business-system outcome=BUSINESS_ERROR code=50001
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.688 s -- in com.cake.platform.exception.GlobalExceptionHandlerTests
+[INFO] Running com.cake.platform.exception.ParameterContractTests
+2026-11-26T09:29:17.915+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.exception.ParameterContractTests   : Starting ParameterContractTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:17.915+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.exception.ParameterContractTests   : The following 1 profile is active: "test"
+2026-11-26T09:29:18.091+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.exception.ParameterContractTests   : Started ParameterContractTests in 0.191 seconds (process running for 11.382)
+2026-11-26T09:29:18.108+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=2bacf6d8-210f-476c-8aa9-033838c7e06a method=POST route=/__contract/input outcome=INVALID_PARAMETER fields=1
+2026-11-26T09:29:18.129+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=67ac46cb-f780-4953-9852-7129eaa0a008 method=GET route=/__contract/empty outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:18.134+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=baf4e67a-4bcd-491f-a252-421f5436df3a method=POST route=/__contract/input outcome=INVALID_PARAMETER fields=2
+2026-11-26T09:29:18.151+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=612b2f2e-3b01-4e8a-a7a0-84c93af7195e method=GET route=/__contract/query outcome=INVALID_PARAMETER
+2026-11-26T09:29:18.182+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a9ef0759-ad6c-4e1b-a2fc-1bc9c5e65f38 method=GET route=/__contract/query outcome=INVALID_PARAMETER
+2026-11-26T09:29:18.196+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=efa7f2c2-4b77-4dc2-b472-23606db82b8a method=POST route=/__contract/defaults outcome=INVALID_PARAMETER fields=1
+2026-11-26T09:29:18.208+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f34e0004-a8ae-4a26-b081-a5f2152312a8 method=POST route=/__contract/input outcome=INVALID_JSON
+2026-11-26T09:29:18.209+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ebee2b79-1a7a-415c-8e19-2ed2055694a7 method=POST route=/__contract/input outcome=INVALID_JSON
+2026-11-26T09:29:18.211+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=7f15cb91-4aeb-4e0f-ba60-f13783a654b8 method=POST route=/__contract/input outcome=INVALID_JSON
+2026-11-26T09:29:18.214+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=cf4d3d31-8a3d-4484-aa27-1bd2d3e19fbf method=GET route=/__contract/constraint outcome=INVALID_PARAMETER
+2026-11-26T09:29:18.229+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=163b1f91-2d2d-41ea-8fbb-690656b3cf8d method=POST route=/__contract/mixed outcome=INVALID_PARAMETER
+2026-11-26T09:29:18.293+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9f5f7086-373d-497d-accc-c24c2e4435e9 method=POST route=/__contract/nested outcome=INVALID_PARAMETER fields=1
+2026-11-26T09:29:18.297+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=933c29ce-75f2-4e84-b953-cabfa9fedd94 method=GET route=/__contract/query outcome=INVALID_PARAMETER
+2026-11-26T09:29:18.301+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=7d7e52ce-c74e-444d-87a4-5f9b0be0bbb7 method=POST route=/__contract/nested outcome=INVALID_JSON
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 s -- in com.cake.platform.exception.ParameterContractTests
+[INFO] Running com.cake.platform.exception.ValidationErrorExtractorTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.cake.platform.exception.ValidationErrorExtractorTests
+[INFO] Running com.cake.platform.security.AuthHttpMySqlTests
+2026-11-26T09:29:18.337+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : Starting AuthHttpMySqlTests using Java 18.0.2.1 with PID 22520 (started by xiaochao in D:\study\蛋糕店订单管理系统\backend)
+2026-11-26T09:29:18.337+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : The following 1 profile is active: "mysql-test"
+2026-11-26T09:29:18.800+08:00  INFO 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthHttpMySqlTests        : Started AuthHttpMySqlTests in 0.478 seconds (process running for 12.092)
+2026-11-26T09:29:19.026+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=47350a9a-197a-4547-94d9-dbe67f64fa6f method=PATCH outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.150+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=508b529d-04b2-4dab-9cdc-62ac9905626a method=POST outcome=AUTH_ERROR code=40901
+2026-11-26T09:29:19.318+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=63b4afe4-7f0c-4064-988b-8dffc0cc4ab7 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.375+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=70d59745-9540-4eef-87ef-188c45e1e5ff method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.433+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=523c2968-1a30-4e7b-9ca7-4da4bf6a6724 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.488+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=78a35a02-d17c-4a35-a019-6f9e87c4dd7f method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:19.544+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=ca34ab56-6d04-4cc4-baa7-dc47b7423a73 method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:19.550+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=f6888db5-f101-4072-bfdf-3a8885a90dec method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:19.682+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f725f14e-5207-4e6e-abb1-280555cb5aa6 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:20.054+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=5a532564-0a9f-4a9f-ab5d-40f33757b270 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.055+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=f58529de-cf55-468e-83d0-c7e9822ae0bb method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.110+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c65e9eb8-b4d9-4171-b151-7193f818cc7b method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:20.538+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=a558de2d-2885-4810-8a8e-d58cca3f4d45 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.539+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=78dd40d1-4efc-4c8d-98f2-520bbf6088c9 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:20.594+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c2903851-8560-4c39-9fc6-d9927f980fa8 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.024+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=63808ec2-2417-4690-82dd-4ff052f2a74b method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:21.025+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=f4c2086d-668e-4d11-aba7-de1b73d12dd0 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:21.081+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=421d187c-6b34-4afc-a0aa-30421ca881ac method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.197+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=66d0f0df-0521-4f7c-ab88-821d7adfb235 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:21.202+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=f7c57472-0111-4b73-87f4-f56de849570a method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:21.208+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ddeff2a8-35af-42f8-a5df-e602030d1a93 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:21.214+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9e3ce7a3-028b-4e4b-9f51-5bf4639f0ada method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:21.220+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ea3b3841-f865-435b-aaeb-0c2dbc0f55e6 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:21.225+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=b5b31939-b347-42f4-91bf-d77117b80bad method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:21.231+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ebdf938c-4954-47d6-a882-b9d31b946d06 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:21.236+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5a9d8f71-8b14-46ae-b224-d233bda7de98 method=POST route=/api/auth/register outcome=INVALID_JSON
+2026-11-26T09:29:21.300+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=d9b8c876-cca1-4837-b109-b77e723e1345 method=POST outcome=AUTH_ERROR code=40301
+2026-11-26T09:29:21.658+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-5] c.c.p.c.auth.AuthExceptionHandler        : requestId=5f4bfcad-1e74-40d2-90c5-eb769d7ff82c method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.668+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-3] c.c.p.c.auth.AuthExceptionHandler        : requestId=a83da625-f476-4e0d-aad3-3efaa91cdc04 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.722+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=71a91525-b12f-4f55-9870-e2705584b7bd method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.775+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=cdf6d662-ab9e-4364-8d28-ced8170415b0 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.778+08:00  WARN 22520 --- [cake-order-platform] [pool-6-thread-4] c.c.p.c.auth.AuthExceptionHandler        : requestId=5783b946-d630-41c6-a042-6e2f5db14cee method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:21.914+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=75266e6f-bd13-4360-9c40-1ca15ec8d21c method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:22.035+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=98e3c522-f4e5-41d5-9cd7-5ba25f26eb14 method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:22.159+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=774a7980-4210-4172-b309-99797cf99900 method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:22.277+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=91f3213f-0b84-41e3-8cd6-5a1284210d7a method=PATCH route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:23.223+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e701e9b8-6f31-47cd-8a96-afac0961e553 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:23.224+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2ae7e5fa-60ce-4247-b5f7-209064f3f874 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:23.225+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=bde21247-ca4d-4be7-b3b9-288ad2f75249 method=POST outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:23.398+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-26T09:29:23.399+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=02274066-314b-4c2d-ae29-b979c97fa232 method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=50001
+2026-11-26T09:29:23.525+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8b51f07f-0831-44d1-aa97-188c5450256f method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:23.593+08:00  WARN 22520 --- [cake-order-platform] [pool-7-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=384d5534-eac4-46ed-b8cd-60a92dff9628 method=POST outcome=AUTH_ERROR code=40901
+2026-11-26T09:29:23.713+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=69e59caf-a38b-4b34-9806-d4786da37d0a method=GET route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:23.714+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=676b4f52-3f15-43ca-86ae-e4f3c1b63090 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:23.783+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5954c5ae-3c3b-4ddd-a324-538f485366fd method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:23.818+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=bb0aef31-ad33-461e-88c8-1935d873c477 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:23.823+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=d694370c-55c4-4901-b4b9-024dc0058184 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:23.828+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9e840f45-ee92-4c6b-a5d5-c7a6b18999a4 method=POST route=/api/auth/register outcome=INVALID_JSON
+2026-11-26T09:29:23.833+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=80e71119-6875-4ed6-83b2-f41bd472cdda method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:23.952+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-7] c.c.p.c.auth.AuthExceptionHandler        : requestId=960f322e-6a6b-430b-9740-1db3f33c374d method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.008+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-8] c.c.p.c.auth.AuthExceptionHandler        : requestId=2199d1cf-4b80-4bd3-8552-0a4d6161502f method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.061+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-3] c.c.p.c.auth.AuthExceptionHandler        : requestId=95216bd4-1f6c-4b84-bad1-b988999a0c38 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.115+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-4] c.c.p.c.auth.AuthExceptionHandler        : requestId=d85515d0-14d7-4b32-903c-eb8dce8ac0ea method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:24.170+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-6] c.c.p.c.auth.AuthExceptionHandler        : requestId=024f6fa1-a0e8-4c2f-afda-cb5def67b01f method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:24.170+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=d984387d-41fc-4804-bae1-c3efda64efa5 method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:24.171+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-5] c.c.p.c.auth.AuthExceptionHandler        : requestId=0bb732b9-c1b2-46ba-946c-8301e59973b8 method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:24.172+08:00  WARN 22520 --- [cake-order-platform] [pool-8-thread-1] c.c.p.c.auth.AuthExceptionHandler        : requestId=eb79b835-0418-4601-8fef-73b86091f832 method=POST outcome=AUTH_ERROR code=42301
+2026-11-26T09:29:24.184+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=4be3713a-2e8d-47a7-882a-83d178461c62 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:24.190+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=7df8a0b0-d0e3-4ad8-87d7-0ac469b3e327 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:24.195+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=7c7e1ea4-f7e6-480c-8526-5e0874aa7c24 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:24.200+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=832f787d-7b2c-4b35-bb8f-f7ad07738699 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:24.205+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=14de4dbb-4dfe-4732-a3dd-3c8021b4a0ac method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:24.209+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=0e3f2ad9-497c-47a0-b5ec-a292b1e11e2e method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:24.213+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8e4d3e99-5019-4d92-a476-f576c691cff5 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:24.271+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5cd76070-016e-4ea2-aec3-17aff074a0b1 method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:24.821+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e9b724b3-0325-4bd9-b402-81bc2b5aa367 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:24.892+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=ce0d51b2-db78-43fe-8b51-72a7bb388ff1 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:25.027+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=229a9f09-f380-4c1b-948e-4d98c689d523 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:25.162+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3efec588-bd17-4ba4-8698-2ac583a4e4a6 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:25.295+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9eb08085-584b-48f9-838f-04ce0fbaaf38 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:25.430+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=51666354-eee1-4105-8986-9d6d3c98b3d3 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:25.565+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=3530b208-2ee3-4e3d-9524-9e386576fbe9 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:25.699+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=2c5cab14-5b78-41d2-b064-e151f423dbd6 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:25.826+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ed9a8e2d-96ee-4fb5-b563-dd7b9f34f505 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:26.511+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=591fcb7f-8903-48e6-9d6f-f6200869920c method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:26.654+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=ad1bba5e-bb0c-44ad-8b96-5a4f5ea50194 method=GET outcome=AUTH_ERROR code=40301
+2026-11-26T09:29:26.881+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9980bf42-8210-4bae-8d9c-f4c22a5aee0b method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:26.971+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a82a598b-cfa8-4153-8c37-e437b93e4d89 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:26.977+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=76a00691-5540-47fa-b42b-1de5b80ea4d1 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:26.983+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=c76de139-82f2-4a0a-9dc2-ea864bba816a method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:26.987+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0c62b0f8-f667-4edf-baef-9fbd79971c50 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:26.992+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0af80355-185a-44e4-aadc-52d8a0d302e1 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:26.998+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=fa04bf17-4aff-485a-9595-ccf20521873e method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.003+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=22b5da45-46e5-48f9-b24d-e76f6aac1fca method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.126+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=69087dd0-dad0-4aa8-b382-dcd676de6a47 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.261+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=2bc6d05b-9f8d-49b0-8c95-cf67c4f1aeb6 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.395+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=8b052411-100f-4b94-b7bc-6d31c0723eb5 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.528+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c6ccea0c-fa05-465d-917f-a0744eaa0e9f method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.660+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=db19fe8a-e183-42fc-bba0-9d3519b5d3f0 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.788+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0b1c47ca-fcd2-4142-b848-757aa6168bec method=GET route=/api/users/me outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.800+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=e1766b76-b7c3-4cc7-8d52-0b92b7e8b3ba method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.805+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=42b6bf02-5d47-46e8-b5ac-c46db89362cc method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.811+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=996709b6-3870-4ad3-a4bc-f00c29dea0f5 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.817+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=ab0183f7-8ba6-416f-a486-f77930be4ef9 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.822+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=0da36f19-839f-420a-a6a7-f439a01c61d1 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.828+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=39266dd5-36b7-4ea2-b5b2-83f7889d1c43 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.833+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=5c373b4a-30fb-43fa-b71d-848b20d99d85 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.840+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=7b20c345-36c2-499e-8473-df1a97a3ce90 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:27.966+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-26T09:29:27.966+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=e53bdc18-697f-475f-ba69-8ab4630e5806 method=GET outcome=AUTH_ERROR code=50001
+2026-11-26T09:29:27.980+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=01806b58-428b-472e-8575-2038bfde9109 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.986+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=6a858782-e2c8-49b9-885b-4a47fe607e51 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.991+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=085109eb-b6fc-431e-ab2e-f175672a740f method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:27.997+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c10f4f97-8bce-4046-9c0f-efa0cc7f5757 method=POST outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.115+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=a4367992-a292-4134-b9f6-7e75632a735d method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:28.117+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=63c5bd10-1e99-4cc5-a90b-f642e02e3e5d method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:28.118+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=9dd0db84-8233-4356-a094-fc511854bcb0 method=PATCH route=/api/users/me/password outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:28.119+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4d796a48-0a14-4bb2-a54a-07762809bca4 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.132+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=09c23a0e-4da8-43d5-ba25-09d1ac59b806 method=POST route=/api/auth/register outcome=BUSINESS_ERROR code=40001
+2026-11-26T09:29:28.402+08:00  WARN 22520 --- [cake-order-platform] [pool-9-thread-2] c.c.p.c.auth.AuthExceptionHandler        : requestId=eb3d9127-23f2-4ac5-958a-25843879e984 method=PATCH outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:28.642+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=47984d08-2d65-4c64-802c-07f620cbac26 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.643+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=728c8b33-7407-4cb8-b21c-e65403d1a6e0 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.768+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=00dfcdb4-b598-4f72-99b9-caf6bff8e92e method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.770+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2b2a79d9-ff97-453e-a23f-a5b33cf5a512 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.771+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=3f6da516-1e5a-4752-9e38-9b6b29e35899 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.900+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=107cb920-185e-40e1-8ed0-e303b01f29ec method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.901+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=0b69603c-5157-4d2d-9df0-36236ad42005 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:28.903+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=d0fa96f3-be2b-48ff-ab0d-63514d93cc1f method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.021+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=30d788cd-93f1-4106-a8aa-32ab62c339fd method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.022+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=20cb36b2-d11e-4241-b933-8cf2c1df1e38 method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.262+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=65a98dd8-1c6f-4712-8c10-ae78767bd786 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.378+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=fda039aa-461a-45ab-be5f-3b28e425d0a0 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.495+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=7aa45de6-09d5-41a8-aa05-85d89cab77cc method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.610+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c2f30fe1-e8f0-4394-9070-a081506cd63f method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.729+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4e217b3e-3d19-432a-8b48-53c2d3c438d2 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.847+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=e984607f-260e-49e1-b091-6559f418c936 method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:29.963+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=faceb5c2-ee3c-4e67-9dff-0aeadf98230d method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:30.082+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=3a73c155-1676-414f-a115-5976f4336efb method=PATCH outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:30.198+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=3b87bd34-4895-4fef-869d-effc21b48d8c method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:30.247+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=c888776e-c1b4-4367-b093-c300354d2af1 method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:30.309+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=5f86fae6-d3ec-482a-8fca-f4dcca7c151b method=GET outcome=AUTH_ERROR code=40302
+2026-11-26T09:29:30.427+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.c.auth.AuthExceptionHandler        : requestId=4915d3c2-9ec2-4304-9ec4-5f91686c418a method=POST outcome=AUTH_ERROR code=40101
+2026-11-26T09:29:30.607+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.s.auth.AuthenticationService       : authentication outcome=ACCOUNT_BINDING_INTEGRITY_ERROR
+2026-11-26T09:29:30.607+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.exception.GlobalExceptionHandler   : requestId=b0cc405c-7b67-4d52-b9b3-aa2847d0ae3a method=POST route=/api/auth/login outcome=BUSINESS_ERROR code=50001
+[INFO] Tests run: 107, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.31 s -- in com.cake.platform.security.AuthHttpMySqlTests
+[INFO] Running com.cake.platform.security.AuthRequestsTests
+[INFO] Tests run: 75, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.040 s -- in com.cake.platform.security.AuthRequestsTests
+[INFO] Running com.cake.platform.security.JwtAuthenticationFilterTests
+2026-11-26T09:29:30.794+08:00 ERROR 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2bda5aaf-d21a-4d9c-a434-f8186053136d method=GET outcome=AUTH_ERROR code=50001
+2026-11-26T09:29:30.811+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=a437f8ea-f84c-49e9-bc63-1c35cfd0472a method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.814+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8ecce074-067d-4472-8ffe-36310c6b96a2 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.817+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=0d22d115-82e4-4b92-bb5b-b8659c644428 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.819+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=064e3b62-8b9a-4aa5-a148-3886e6f491bd method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.822+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=1f107176-1e88-493c-995b-b4b2d908782f method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.824+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=5f292b00-e8e7-47d1-8cda-92373b6b3a68 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.828+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=362495ff-447b-4ad3-b11c-dcace7170ae9 method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.832+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=2ede91c4-f1b8-42be-ad34-0aae7316f46b method=GET outcome=AUTH_ERROR code=40102
+2026-11-26T09:29:30.838+08:00  WARN 22520 --- [cake-order-platform] [           main] c.c.p.security.AuthErrorResponses        : requestId=8190f6e0-7f62-4456-8c2c-3b15b34177d8 method=GET outcome=AUTH_ERROR code=40301
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 s -- in com.cake.platform.security.JwtAuthenticationFilterTests
+[INFO] Running com.cake.platform.security.JwtServiceTests
+[INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in com.cake.platform.security.JwtServiceTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 363, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.935 s
+[INFO] Finished at: 2026-11-26T09:29:31+08:00
+[INFO] ------------------------------------------------------------------------
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
