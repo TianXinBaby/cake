@@ -145,7 +145,7 @@ Get-Service -Name 'MySQL80'
 已有 `frontend/node_modules/` 时直接进入下一步。首次准备且缺少依赖、已获准恢复依赖时，执行：
 
 ```powershell
-Set-Location -LiteralPath 'D:\study\蛋糕店订单管理系统\frontend'
+Set-Location -LiteralPath '“修改成你的项目位置”\蛋糕店订单管理系统\frontend'（例如‘D:\study\蛋糕店订单管理系统’）
 npm.cmd ci
 ```
 
