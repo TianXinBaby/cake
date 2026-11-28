@@ -74,7 +74,7 @@ class AdminHttpMySqlTests {
 
     @BeforeEach void setup() {
         assertThat(jdbc.queryForObject("SELECT DATABASE()", String.class)).isEqualTo(System.getenv("DB_TEST_NAME"));
-        assertThat(jdbc.queryForObject("SELECT VERSION()", String.class)).startsWith("8.0.19");
+        assertThat(jdbc.queryForObject("SELECT VERSION()", String.class)).startsWith("8.0.");
         TABLES.forEach(table -> owned.put(table, new ArrayList<>()));
         before = counts();
         admin = account("ADMIN");

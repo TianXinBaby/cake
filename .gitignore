@@ -1,1 +1,18 @@
-﻿
+# 构建产物（本地生成，不提交）
+/backend/target/
+/frontend/node_modules/
+/frontend/dist/
+
+# 本地演示数据（含演示账号密码/哈希，不提交、不作为正式种子）
+/database/demo/
+
+# 仅本地演示使用的额外商品照片（正式种子只使用 cake-01～08）
+/frontend/public/images/cake-09.png
+/frontend/public/images/cake-10.png
+
+# 日志、IDE、系统文件
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

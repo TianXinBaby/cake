@@ -2,9 +2,9 @@
 
 面向校园周边及社区的多商家蛋糕订购平台，设置平台管理员（ADMIN）、商家（MERCHANT）和顾客（CUSTOMER）三类角色。完整需求覆盖选店、商品浏览、下单、模拟支付、商家接单、配送或自提及销售统计。
 
-**当前代码已包含基础工程、六表数据库方案、认证与权限、统一参数错误处理，以及平台商家和顾客管理。现有阶段记录为 Phase 4 已交付、待审核。** 商品经营、订单、支付、履约和统计仍待后续阶段实现；当前没有完整订购流程或正式登录页面。
+**当前代码已包含基础工程、六表数据库方案、认证与权限、统一参数错误处理、平台商家和顾客管理、商品分类库存模块，以及 UI-01 登录页与公开商家接口。现有阶段记录为 Phase 5 已交付、待审核（UI-01/API-33/34 由成员二协助补齐，待成员一评审）。** 顾客下单、订单、支付、履约和统计仍待后续阶段实现。
 
-README 更新日期：2026-11-26（Asia/Shanghai）。本次仅更新本文件；文中的启动、初始化和测试命令是操作说明，历史测试结果来自阶段报告。
+README 更新日期：2026-11-28（Asia/Shanghai）。本次更新补充成员二（Phase 5）的商品分类库存、真实照片与演示数据、UI-01 登录页及公开商家接口；历史阶段结论保留。
 
 ## 当前功能与阶段状态
 
@@ -15,7 +15,10 @@ README 更新日期：2026-11-26（Asia/Shanghai）。本次仅更新本文件�
 | 认证与本人资料 | 注册、登录、退出、查询本人、修改昵称、修改密码；JWT、BCrypt、失败锁定及令牌失效 | Phase 3 交付；前端已有 API 和 Pinia 集成，登录/注册/个人中心页面未实现 |
 | 参数错误 | `data.fieldErrors` 字段到字符串数组的错误映射 | Phase 3.1 交付；无法可靠定位时 `data=null` |
 | 平台管理 | ADMIN 商家查询、创建、编辑、启停；CUSTOMER 查询和启停；两个管理页面 | Phase 4 报告记录已验证、待审核，范围为 MERCH-01、USER-05、API-35～40、UI-14/15 |
-| 后续业务 | 公开商家查询、分类、商品、库存、订单、模拟支付、履约、统计及其余页面 | 尚未实现，不计入当前交付 |
+| 商品、分类与库存 | 公开分类/商品分页与详情；商家本店商品、分类、上下架、库存增减；四个页面 | Phase 5 报告记录已验证、待审核，范围为 PROD-01～04、API-02～05/15～22/29～31、UI-02/04/10/11 |
+| UI-01 登录与 API-33/34 | 三角色登录、按角色跳转；公开商家列表/详情 | 成员二协助补齐，待成员一评审；解开商家页与店铺电话/地址的演示阻塞 |
+| 演示数据 | 奶油星球、4 个分类、8 个商品、真实蛋糕照片 | `database/seed/` 为可提交种子（无明文密码）；`database/demo/` 为本地临时数据，不提交 |
+| 后续业务 | 公开商家页面（UI-12/13）、订单、模拟支付、履约、统计及其余页面 | 尚未实现，不计入当前交付 |
 
 实施和验收证据见 [Phase 4 报告](reports/PHASE_4_REPORT.md)、[项目状态](PROJECT_STATUS.md)和[待办事项](TODO.md)。阶段报告保留当时结论；后续开发须按用户明确授权执行。
 
@@ -46,12 +49,12 @@ V1.1 范围为 20 项功能、45 项 API、17 个页面、46 个验收场景和�
 | Spring Security / JWT | Boot 管理的 Spring Security、Nimbus JOSE JWT；HS256、2 小时有效期 |
 | Maven | 官方 Maven Wrapper 3.3.4 / Maven 3.9.11（ENV-03） |
 | MyBatis-Plus / Connector/J | 3.5.18 / 8.4.0 |
-| MySQL | 阶段报告实测 8.0.19；InnoDB、utf8mb4、`utf8mb4_0900_as_cs`、DATETIME(3) |
-| Node.js / npm | 24.20.0（ENV-01） / 11.19.0 |
+| MySQL | 测试断言与 DatabaseTool 已放宽为 8.0.x；Phase 5 在 8.0.46 全量通过，不强制全组重装 8.0.19 |
+| Node.js / npm | ENV-01 基线 24.20.0 / 11.19.0；Phase 5 实测本机 22.23.1 / 10.9.8，按用户决定待全组升级后复跑 |
 | Vue / Vue Router / Pinia | 3.5.46 / 4.6.5 / 3.0.4 |
 | Element Plus / Axios | 2.14.8 / 1.21.1 |
 | Vite / Vitest | 7.3.8 / 4.1.12 |
-| Git | 当前工作区已有 Git 仓库，分支为 `main`；历史文档中的“非 Git 仓库”为当时记录 |
+| Git | 当前工作区已有 Git 仓库，实查分支为 `qxy-dev`；历史文档中的“非 Git 仓库”为当时记录 |
 
 Phase 0 历史转录中的 JDK 17 / Node.js 18 环境行与后续确认的 ENV-01～03 区分保留，当前工程按上表执行。排序规则 `utf8mb4_0900_as_cs` 区分大小写和重音，已由用户确认。
 
@@ -64,21 +67,28 @@ backend/
   .mvn/wrapper/               Maven Wrapper 配置
   src/main/java/com/cake/platform/
     common/、config/           公共响应、序列化、数据源等配置
-    controller/               auth、user、admin 控制器
+    controller/               auth、user、admin、catalog 控制器
     dto/、vo/                  请求校验和公开响应对象
-    entity/、mapper/           当前认证与平台管理所需数据访问
+    entity/、mapper/           认证、平台管理与商品分类库存的数据访问
     security/                 JWT、当前身份和权限校验
-    service/                  auth、admin 业务与事务
+    service/                  auth、admin、catalog 业务与事务
     exception/                统一异常及字段错误处理
   src/main/resources/         dev / prod 配置
   src/test/                   单元测试和隔离 MySQL 集成测试
 frontend/
-  src/api/                    Axios、认证、本人资料和平台管理 API
+  src/api/                    Axios、认证、本人资料、平台管理与商品分类 API
   src/stores/                 Pinia 内存认证状态
-  src/router/                 路由和管理员守卫
-  src/layouts/、components/    后台布局及管理组件
+  src/router/                 路由、管理员守卫与商家守卫
+  src/layouts/、components/    后台布局、商家布局及管理/商品组件
   src/views/admin/            商家管理、顾客管理页面
+  src/views/auth/             UI-01 登录页
+  src/views/shop/             本店商品、商品详情页面
+  src/views/merchant/         商家商品管理、分类管理页面
+  src/styles/                 基础、商品与登录页样式
+  public/images/              真实蛋糕照片与加载失败占位图
 database/                     六表 DDL、索引、约束、种子模板及独立 Java 工具
+  seed/                       可提交演示种子（奶油星球、4 分类、8 商品）
+  demo/                       本地临时演示数据（含演示密码，不提交）
 docs/                         需求、架构、阶段计划、数据库、安全及管理说明
 reports/                      各阶段报告
 ```
@@ -128,7 +138,7 @@ spring:
 
 
 
-分别为 JDK `18.0.2.1`、Node.js `v24.20.0`、npm `11.19.0`。后端使用项目内的 Maven Wrapper，无需另装全局 Maven。若版本不符，先确认环境，不自动切换或修改系统配置。
+分别为 JDK `18.0.2.1`、Node.js `v24.20.0`、npm `11.19.0`。后端使用项目内的 Maven Wrapper，无需另装全局 Maven。若版本不符，先确认环境，不自动切换或修改系统配置；当前本机为 Node 22.23.1，Phase 5 已在该版本通过测试与构建，按用户决定等全组升级后再整体复跑。
 
 ### 2. 确认 MySQL 和前端依赖
 
@@ -138,9 +148,9 @@ spring:
 Get-Service -Name 'MySQL80'
 ```
 
-状态应为 `Running`；未运行时，在 Windows“服务”中启动该服务。其他机器以实际服务名为准。使用数据库客户端确认 `127.0.0.1:3306` 可连接，开发库 `cake_order_system` 已有六张核心表，并准备可访问该库的数据库用户名和密码。
+状态应为 `Running`；未运行时，在 Windows“服务”中启动该服务。其他机器以实际服务名为准。使用数据库客户端确认 `127.0.0.1:3306` 可连接，开发库 `cake_order_system` 已有六张核心表，并准备可访问该库的数据库用户名和密码。MySQL 8.0.x 均可，测试与建库工具不再强制 8.0.19。
 
-历史报告记录开发库已经建立，日常启动无需执行 SQL、`init` 或种子。新环境尚无数据库时，先按[初始化指南](docs/database/INITIALIZATION_GUIDE.md)确认并完成获授权的首次初始化，再继续启动。
+历史报告记录开发库已经建立，日常启动无需执行 SQL、`init` 或种子。新环境尚无数据库时，先按[初始化指南](docs/database/INITIALIZATION_GUIDE.md)确认并完成获授权的首次初始化，再继续启动。若需要「奶油星球」演示账号、分类和 8 个商品，按[可提交演示种子](database/seed/README.md)执行 `05_demo_seed.sql`；账号为 `13900000001`，密码由项目负责人在小组内单独提供，不写入仓库。`database/demo/` 是旧的本地临时脚本，含明文密码，已被忽略，不要提交。
 
 已有 `frontend/node_modules/` 时直接进入下一步。首次准备且缺少依赖、已获准恢复依赖时，执行：
 
@@ -215,11 +225,16 @@ curl.exe --include --max-time 5 http://127.0.0.1:5173/api/users/me
 | 服务或页面 | 默认地址 | 使用条件 |
 | --- | --- | --- |
 | 后端 | `http://127.0.0.1:8080` | 数据库连接和 JWT 配置齐全 |
-| 前端根入口 | `http://127.0.0.1:5173/` | 当前为基础出口及访问提示，没有登录表单 |
-| 商家管理 UI-14 | `http://127.0.0.1:5173/admin/merchants` | 已有 ADMIN 内存会话 |
-| 顾客管理 UI-15 | `http://127.0.0.1:5173/admin/users` | 已有 ADMIN 内存会话 |
+| 登录页 UI-01 | `http://127.0.0.1:5173/login` | 三角色共用；登录后按账号角色跳转 |
+| 前端根入口 | `http://127.0.0.1:5173/` | 基础出口及访问提示 |
+| 商家管理 UI-14 | `http://127.0.0.1:5173/admin/merchants` | 通过 `/login` 使用 ADMIN 登录 |
+| 顾客管理 UI-15 | `http://127.0.0.1:5173/admin/users` | 通过 `/login` 使用 ADMIN 登录 |
+| 本店商品页 UI-02 | `http://127.0.0.1:5173/shop/1` | 匿名可访问，`1` 换成实际商家 ID（奶油星球演示数据为 1） |
+| 商品详情页 UI-10 | `http://127.0.0.1:5173/shop/products/1` | 匿名可访问，`1` 换成实际商品 ID |
+| 商家商品管理 UI-04 | `http://127.0.0.1:5173/merchant/products` | 通过 `/login` 使用 MERCHANT 登录 |
+| 商家分类管理 UI-11 | `http://127.0.0.1:5173/merchant/categories` | 通过 `/login` 使用 MERCHANT 登录 |
 
-**当前尚无 UI-01 正式登录页。** 直接打开根入口可能显示空白；无会话访问管理页会返回根入口并提示先登录，这是当前已实现的页面行为。Pinia 令牌仅保存在内存，刷新后会话丢失。正式管理员种子仍暂缓，没有已有 ADMIN 账号和内存会话时，当前只能检查服务响应及匿名访问提示，不能通过普通登录页面进入后台。Phase 4 浏览器验证通过既有认证 API 建立隔离测试会话，不代表正式登录页面流程已交付。
+**UI-01 已交付（成员二协助补齐，待成员一评审）。** 未登录访问后台或商家页会跳转 `/login` 并保留目标地址；登录成功按服务器返回角色跳转：ADMIN→商家管理、MERCHANT→商品管理、CUSTOMER→公开入口并提示后续页面。页面不提供角色选择，角色完全由账号决定。Pinia 令牌仅保存在内存，刷新后需重新登录；正式管理员种子仍暂缓，演示可使用 `database/seed/` 的商家账号（密码单独提供）。
 
 ### 6. 停止项目
 
@@ -234,26 +249,45 @@ curl.exe --include --max-time 5 http://127.0.0.1:5173/api/users/me
 | JWT 密钥格式或长度错误 | 使用上文内存随机生成步骤；外部密钥须为 Base64 编码且解码后至少 32 字节 |
 | 8080 或 5173 端口占用 | 确认占用者；只关闭自己启动的旧实例。若调整后端端口，须同步 Vite 代理目标 |
 | 找不到 Vite 或前端依赖 | 确认位于 `frontend` 目录，并按步骤 2 判断是否需恢复依赖 |
-| 根页面空白、管理页提示先登录 | 按步骤 5 核对当前页面和会话限制，不将其当作已有登录页或完整后台流程 |
+| 根页面空白、管理页跳转登录 | 先访问 `/login` 完成登录；刷新后令牌仅内存保存，需要重新登录 |
 
 ## 已实现接口
 
-以下 12 项为当前已有控制器和服务的业务接口。请求字段、错误码和事务边界见[认证设计](docs/security/AUTHENTICATION_DESIGN.md)及[平台管理说明](docs/admin/PLATFORM_MANAGEMENT.md)。
+以下 29 项为当前已有控制器和服务的业务接口。请求字段、错误码和事务边界见[认证设计](docs/security/AUTHENTICATION_DESIGN.md)、[平台管理说明](docs/admin/PLATFORM_MANAGEMENT.md)及[商品分类库存说明](docs/catalog/CATALOG_MANAGEMENT.md)。
 
 | 编号 | 方法与路径 | 功能与访问范围 |
 | --- | --- | --- |
 | API-01 | `POST /api/auth/login` | 三角色统一登录 |
+| API-02 | `GET /api/products` | 匿名分页浏览所选店铺的上架商品 |
+| API-03 | `POST /api/merchant/products` | MERCHANT 新增本店商品，默认下架 |
+| API-04 | `PUT /api/merchant/products/{id}` | MERCHANT 编辑本店商品基本信息，不改库存/状态/归属 |
+| API-05 | `DELETE /api/merchant/products/{id}` | MERCHANT 删除无历史订单引用的商品 |
 | API-10 | `POST /api/auth/register` | 公开注册，固定 CUSTOMER |
 | API-11 | `POST /api/auth/logout` | 已登录账号退出，使该账号旧 JWT 失效 |
 | API-12 | `GET /api/users/me` | 查询本人公开资料 |
 | API-13 | `PATCH /api/users/me` | 修改本人昵称 |
 | API-14 | `PATCH /api/users/me/password` | 验证旧密码、修改密码，使旧 JWT 失效 |
+| API-15 | `GET /api/products/{id}` | 匿名查看上架商品详情 |
+| API-16 | `GET /api/categories` | 匿名查询所选店铺的启用分类 |
+| API-33 | `GET /api/merchants` | 匿名分页查询启用店铺（成员二协助补齐） |
+| API-34 | `GET /api/merchants/{id}` | 匿名查看启用店铺详情（成员二协助补齐） |
+| API-17 | `GET /api/merchant/products` | MERCHANT 分页查询本店商品，含下架商品 |
+| API-18 | `GET /api/merchant/products/{id}` | MERCHANT 查看本店商品详情 |
+| API-19 | `GET /api/merchant/categories` | MERCHANT 查询本店全部分类 |
+| API-20 | `POST /api/merchant/categories` | MERCHANT 新增本店分类 |
+| API-21 | `PUT /api/merchant/categories/{id}` | MERCHANT 编辑本店分类名称与排序 |
+| API-22 | `DELETE /api/merchant/categories/{id}` | MERCHANT 删除本店空分类 |
+| API-29 | `PATCH /api/merchant/products/{id}/stock` | MERCHANT 按增减量条件调整本店库存 |
+| API-30 | `PATCH /api/merchant/products/{id}/status` | MERCHANT 上架/下架本店商品 |
+| API-31 | `PATCH /api/merchant/categories/{id}/status` | MERCHANT 启用/禁用本店分类 |
 | API-35 | `GET /api/admin/merchants` | ADMIN 分页查询商家 |
 | API-36 | `POST /api/admin/merchants` | ADMIN 在同一事务创建 MERCHANT 账号和店铺 |
 | API-37 | `PUT /api/admin/merchants/{id}` | ADMIN 编辑店铺资料，绑定账号不变 |
 | API-38 | `PATCH /api/admin/merchants/{id}/status` | ADMIN 启停店铺，不修改商家账号状态 |
 | API-39 | `GET /api/admin/users` | ADMIN 分页查询 CUSTOMER |
 | API-40 | `PATCH /api/admin/users/{id}/status` | ADMIN 启停 CUSTOMER，状态变化时递增令牌版本 |
+
+商品接口强制登录商家的本店归属，公开接口只返回启用店铺、启用分类和上架商品；库存调整使用 `delta + expectedStock` 条件更新，不接收直接覆盖。金额为两位小数字符串，商品与分类 ID 为十进制字符串。
 
 公共响应保持 `code/msg/data`。ID 使用十进制字符串，避免前端整数精度丢失；时间采用 `+08:00` ISO 8601 毫秒字符串。密码使用 BCrypt；登录连续失败第 5 次锁定 10 分钟。退出、改密和顾客账号状态变化使用令牌版本使旧 JWT 失效。
 
@@ -294,18 +328,20 @@ npm.cmd test
 npm.cmd run build
 ```
 
-最近一次阶段验证记录如下，来源为 2026-11-26 的 [Phase 4 报告](reports/PHASE_4_REPORT.md)，本次 README 更新未重新运行：
+最近一次阶段验证记录如下，来源为 2026-11-28 的 [Phase 5 报告](reports/PHASE_5_REPORT.md)；Phase 4 的历史结果保留在对应报告：
 
-| 检查 | Phase 4 报告中的结果 |
+| 检查 | Phase 5 报告中的结果 |
 | --- | --- |
-| 后端完整回归 | 363 项，失败 0、错误 0、跳过 0，含真实 MySQL、事务回滚及并发测试 |
+| 后端新增契约测试 | 54 项 Catalog + 13 项公开商家，失败/错误/跳过 0 |
+| 后端新增真实 MySQL 测试 | 19 项 Catalog + 3 项公开商家（隔离临时 MySQL 8.0.46） |
+| 后端全量套件 | 452 项在 MySQL 8.0.46 通过，失败/错误/跳过 0 |
 | 后端打包 | 在完整测试后以 `-DskipTests package` 打包成功 |
-| 前端测试 | 6 个文件、85 项通过 |
+| JAR 真实联调 | 连接隔离临时库，28 项 HTTP 检查全部通过；另验证奶油星球登录、7/8 件商品与 API-33/34 |
+| 前端测试 | 11 个文件、151 项通过（原 85 + 新增 66，含登录页 11） |
 | 前端构建 | 成功；保留主 chunk 超过 500 kB 的体积提示 |
-| JAR 和浏览器 | 打包 JAR、Chrome / Edge；1440×1000 与 390×844 两种分辨率，验证两管理页及相关操作 |
-| 数据库保护 | 当时两库六表最终均为 0 行，结构及数据摘要一致；测试可能推进自增序列，不重置 |
+| 浏览器截图 | Chrome 158；UI-01、UI-02、UI-10、UI-04、UI-11、两个表单与 1440×1000 / 390×844，使用真实照片与真实登录 |
 
-这些结果仅覆盖已交付阶段，全部 46 个验收场景、17 个页面、商品订单流程及生产部署仍待对应阶段验收。后端测试 XML 位于 `backend/target/surefire-reports/`；Phase 4 可重建证据位于 `backend/target/phase4-evidence/` 和 `backend/target/phase4-browser/`。
+这些结果仅覆盖已交付阶段，全部 46 个验收场景、17 个页面、订单支付履约流程及生产部署仍待对应阶段验收。后端测试 XML 位于 `backend/target/surefire-reports/`；Phase 5 证据位于 `backend/target/phase5-evidence/` 和 `backend/target/phase5-browser/`。
 
 ## 文档导航与后续事项
 
@@ -320,6 +356,9 @@ npm.cmd run build
 | [认证设计](docs/security/AUTHENTICATION_DESIGN.md)、[JWT 与权限](docs/security/JWT_AND_PERMISSION.md) | 六个认证/本人接口、身份与令牌规则 |
 | [密码安全](docs/security/PASSWORD_SECURITY.md)、[认证测试](docs/security/AUTH_API_TESTS.md) | BCrypt、失败锁定、测试与安全复现 |
 | [平台管理说明](docs/admin/PLATFORM_MANAGEMENT.md) | 六管理接口、事务、权限及两页面 |
-| [Phase 0](reports/PHASE_0_REPORT.md)、[Phase 1](reports/PHASE_1_REPORT.md)、[Phase 2](reports/PHASE_2_REPORT.md)、[Phase 3](reports/PHASE_3_REPORT.md)、[Phase 3.1](reports/PHASE_3_1_REPORT.md)、[Phase 4](reports/PHASE_4_REPORT.md) | 各阶段当时的实施与验证证据 |
+| [商品分类库存说明](docs/catalog/CATALOG_MANAGEMENT.md)、[成员二报告材料](docs/catalog/MEMBER_2_REPORT_CONTENT.md) | 15 个商品分类库存接口、四页面、事务并发及报告/答辩素材 |
+| [可提交演示种子](database/seed/README.md) | 奶油星球、4 个分类、8 个商品；账号 `13900000001`，密码单独提供 |
+| [本地临时演示数据](database/demo/README.md) | 旧的本机脚本，含明文密码、不提交，仅作本地参考 |
+| [Phase 0](reports/PHASE_0_REPORT.md)、[Phase 1](reports/PHASE_1_REPORT.md)、[Phase 2](reports/PHASE_2_REPORT.md)、[Phase 3](reports/PHASE_3_REPORT.md)、[Phase 3.1](reports/PHASE_3_1_REPORT.md)、[Phase 4](reports/PHASE_4_REPORT.md)、[Phase 5](reports/PHASE_5_REPORT.md) | 各阶段当时的实施与验证证据 |
 
 当前待办包括 Phase 4 审核、正式账号种子及后续页面流程，以及商家账号禁用来源、支付超时与停店优先级、库存回补溢出、排行商家名称快照和密码 Unicode 长度口径等需求问题，详见 TODO。未经明确授权，不进入下一阶段，不自动执行种子、提交或推送。

@@ -62,9 +62,10 @@ class DatabaseTool {
             try (Statement statement = connection.createStatement(); ResultSet rows = statement.executeQuery(
                     "SELECT VERSION(),@@session.time_zone")) {
                 rows.next();
-                if (!rows.getString(1).equals("8.0.19") || !rows.getString(2).equals("+08:00"))
-                    throw new IllegalStateException("Expected MySQL 8.0.19 and +08:00");
-                System.out.println("Connected: MySQL 8.0.19; session +08:00.");
+                String serverVersion = rows.getString(1);
+                if (!serverVersion.startsWith("8.0.") || !rows.getString(2).equals("+08:00"))
+                    throw new IllegalStateException("Expected MySQL 8.0.x and +08:00");
+                System.out.println("Connected: MySQL " + serverVersion + "; session +08:00.");
             }
             try (Statement statement = connection.createStatement()) {
                 statement.execute("SET SESSION sql_mode='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION'");

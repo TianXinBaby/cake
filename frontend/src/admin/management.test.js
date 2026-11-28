@@ -78,12 +78,13 @@ afterEach(() => {
 })
 
 describe('平台管理员路由守卫', () => {
-  it('未登录回技术根提示，不发送后台请求，不提供令牌或认证页面', async () => {
+  it('未登录跳转登录页，不发送后台请求，登录表单不含角色选择', async () => {
     await setup({ authenticated: false })
-    expect(router.currentRoute.value.path).toBe('/')
-    expect(document.body.textContent).toContain('请先使用管理员账号登录')
+    expect(router.currentRoute.value.path).toBe('/login')
+    expect(document.body.textContent).toContain('账号登录')
     expect(requests).toHaveLength(0)
-    expect(document.querySelector('input')).toBeNull()
+    expect(document.querySelector('#login-username')).not.toBeNull()
+    expect(document.querySelector('select')).toBeNull()
   })
 
   it.each(['MERCHANT', 'CUSTOMER'])('内存伪造 ADMIN，服务器当前 %s 仍无权限访问', async (role) => {
@@ -112,11 +113,12 @@ describe('平台管理员路由守卫', () => {
     expect(requests).toHaveLength(1)
   })
 
-  it('鉴权401清理当前会话并回根提示，403显示权限提示', async () => {
+  it('鉴权401清理当前会话并跳转登录页，403显示权限提示', async () => {
     server = (config) => fail(config, 40102, 401, null, '认证失效')
     await setup()
     expect(store.isAuthenticated).toBe(false)
-    expect(document.body.textContent).toContain('请先使用管理员账号登录')
+    expect(router.currentRoute.value.path).toBe('/login')
+    expect(document.body.textContent).toContain('账号登录')
     expect(errorMessage).toHaveBeenCalledExactlyOnceWith('认证失效')
   })
 
@@ -272,18 +274,18 @@ describe('UI-15 用户管理', () => {
     expect(Array.from(document.querySelectorAll('.admin-table button')).map((item) => item.textContent.trim())).toEqual(['停用'])
   })
 
-  it('列表请求401使用原有统一失效处理，退出到提示', async () => {
+  it('列表请求401使用原有统一失效处理，退出到登录页', async () => {
     await setup({ path: '/admin/users' }); await ready(customer.nickname)
     server = (config) => fail(config, 40102, 401, null, '认证失效')
     await submit('.admin-filters')
-    await vi.waitFor(() => expect(router.currentRoute.value.path).toBe('/'))
+    await vi.waitFor(() => expect(router.currentRoute.value.path).toBe('/login'))
     expect(store.isAuthenticated).toBe(false)
-    expect(document.body.textContent).toContain('请先使用管理员账号登录')
+    expect(document.body.textContent).toContain('账号登录')
   })
 
-  it('公共退出调用现有API，成功清理会话并回根提示', async () => {
+  it('公共退出调用现有API，成功清理会话并回登录页', async () => {
     await setup({ path: '/admin/users' }); await ready(customer.nickname); await click('退出登录')
-    await vi.waitFor(() => expect(router.currentRoute.value.path).toBe('/'))
+    await vi.waitFor(() => expect(router.currentRoute.value.path).toBe('/login'))
     expect(requests.find((config) => config.url === '/auth/logout').method).toBe('post')
     expect(store.isAuthenticated).toBe(false)
   })

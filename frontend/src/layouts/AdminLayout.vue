@@ -12,9 +12,9 @@ async function signOut() {
   leaving.value = true
   try {
     await logout()
-    if (!store.isAuthenticated) await router.replace({ path: '/', query: { notice: 'admin-login' } })
+    if (!store.isAuthenticated) await router.replace('/login')
   } catch {
-    if (!store.isAuthenticated) await router.replace({ path: '/', query: { notice: 'admin-login' } })
+    if (!store.isAuthenticated) await router.replace('/login')
   } finally { leaving.value = false }
 }
 </script>

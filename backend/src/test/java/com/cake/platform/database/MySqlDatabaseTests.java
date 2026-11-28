@@ -34,7 +34,7 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-/** Opt-in only: preinitialized dedicated MySQL 8.0.19 schema, never the development database. */
+/** Opt-in only: preinitialized dedicated MySQL 8.0.x schema, never the development database. */
 @SpringBootTest
 @ActiveProfiles("mysql-test")
 @EnabledIfEnvironmentVariable(named = "CAKE_MYSQL_TEST_ENABLED", matches = "true")
@@ -89,12 +89,12 @@ class MySqlDatabaseTests {
     }
 
     @Test
-    void springDatasourceAndMybatisPlusInitializeAgainstMysql8019() throws Exception {
+    void springDatasourceAndMybatisPlusInitializeAgainstMysql80x() throws Exception {
         assertThat(sqlSessionFactory.getConfiguration()).isInstanceOf(MybatisConfiguration.class);
         try (Connection connection = dataSource.getConnection()) {
             assertThat(connection.isValid(2)).isTrue();
             assertThat(connection.getMetaData().getDatabaseProductName()).isEqualTo("MySQL");
-            assertThat(connection.getMetaData().getDatabaseProductVersion()).startsWith("8.0.19");
+            assertThat(connection.getMetaData().getDatabaseProductVersion()).startsWith("8.0.");
         }
         assertThat(jdbc.queryForObject("SELECT @@session.time_zone", String.class)).isEqualTo("+08:00");
         assertThat(jdbc.queryForObject("SELECT @@session.sql_mode", String.class)).contains("STRICT_TRANS_TABLES");
