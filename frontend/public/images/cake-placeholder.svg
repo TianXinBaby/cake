@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="cake placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f1ec"/><stop offset="1" stop-color="#e9e2da"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <circle cx="520" cy="86" r="58" fill="#ffffff" opacity="0.45"/>
+  <circle cx="112" cy="128" r="26" fill="#ffffff" opacity="0.35"/>
+  <ellipse cx="320" cy="400" rx="190" ry="24" fill="#8a5a3b" opacity="0.18"/>
+  <ellipse cx="320" cy="384" rx="204" ry="28" fill="#ffffff"/>
+  <rect x="158" y="300" width="324" height="74" rx="20" fill="#d8c6b8"/>
+  <rect x="178" y="242" width="284" height="68" rx="18" fill="#efe4d8"/>
+  <rect x="204" y="188" width="232" height="62" rx="16" fill="#d8c6b8"/>
+  <path d="M158 302 q40 26 81 0 t81 0 t81 0 t81 0 v-22 h-324z" fill="#ffffff" opacity="0.9"/>
+  <path d="M178 244 q35 22 71 0 t71 0 t71 0 t71 0 v-20 h-284z" fill="#ffffff" opacity="0.9"/>
+  <path d="M204 190 q29 20 58 0 t58 0 t58 0 t58 0 v-18 h-232z" fill="#ffffff" opacity="0.9"/>
+  <circle cx="280" cy="176" r="11" fill="#c98f8f"/>
+  <circle cx="320" cy="168" r="12" fill="#c98f8f"/>
+  <circle cx="360" cy="176" r="11" fill="#c98f8f"/>
+  <path d="M320 156 q6 -18 18 -24" stroke="#4f7a3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="320" cy="420" rx="120" ry="10" fill="#8a5a3b" opacity="0.10"/>
+</svg>

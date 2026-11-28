@@ -63,7 +63,7 @@ Phase 2 的后端 **57 项总数已包含 Phase 1 的 25 项**，不能计算为
 
 ## 真实 MySQL 隔离
 
-优先复用已初始化的 `cake_order_system_phase2_test`，开发库仍为 `cake_order_system`。显式设置 `CAKE_MYSQL_TEST_ENABLED=true` 才执行真实套件；DB_TEST_NAME 必须以 `_test` 结尾且不同于 DB_NAME。写夹具前应验证实际 `SELECT DATABASE()` 等于测试库、版本为 MySQL 8.0.19，并核对既有六表。
+优先复用已初始化的 `cake_order_system_phase2_test`，开发库仍为 `cake_order_system`。显式设置 `CAKE_MYSQL_TEST_ENABLED=true` 才执行真实套件；DB_TEST_NAME 必须以 `_test` 结尾且不同于 DB_NAME。写夹具前应验证实际 `SELECT DATABASE()` 等于测试库、版本为 MySQL 8.0.x（Phase 5 起断言已放宽，历史基线 8.0.19），并核对既有六表。
 
 认证请求和并发服务事务可能提交，不能依靠外层测试 `@Transactional` 自动清理。测试生成专属合成账号和真实 BCrypt，跟踪注册手机号及生成 ID；结束时按依赖关系只删除本套件创建的店铺/账号，最后比较六表计数。原有数据库完整性套件继续事务回滚。任何测试失败均须先检查本套件清理结果，不对开发库试错，不清空已有数据，不关闭外键检查。
 

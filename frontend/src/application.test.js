@@ -57,7 +57,8 @@ describe('Vue 基础初始化', () => {
     expect(router.currentRoute.value.path).toBe('/')
     expect(router.currentRoute.value.query.phase).toBe('1')
     expect(router.getRoutes().map((route) => route.path).sort())
-      .toEqual(['/', '/admin', '/admin/merchants', '/admin/users'])
+      .toEqual(['/', '/admin', '/admin/merchants', '/admin/users', '/login', '/merchant', '/merchant/categories',
+        '/merchant/products', '/shop/:merchantId', '/shop/products/:id'])
   })
 
   it('不同应用实例的 Pinia 状态互相隔离', () => {

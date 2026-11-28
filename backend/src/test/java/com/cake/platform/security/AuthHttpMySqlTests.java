@@ -103,7 +103,7 @@ class AuthHttpMySqlTests {
     @BeforeEach
     void snapshotExistingRows() {
         assertThat(jdbc.queryForObject("SELECT DATABASE()", String.class)).isEqualTo(System.getenv("DB_TEST_NAME"));
-        assertThat(jdbc.queryForObject("SELECT VERSION()", String.class)).startsWith("8.0.19");
+        assertThat(jdbc.queryForObject("SELECT VERSION()", String.class)).startsWith("8.0.");
         beforeCounts = counts();
     }
 

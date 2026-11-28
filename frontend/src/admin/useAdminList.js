@@ -11,9 +11,9 @@ export function useAdminAccess() {
     async handleError(error, token) {
       if ((error.status === 401 || error.code === 40102) && store.token === token) {
         store.clearAuthentication()
-        await router.replace({ path: '/', query: { notice: 'admin-login' } })
+        await router.replace({ path: '/login', query: { redirect: router.currentRoute.value.fullPath } })
       } else if (error.code === 40102 && !store.isAuthenticated) {
-        await router.replace({ path: '/', query: { notice: 'admin-login' } })
+        await router.replace('/login')
       }
     },
   }
