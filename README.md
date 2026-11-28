@@ -17,7 +17,7 @@ README 更新日期：2026-11-28（Asia/Shanghai）。本次更新补充成员�
 | 平台管理 | ADMIN 商家查询、创建、编辑、启停；CUSTOMER 查询和启停；两个管理页面 | Phase 4 报告记录已验证、待审核，范围为 MERCH-01、USER-05、API-35～40、UI-14/15 |
 | 商品、分类与库存 | 公开分类/商品分页与详情；商家本店商品、分类、上下架、库存增减；四个页面 | Phase 5 报告记录已验证、待审核，范围为 PROD-01～04、API-02～05/15～22/29～31、UI-02/04/10/11 |
 | UI-01 登录与 API-33/34 | 三角色登录、按角色跳转；公开商家列表/详情 | 成员二协助补齐，待成员一评审；解开商家页与店铺电话/地址的演示阻塞 |
-| 本地演示数据 | 奶油星球、4 个分类、8 个商品、真实蛋糕照片 | `database/demo/` 仅本地开发/答辩，不提交、不是正式种子 |
+| 演示数据 | 奶油星球、4 个分类、8 个商品、真实蛋糕照片 | `database/seed/` 为可提交种子（无明文密码）；`database/demo/` 为本地临时数据，不提交 |
 | 后续业务 | 公开商家页面（UI-12/13）、订单、模拟支付、履约、统计及其余页面 | 尚未实现，不计入当前交付 |
 
 实施和验收证据见 [Phase 4 报告](reports/PHASE_4_REPORT.md)、[项目状态](PROJECT_STATUS.md)和[待办事项](TODO.md)。阶段报告保留当时结论；后续开发须按用户明确授权执行。
@@ -87,7 +87,8 @@ frontend/
   src/styles/                 基础、商品与登录页样式
   public/images/              真实蛋糕照片与加载失败占位图
 database/                     六表 DDL、索引、约束、种子模板及独立 Java 工具
-  demo/                       本地演示数据（奶油星球，非正式种子、不提交）
+  seed/                       可提交演示种子（奶油星球、4 分类、8 商品）
+  demo/                       本地临时演示数据（含演示密码，不提交）
 docs/                         需求、架构、阶段计划、数据库、安全及管理说明
 reports/                      各阶段报告
 ```
@@ -149,7 +150,7 @@ Get-Service -Name 'MySQL80'
 
 状态应为 `Running`；未运行时，在 Windows“服务”中启动该服务。其他机器以实际服务名为准。使用数据库客户端确认 `127.0.0.1:3306` 可连接，开发库 `cake_order_system` 已有六张核心表，并准备可访问该库的数据库用户名和密码。MySQL 8.0.x 均可，测试与建库工具不再强制 8.0.19。
 
-历史报告记录开发库已经建立，日常启动无需执行 SQL、`init` 或种子。新环境尚无数据库时，先按[初始化指南](docs/database/INITIALIZATION_GUIDE.md)确认并完成获授权的首次初始化，再继续启动。若需要「奶油星球」本地演示账号、分类和 8 个商品，按[本地演示数据说明](database/demo/README.md)在本地库执行脚本；该数据与账号仅用于本机演示，不属于正式种子。
+历史报告记录开发库已经建立，日常启动无需执行 SQL、`init` 或种子。新环境尚无数据库时，先按[初始化指南](docs/database/INITIALIZATION_GUIDE.md)确认并完成获授权的首次初始化，再继续启动。若需要「奶油星球」演示账号、分类和 8 个商品，按[可提交演示种子](database/seed/README.md)执行 `05_demo_seed.sql`；账号为 `13900000001`，密码由项目负责人在小组内单独提供，不写入仓库。`database/demo/` 是旧的本地临时脚本，含明文密码，已被忽略，不要提交。
 
 已有 `frontend/node_modules/` 时直接进入下一步。首次准备且缺少依赖、已获准恢复依赖时，执行：
 
@@ -233,7 +234,7 @@ curl.exe --include --max-time 5 http://127.0.0.1:5173/api/users/me
 | 商家商品管理 UI-04 | `http://127.0.0.1:5173/merchant/products` | 通过 `/login` 使用 MERCHANT 登录 |
 | 商家分类管理 UI-11 | `http://127.0.0.1:5173/merchant/categories` | 通过 `/login` 使用 MERCHANT 登录 |
 
-**UI-01 已交付（成员二协助补齐，待成员一评审）。** 未登录访问后台或商家页会跳转 `/login` 并保留目标地址；登录成功按服务器返回角色跳转：ADMIN→商家管理、MERCHANT→商品管理、CUSTOMER→公开入口并提示后续页面。页面不提供角色选择，角色完全由账号决定。Pinia 令牌仅保存在内存，刷新后需重新登录；正式管理员种子仍暂缓，本地演示可使用 `database/demo/` 的临时商家账号（仅本机，见该目录说明）。
+**UI-01 已交付（成员二协助补齐，待成员一评审）。** 未登录访问后台或商家页会跳转 `/login` 并保留目标地址；登录成功按服务器返回角色跳转：ADMIN→商家管理、MERCHANT→商品管理、CUSTOMER→公开入口并提示后续页面。页面不提供角色选择，角色完全由账号决定。Pinia 令牌仅保存在内存，刷新后需重新登录；正式管理员种子仍暂缓，演示可使用 `database/seed/` 的商家账号（密码单独提供）。
 
 ### 6. 停止项目
 
@@ -356,7 +357,8 @@ npm.cmd run build
 | [密码安全](docs/security/PASSWORD_SECURITY.md)、[认证测试](docs/security/AUTH_API_TESTS.md) | BCrypt、失败锁定、测试与安全复现 |
 | [平台管理说明](docs/admin/PLATFORM_MANAGEMENT.md) | 六管理接口、事务、权限及两页面 |
 | [商品分类库存说明](docs/catalog/CATALOG_MANAGEMENT.md)、[成员二报告材料](docs/catalog/MEMBER_2_REPORT_CONTENT.md) | 15 个商品分类库存接口、四页面、事务并发及报告/答辩素材 |
-| [本地演示数据](database/demo/README.md) | 奶油星球临时商家账号、分类与 8 个商品；仅本地、不提交 |
+| [可提交演示种子](database/seed/README.md) | 奶油星球、4 个分类、8 个商品；账号 `13900000001`，密码单独提供 |
+| [本地临时演示数据](database/demo/README.md) | 旧的本机脚本，含明文密码、不提交，仅作本地参考 |
 | [Phase 0](reports/PHASE_0_REPORT.md)、[Phase 1](reports/PHASE_1_REPORT.md)、[Phase 2](reports/PHASE_2_REPORT.md)、[Phase 3](reports/PHASE_3_REPORT.md)、[Phase 3.1](reports/PHASE_3_1_REPORT.md)、[Phase 4](reports/PHASE_4_REPORT.md)、[Phase 5](reports/PHASE_5_REPORT.md) | 各阶段当时的实施与验证证据 |
 
 当前待办包括 Phase 4 审核、正式账号种子及后续页面流程，以及商家账号禁用来源、支付超时与停店优先级、库存回补溢出、排行商家名称快照和密码 Unicode 长度口径等需求问题，详见 TODO。未经明确授权，不进入下一阶段，不自动执行种子、提交或推送。

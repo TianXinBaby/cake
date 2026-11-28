@@ -70,7 +70,7 @@
 | UI-04 商家商品管理 | `/merchant/products` | 本店筛选分页、创建、编辑、库存增减（带 expectedStock）、上下架确认、删除确认、字段错误、40911 刷新提示 | 无他店切换、无平台入口；merchantId 只读 |
 | UI-11 商家分类管理 | `/merchant/categories` | 分类列表、状态筛选、新增/改名/排序、启停确认、删除确认、40901/40909 就地提示 | 当前无分类商品数统计接口，页面不推测数量 |
 
-商家路由守卫每次进入读取服务器当前账号；未登录访问后台/商家页跳转 `/login` 并保留目标地址，登录后按服务器角色返回。真实照片位于 `frontend/public/images/cake-01.png`～`cake-08.png`（4:3），`ProductImage.vue` 在图片地址为空或加载失败时回退到 `cake-placeholder.svg`。本地演示店铺「奶油星球」的数据由 `database/demo/05_local_demo.sql` 提供（非正式种子，不提交）。
+商家路由守卫每次进入读取服务器当前账号；未登录访问后台/商家页跳转 `/login` 并保留目标地址，登录后按服务器角色返回。真实照片位于 `frontend/public/images/cake-01.png`～`cake-08.png`（4:3），`ProductImage.vue` 在图片地址为空或加载失败时回退到 `cake-placeholder.svg`。演示店铺「奶油星球」的数据由可提交的 `database/seed/05_demo_seed.sql` 提供（无明文密码，账号密码单独提供）；`database/demo/` 是旧的本机脚本，不提交。
 
 ## 6 验证范围与遗留
 
